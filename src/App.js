@@ -2,7 +2,6 @@
 import { Routes, Route } from "react-router-dom";
 import * as Pages from "./pages";
 import { useAuthContext } from "./contexts/auth";
-import { Header } from "./layout";
 
 import "./App.css";
 
@@ -18,7 +17,6 @@ function App() {
 
   return (
     <div className="App">
-      <Header />
       <Routes>
         <Route path={"/"} element={<Pages.Home />} />
       </Routes>
