@@ -1,7 +1,10 @@
-import logo from "./logo.svg";
+// import logo from "./logo.svg";
+import { Routes, Route } from "react-router-dom";
 
 import { io } from "socket.io-client";
 const socket = io("https://en-croissant.herokuapp.com/");
+
+import * as Pages from "./pages";
 
 import { useAuthContext } from "./contexts/auth";
 
@@ -16,20 +19,9 @@ function App() {
 
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Routes>
+        <Route path={"/"} element={<Pages.Home />} />
+      </Routes>
     </div>
   );
 }
