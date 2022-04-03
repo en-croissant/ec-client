@@ -4,9 +4,7 @@ import "./style.css";
 function Home() {
   return (
     <>
-      <div id="titlediv">
-        <h1> hello </h1>
-      </div>
+      <div id="homeDiv"></div>
     </>
   );
 }
