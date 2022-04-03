@@ -48,6 +48,27 @@ export const AuthProvider = ({ children }) => {
     });
   };
 
+  const register = async (userData) => {
+    try {
+      const options = {
+        headers: { "Content-Type": "application/json" }
+      };
+
+      const { data } = await axios.post(
+        `${process.env.REACT_APP_API_URL}auth/register`,
+        userData,
+        options
+      );
+      if (data.err) {
+        throw Error(data.err);
+      }
+      await login(userData);
+      return "Registration successful";
+    } catch (err) {
+      return err;
+    }
+  };
+
   const loginUser = (token) => {
     localStorage.setItem("token", token);
     const user = jwt_decode(token);
