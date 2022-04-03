@@ -1,7 +1,13 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
+import { io } from "socket.io-client";
+
+const socket = io("https://en-croissant.herokuapp.com/");
 
 function App() {
+  socket.on("hello world", () => {
+    console.log("hello world");
+  });
   return (
     <div className="App">
       <header className="App-header">
