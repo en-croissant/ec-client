@@ -28,7 +28,7 @@ export const AuthProvider = ({ children }) => {
         };
 
         const { data } = await axios.post(
-          `${process.env.API_URL}/auth/login`,
+          `${process.env.REACT_APP_API_URL}/auth/login`,
           userData,
           options
         );
