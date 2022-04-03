@@ -1,10 +1,11 @@
 import React from "react";
-
+import "./style.css";
 function Home() {
   <>
-    <h1> hello </h1>
-  </>
-  
+    <div id="titlediv">
+      <h1> hello </h1>
+    </div>
+  </>;
 }
 
 export default Home;
