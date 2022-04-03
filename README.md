@@ -11,6 +11,8 @@
 
 Enter description of the application.
 
+View the server-side repo [here](https://github.com/en-croissant/ec-flask)
+
 ## Table of Contents
 
 - [Welcome to En Croissant!](#welcome-to-en-croissant)
@@ -28,9 +30,10 @@ Enter description of the application.
 
 ### Local Usage
 
-- Clone the repo.
-- Open terminal and navigate to `/ec-client` folder.
-- Run `npm install` to install dependencies.
+- Clone the repo
+- Open terminal and navigate to `/ec-client` folder
+- Create a `.env` file and add `REACT_APP_API_URL=https://en-croissant.herokuapp.com/`
+- Run `npm install` to install dependencies
 
 #### `npm start`
 
