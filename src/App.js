@@ -1,7 +1,7 @@
 // import logo from "./logo.svg";
-import * as Pages from "./pages";
+import { Home } from "./pages";
 import "./App.css";
-import { Routes, Route } from "react-router-dom";
+import { Switch, Route } from "react-router-dom";
 import { io } from "socket.io-client";
 
 const socket = io("https://en-croissant.herokuapp.com/");
@@ -11,11 +11,13 @@ function App() {
     console.log("hello world");
   });
   return (
-    <div className="App">
-      <Routes>
-        <Route path={"/"} element={<Pages.Home />} />
-      </Routes>
-    </div>
+    <>
+      <Switch>
+        <Route exact path="/">
+          <Home />
+        </Route>
+      </Switch>
+    </>
   );
 }
 

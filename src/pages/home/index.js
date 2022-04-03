@@ -2,7 +2,7 @@ import React from "react";
 
 function Home() {
   <>
-    <div> hello </div>
+    <h1> hello </h1>
   </>;
 }
 
