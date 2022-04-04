@@ -6,7 +6,9 @@ function Home() {
     <>
       <div id="homeDiv">
         <div id="black_l"></div>
-        <div id="white_l"></div>
+        <div id="white_l">
+          <div id="white_dgnl"></div>
+        </div>
       </div>
     </>
   );

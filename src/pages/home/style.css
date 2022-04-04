@@ -4,18 +4,30 @@
   background-color: aqua;
 }
 #black_l {
-  height: 540px;
+  height: 500px;
   width: 845px;
   background-color: black;
   position: absolute;
 }
 
 #white_l {
-  height: 430px;
+  height: 300px;
   width: 845px;
-  bottom: 0;
+  bottom: 0px;
   background-color: rgb(255, 255, 255);
   position: absolute;
-  transform: skewy(-15deg);
+  /* transform: skewy(-15deg);
   transform: skewx(-25deg);
+  transform: rotate(-12deg); */
+}
+
+#white_dgnl {
+  height: 315px;
+  width: 200px;
+  bottom: -44px;
+  left: 89%;
+  background-color: rgb(228, 23, 23);
+  position: absolute;
+  transform: skewy(-15deg);
+  transform: rotate(-35deg);
 }

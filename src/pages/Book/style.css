@@ -1,0 +1,25 @@
+.leftpage {
+  border: solid 1px black;
+  background-color: whitesmoke;
+  border-radius: 20px;
+}
+
+.rightpage {
+  border: solid 1px black;
+  background-color: whitesmoke;
+  border-radius: 20px;
+}
+
+.bookfront {
+  border: solid 1px black;
+  background-color: red;
+  border-radius: 20px;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 400px;
+}
+
+.bookfronttext {
+  background-color: yellow;
+  height: 30px;
+}
