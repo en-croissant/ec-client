@@ -135,5 +135,22 @@
   height: 100px;
   width: 10px;
   position: absolute;
-  transform: skewY(-5deg);
+  transform: skewY(-0deg);
+}
+
+#l_back_leg_b {
+  background-color: rgb(119, 69, 33);
+  background-image: linear-gradient(
+    315deg,
+    rgb(77, 45, 23) 0%,
+    rgb(70, 41, 19) 50%,
+    rgb(39, 21, 9) 100%
+  );
+  top: 60px;
+  left: 35px;
+  height: 100px;
+  width: 10px;
+  position: absolute;
+
+  z-index: -1;
 }
