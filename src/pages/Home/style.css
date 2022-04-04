@@ -135,7 +135,7 @@
   height: 100px;
   width: 10px;
   position: absolute;
-  transform: skewY(-0deg);
+  transform: skewY(35deg);
 }
 
 #l_back_leg_b {
@@ -147,11 +147,12 @@
     rgb(39, 21, 9) 100%
   );
   top: 60px;
-  left: 35px;
+  left: 39px;
   height: 100px;
   width: 10px;
   position: absolute;
   z-index: -1;
+  transform: skewY(-30deg);
 }
 
 #l_front_leg_a {
