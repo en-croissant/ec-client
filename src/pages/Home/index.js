@@ -16,10 +16,9 @@ function Home() {
         </div>
       </div>
       <div id="table">
-        <div id="table_top">
-          <div id="table_top_front"></div>
-          <div id="table_top_side"></div>
-        </div>
+        <div id="table_top"></div>
+        <div id="table_top_front"></div>
+        <div id="table_top_side"></div>
       </div>
     </>
   );

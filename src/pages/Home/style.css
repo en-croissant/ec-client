@@ -82,3 +82,10 @@
   transform: skewX(60deg) skewY(-5deg);
   /* background: url(http://thenewcode.com/assets/images/woodgrain.jpg); */
 }
+#table_top_front {
+  background-color: rgb(88, 49, 21);
+  top: 30px;
+  left: 30px;
+  height: 10px;
+  width: 440px;
+}
