@@ -40,3 +40,11 @@
   position: absolute;
   transform: rotate(-60deg);
 }
+
+#white_r {
+  height: 345px;
+  width: 862px;
+  background-color: rgb(255, 255, 255);
+  position: absolute;
+  left: 845px;
+}
