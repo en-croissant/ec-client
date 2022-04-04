@@ -1,0 +1,28 @@
+.leftpage {
+  border: solid 1px black;
+  background-color: whitesmoke;
+  border-radius: 20px;
+}
+
+.rightpage {
+  border: solid 1px black;
+  background-color: whitesmoke;
+  border-radius: 20px;
+}
+
+.bookfront {
+  border: solid 1px black;
+  background-color: red;
+  border-radius: 20px;
+  /* add pages sitcking out pls help Jumaanah  */
+}
+
+.bookfronttext {
+  background-color: whitesmoke;
+  height: 50px;
+  margin-top: 200px;
+  text-align: center;
+  vertical-align: middle;
+  padding-top: 30px;
+  border-bottom: green solid 25px;
+}
