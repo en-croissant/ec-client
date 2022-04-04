@@ -72,3 +72,12 @@
   position: absolute;
   width: 500px;
 }
+#table_top {
+  background-color: rgb(70, 153, 226);
+  top: 30px;
+  left: 30px;
+  height: 50px;
+  width: 440px;
+  position: absolute;
+  transform: skewX(60deg) skewY(-5deg);
+}
