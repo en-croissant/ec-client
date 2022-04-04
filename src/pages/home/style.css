@@ -35,7 +35,7 @@
   height: 600px;
   width: 300px;
   bottom: -280px;
-  left: 868px;
+  left: 866px;
   background-color: rgb(255, 255, 255);
   position: absolute;
   transform: rotate(-60deg);
@@ -62,4 +62,11 @@
   -o-transform: skewY(-5deg);
   transform: skewY(-10deg);
   z-index: 10;
+}
+
+#table {
+  position: absolute;
+  height: 200px;
+  width: 200px;
+  color: pink;
 }
