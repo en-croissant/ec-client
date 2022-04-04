@@ -80,4 +80,5 @@
   width: 440px;
   position: absolute;
   transform: skewX(60deg) skewY(-5deg);
+  background: url(http://thenewcode.com/assets/images/woodgrain.jpg);
 }
