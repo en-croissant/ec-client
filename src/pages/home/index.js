@@ -15,7 +15,9 @@ function Home() {
           <div id="whiteR_dgnl"></div>
         </div>
       </div>
-      <div id="table"></div>
+      <div id="table">
+        <div className="table_top"></div>
+      </div>
     </>
   );
 }
