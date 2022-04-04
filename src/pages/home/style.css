@@ -11,10 +11,11 @@
 }
 
 #white_l {
-  height: 330px;
+  height: 430px;
   width: 845px;
   bottom: 0;
   background-color: rgb(255, 255, 255);
   position: absolute;
-  transform: skewy(-3deg);
+  transform: skewy(-15deg);
+  transform: skewx(-25deg);
 }
