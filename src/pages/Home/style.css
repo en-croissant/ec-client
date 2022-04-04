@@ -53,14 +53,14 @@
   height: 190px;
   width: 862px;
   left: 0px;
-  top: 243px;
+  top: 280px;
   background-color: rgb(255, 255, 255);
   position: absolute;
   -webkit-transform: skewY(-5deg);
   -moz-transform: skewY(-5deg);
   -ms-transform: skewY(-5deg);
   -o-transform: skewY(-5deg);
-  transform: skewY(-10deg);
+  transform: skewY(-5deg);
   z-index: 10;
 }
 
