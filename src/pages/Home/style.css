@@ -73,7 +73,13 @@
   width: 500px;
 }
 #table_top {
-  background-color: rgb(119, 66, 28);
+  background-color: #a55c1b;
+  background-image: linear-gradient(
+    315deg,
+    #8e4f18 0%,
+    #a55c1b 50%,
+    #7a4618 74%
+  );
   top: 30px;
   left: 30px;
   height: 50px;
@@ -81,11 +87,85 @@
   position: absolute;
   transform: skewX(60deg) skewY(-5deg);
   /* background: url(http://thenewcode.com/assets/images/woodgrain.jpg); */
+  z-index: 10;
 }
 #table_top_front {
   background-color: rgb(88, 49, 21);
-  top: 30px;
+  background-image: linear-gradient(
+    315deg,
+    rgb(68, 39, 18) 0%,
+    rgb(91, 53, 27) 74%,
+    rgb(59, 33, 15) 100%
+  );
+  top: 75px;
+  left: 110px;
+  height: 20px;
+  width: 360px;
+  position: absolute;
+  transform: skewY(-6deg);
+}
+
+#table_top_side {
+  background-color: rgb(88, 49, 21);
+  background-image: linear-gradient(
+    315deg,
+    rgb(91, 53, 27) 0%,
+    rgb(68, 39, 18) 74%,
+    rgb(59, 33, 15) 100%
+  );
+
+  top: 75px;
   left: 30px;
-  height: 10px;
-  width: 440px;
+  height: 15px;
+  width: 80px;
+  position: absolute;
+  transform: skewY(30deg);
+}
+
+#l_back_leg_a {
+  background-color: rgb(119, 69, 33);
+  background-image: linear-gradient(
+    315deg,
+    rgb(119, 69, 33) 0%,
+    rgb(119, 69, 33) 50%,
+    rgb(49, 27, 11) 100%
+  );
+  top: 60px;
+  left: 30px;
+  height: 100px;
+  width: 10px;
+  position: absolute;
+  transform: skewY(-0deg);
+}
+
+#l_back_leg_b {
+  background-color: rgb(119, 69, 33);
+  background-image: linear-gradient(
+    315deg,
+    rgb(77, 45, 23) 0%,
+    rgb(70, 41, 19) 50%,
+    rgb(39, 21, 9) 100%
+  );
+  top: 60px;
+  left: 35px;
+  height: 100px;
+  width: 10px;
+  position: absolute;
+  z-index: -1;
+}
+
+#l_front_leg_a {
+  background-color: rgb(119, 69, 33);
+  background-image: linear-gradient(
+    315deg,
+    rgb(119, 69, 33) 0%,
+    rgb(119, 69, 33) 50%,
+    rgb(49, 27, 11) 100%
+  );
+  top: 90px;
+  left: 100px;
+  height: 100px;
+  width: 10px;
+  position: absolute;
+  transform: skewY(35deg);
 }
