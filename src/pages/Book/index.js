@@ -12,7 +12,7 @@ function Book(props) {
       </div>
       <HTMLFlipBook width={300} height={500}>
           <div className="nopage"></div>
-          <div className="bookfront"><div className="bookfronttext">Front of book</div></div>
+          <div className="bookfront"><div className="bookfronttext">NOTEBOOK</div></div>
           <div className="leftpage">Page 1</div>
           <div className="rightpage">Page 2</div>
           <div className="leftpage">Page 3</div>

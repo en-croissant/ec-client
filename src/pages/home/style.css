@@ -22,12 +22,11 @@
 }
 
 #white_dgnl {
-  height: 315px;
-  width: 200px;
-  bottom: -44px;
-  left: 89%;
-  background-color: rgb(228, 23, 23);
+  height: 600px;
+  width: 300px;
+  bottom: -280px;
+  left: 877px;
+  background-color: rgb(255, 255, 255);
   position: absolute;
-  transform: skewy(-15deg);
-  transform: rotate(-35deg);
+  transform: rotate(-60deg);
 }

@@ -14,12 +14,15 @@
   border: solid 1px black;
   background-color: red;
   border-radius: 20px;
-  text-align: center;
-  vertical-align: middle;
-  line-height: 400px;
+  /* add pages sitcking out pls help Jumaanah  */
 }
 
 .bookfronttext {
-  background-color: yellow;
-  height: 30px;
+  background-color: whitesmoke;
+  height: 50px;
+  margin-top: 200px;
+  text-align: center;
+  vertical-align: middle;
+  padding-top: 30px;
+  border-bottom: green solid 25px;
 }
