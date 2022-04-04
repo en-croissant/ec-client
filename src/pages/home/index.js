@@ -11,6 +11,7 @@ function Home() {
         <div id="white_l">
           <div id="white_dgnl"></div>
         </div>
+        <div id="white_r"></div>
       </div>
     </>
   );
