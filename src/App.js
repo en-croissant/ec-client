@@ -5,11 +5,6 @@ import { useAuthContext } from "./contexts/auth";
 
 import "./App.css";
 
-// Below should go inside of the chess game page
-// import { io } from "socket.io-client";
-// const socket = io("https://en-croissant.herokuapp.com/");
-// const socket = io("localhost:5000");
-
 function App() {
 
   const { user } = useAuthContext();
