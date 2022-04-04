@@ -121,3 +121,19 @@
   position: absolute;
   transform: skewY(30deg);
 }
+
+#l_back_leg_a {
+  background-color: rgb(119, 69, 33);
+  background-image: linear-gradient(
+    315deg,
+    rgb(119, 69, 33) 0%,
+    rgb(119, 69, 33) 50%,
+    rgb(49, 27, 11) 100%
+  );
+  top: 60px;
+  left: 30px;
+  height: 100px;
+  width: 10px;
+  position: absolute;
+  transform: skewY(-5deg);
+}
