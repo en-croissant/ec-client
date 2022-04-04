@@ -9,6 +9,16 @@
   background-color: black;
   position: absolute;
 }
+#black_dgnl {
+  height: 858px;
+  width: 300px;
+  left: 268px;
+  top: -47px;
+  background-color: rgb(0, 0, 0);
+  position: absolute;
+  transform: rotate(-93deg);
+  z-index: 10;
+}
 
 #white_l {
   height: 300px;
