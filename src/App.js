@@ -2,13 +2,17 @@ import logo from "./logo.svg";
 import "./App.css";
 import { io } from "socket.io-client";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
 import Chess from "chess.js";
 import { Chessboard } from "react-chessboard";
 
-const socket = io("https://en-croissant.herokuapp.com/");
+//const socket = io("https://en-croissant.herokuapp.com/");
+const socket = io("localhost:5000");
 
 function App() {
+  socket.on("hello world", ({ data }) => console.log(data));
+
+  const chessboardRef = useRef();
   const [game, setGame] = useState(new Chess());
 
   function safeGameMutate(modify) {
@@ -19,31 +23,57 @@ function App() {
     });
   }
 
-  function makeRandomMove() {
-    const possibleMoves = game.moves();
-    if (game.game_over() || game.in_draw() || possibleMoves.length === 0)
-      return; // exit if the game is over
-    const randomIndex = Math.floor(Math.random() * possibleMoves.length);
-    safeGameMutate((game) => {
-      game.move(possibleMoves[randomIndex]);
-    });
-  }
-
   function onDrop(sourceSquare, targetSquare) {
-    let move = null;
-    safeGameMutate((game) => {
-      move = game.move({
-        from: sourceSquare,
-        to: targetSquare,
-        promotion: "q", // always promote to a queen for example simplicity
-      });
+    const gameCopy = { ...game };
+    const move = gameCopy.move({
+      from: sourceSquare,
+      to: targetSquare,
+      promotion: "q", // always promote to a queen for example simplicity
     });
-    if (move === null) return false; // illegal move
-    setTimeout(makeRandomMove, 200);
-    return true;
+    console.log(move.san);
+    socket.emit("move", move.san);
+    setGame(gameCopy);
+    return move;
   }
 
-  return <Chessboard position={game.fen()} onPieceDrop={onDrop} />;
+  return (
+    <div>
+      <Chessboard
+        id="PlayVsPlay"
+        animationDuration={200}
+        boardWidth={400}
+        position={game.fen()}
+        onPieceDrop={onDrop}
+        customBoardStyle={{
+          borderRadius: "4px",
+          boxShadow: "0 5px 15px rgba(0, 0, 0, 0.5)",
+        }}
+        ref={chessboardRef}
+      />
+      <button
+        className="rc-button"
+        onClick={() => {
+          safeGameMutate((game) => {
+            game.reset();
+          });
+          chessboardRef.current.clearPremoves();
+        }}
+      >
+        reset
+      </button>
+      <button
+        className="rc-button"
+        onClick={() => {
+          safeGameMutate((game) => {
+            game.undo();
+          });
+          chessboardRef.current.clearPremoves();
+        }}
+      >
+        undo
+      </button>
+    </div>
+  );
 }
 
 export default App;
