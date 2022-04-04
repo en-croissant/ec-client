@@ -4,7 +4,9 @@ import "./style.css";
 function Home() {
   return (
     <>
-      <div id="homeDiv"></div>
+      <div id="homeDiv">
+        <div id="black_l"></div>
+      </div>
     </>
   );
 }
