@@ -97,8 +97,9 @@
   background-color: rgb(88, 49, 21);
   background-image: linear-gradient(
     315deg,
-    rgb(88, 49, 21) 0%,
-    rgb(59, 33, 15) 74%
+    rgb(107, 61, 28) 0%,
+    rgb(68, 39, 18) 74%,
+    rgb(59, 33, 15) 100%
   );
 
   top: 75px;
