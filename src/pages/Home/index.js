@@ -21,6 +21,8 @@ function Home() {
         <div id="table_top_side"></div>
         <div id="l_back_leg_a"></div>
         <div id="l_back_leg_b"></div>
+        <div id="r_back_leg_a"></div>
+        <div id="r_back_leg_b"></div>
       </div>
     </>
   );
