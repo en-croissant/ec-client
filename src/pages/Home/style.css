@@ -92,3 +92,19 @@
   position: absolute;
   transform: skewY(-6deg);
 }
+
+#table_top_side {
+  background-color: rgb(88, 49, 21);
+  background-image: linear-gradient(
+    315deg,
+    rgb(88, 49, 21) 0%,
+    rgb(59, 33, 15) 74%
+  );
+
+  top: 75px;
+  left: 30px;
+  height: 15px;
+  width: 80px;
+  position: absolute;
+  transform: skewY(30deg);
+}
