@@ -22,6 +22,7 @@ function App() {
             </>
           ) : (
             <>
+              <Route path={"/create"} element={<Pages.CreateGame />} />
               <Route path={"/lobby"} element={<Pages.Lobby />} />
             </>
           )
