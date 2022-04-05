@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-import { useAuthContext } from "../../contexts/AuthContext";
+import { useAuthContext } from "../../contexts/auth";
 import { useNavigate } from "react-router-dom";
 
 import './style.css'
@@ -22,7 +22,7 @@ export default () => {
   }
 
   const formIncomplete = () => {
-    Object.values(formData.some(value => !value))
+    Object.values(formData).some(value => !value)
   }
 
   const handleSubmit = async (e) => {
@@ -43,9 +43,9 @@ export default () => {
 
   return (
     <>
-      <form id="login-form" >
+      <form id="login-form" role="form" >
       <div>
-          <label for="username-log">Username:</label>
+          <label htmlFor="username-log">Username:</label>
           <input
             type="text"
             name="username-log"
@@ -56,7 +56,7 @@ export default () => {
           />
         </div>
         <div>
-          <label for="password-log">Password:</label>
+          <label htmlFor="password-log">Password:</label>
           <input
             type="password"
             name="password-log"

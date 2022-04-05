@@ -1,6 +1,6 @@
-import React from 'react'
+import React, { useState } from 'react'
 
-import { useAuthContext } from "../../contexts/AuthContext";
+import { useAuthContext } from "../../contexts/auth";
 import { useNavigate } from "react-router-dom";
 
 import './style.css'
@@ -29,7 +29,7 @@ export default () => {
     }))
   }
 
-  const fromIncomplete = () => {
+  const formIncomplete = () => {
     return (
       Object.values(formData).some(value => !value) || passwordNotMatch()
     )
@@ -58,9 +58,9 @@ export default () => {
 
   return (
     <>
-      <form id="reg-form" >
+      <form id="reg-form" role="form" >
         <div>
-          <label for="username-reg">Username:</label>
+          <label htmlFor="username-reg">Username:</label>
           <input
             type="text"
             name="username-reg"
@@ -72,7 +72,7 @@ export default () => {
           />
         </div>
         <div>
-          <label for="email-reg">Email:</label>
+          <label htmlFor="email-reg">Email:</label>
           <input
             type="text"
             name="email-reg"
@@ -84,7 +84,7 @@ export default () => {
           />
         </div>
         <div>
-          <label for="password-reg">Password:</label>
+          <label htmlFor="password-reg">Password:</label>
           <input
             type="password"
             name="password-reg"
@@ -96,7 +96,7 @@ export default () => {
           />
         </div>
         <div>
-          <label for="passwordConfirmation">Confirm Password:</label>
+          <label htmlFor="passwordConfirmation">Confirm Password:</label>
           <input
             type="password"
             name="passwordConfirmation"
