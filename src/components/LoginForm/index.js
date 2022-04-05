@@ -17,7 +17,7 @@ function LoginForm() {
     setError()
     return setFormData(prev => ({
       ...prev,
-      [e.targte.name]: e.target.value
+      [e.target.name]: e.target.value
     }))
   }
 
