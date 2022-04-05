@@ -220,3 +220,36 @@
   z-index: -1;
   transform: skewY(-135deg);
 }
+#r_back_leg_a {
+  background-color: rgb(119, 69, 33);
+  background-image: linear-gradient(
+    315deg,
+    rgb(84, 50, 27) 0%,
+    rgb(74, 44, 22) 50%,
+    rgb(32, 16, 6) 100%
+  );
+  top: 62px;
+  left: 400px;
+  height: 70px;
+  width: 5px;
+  position: absolute;
+  z-index: -1;
+  transform: skewY(-135deg);
+}
+
+#r_back_leg_b {
+  background-color: rgb(119, 69, 33);
+  background-image: linear-gradient(
+    315deg,
+    rgb(63, 38, 20) 0%,
+    rgb(60, 35, 18) 50%,
+    rgb(22, 11, 4) 100%
+  );
+  top: 63px;
+  left: 405px;
+  height: 70px;
+  width: 10px;
+  position: absolute;
+  z-index: -1;
+  transform: skewY(-10deg);
+}
