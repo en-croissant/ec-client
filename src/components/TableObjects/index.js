@@ -10,6 +10,8 @@ const TableBook = () => {
         <div id="side_book"></div>
         <div id="pages"></div>
       </a>
+
+      <div id="chess_base"></div>
     </>
   );
 };
