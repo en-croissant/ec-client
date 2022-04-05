@@ -1,0 +1,87 @@
+#top_book {
+  background-color: red;
+  width: 85px;
+  height: 28px;
+  margin-left: 642px;
+  border-radius: 3px;
+  position: fixed;
+  margin-top: -380px;
+  z-index: 20;
+  transform: skewX(60deg) skewY(-5deg);
+}
+
+#top_page {
+  background-color: rgb(201, 201, 201);
+  width: 80px;
+  height: 27px;
+  margin-left: 642px;
+  position: fixed;
+  margin-top: -380px;
+  z-index: 13;
+  transform: skewX(60deg) skewY(-5deg);
+}
+
+#top_book:hover {
+  transform: skewX(60deg) skewY(-10deg);
+  transform: rotate(-65deg);
+  margin-left: 630px;
+  margin-top: -425px;
+  height: 63px;
+  width: 78px;
+}
+
+#side_book {
+  background-color: rgb(223, 8, 8);
+  width: 52px;
+  height: 12px;
+  margin-left: 625px;
+  position: fixed;
+  margin-top: -362px;
+  z-index: 15;
+  transform: skewY(30deg);
+}
+
+#pages {
+  background-color: rgb(215, 215, 215);
+  width: 63px;
+  height: 15px;
+  margin-left: 675px;
+  position: fixed;
+  margin-top: -354px;
+  z-index: 12;
+  transform: skewY(-6deg);
+}
+
+#chess_base {
+  background-color: rgb(132, 98, 24);
+  width: 150px;
+  height: 40px;
+  margin-left: 465px;
+  border-radius: 3px;
+  position: fixed;
+  margin-top: -370px;
+  z-index: 20;
+  transform: skewX(60deg) skewY(-5deg);
+}
+
+#chess_left {
+  background-color: rgb(82, 62, 19);
+  width: 68px;
+  height: 10px;
+  margin-left: 442px;
+  position: fixed;
+  margin-top: -345px;
+  z-index: 20;
+  transform: skewY(30deg);
+}
+
+#chess_front {
+  background-color: rgb(82, 62, 19);
+  width: 125px;
+  height: 10px;
+  margin-left: 510px;
+  position: fixed;
+  margin-top: -332px;
+  z-index: 20;
+  transform: skewY(-6deg);
+}
