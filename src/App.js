@@ -14,6 +14,7 @@ function App() {
       <Routes>
         <Route exact path={"/"} element={<Pages.Home />} />
         <Route path={"/lobby"} element={<Pages.Lobby />} />
+        <Route path={"/create"} element={<Pages.CreateGame />} />
         <Route path={"/book"} element={<Pages.Book />} />
       </Routes>
     </div>
