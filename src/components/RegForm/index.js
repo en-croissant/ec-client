@@ -58,7 +58,7 @@ export default () => {
 
   return (
     <>
-      <form id="reg-form" role="form" >
+      <form aria-label="reg-form" role="form" >
         <div>
           <label htmlFor="username-reg">Username:</label>
           <input
