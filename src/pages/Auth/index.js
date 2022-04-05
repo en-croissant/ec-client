@@ -4,7 +4,7 @@ import { LoginForm, RegForm } from '../../components'
 
 import "./style.css";
 
-export default () => {
+function Auth() {
   return (
     <>
       <LoginForm/>
@@ -12,3 +12,5 @@ export default () => {
     </>
   );
 };
+
+export default Auth
