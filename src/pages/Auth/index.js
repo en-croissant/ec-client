@@ -1,12 +1,12 @@
-import React from 'react'
+import React from "react";
 
-import './style.css'
+import "./style.css";
 
 export default () => {
   return (
     <>
-      <LoginForm/>
-      <RegForm/>
+      {/* <LoginForm/>
+      <RegForm/> */}
     </>
-  )
-}
+  );
+};

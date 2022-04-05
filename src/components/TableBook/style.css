@@ -1,0 +1,10 @@
+#top_book {
+  background-color: red;
+  width: 80px;
+  height: 28px;
+  margin-left: 630px;
+  position: fixed;
+  margin-top: -380px;
+  z-index: 20;
+  transform: skewX(60deg) skewY(-5deg);
+}
