@@ -15,9 +15,10 @@ function LoginForm() {
 
   const handleInput = (e) => {
     setError();
+    const value = e.target.value
     return setFormData((prev) => ({
       ...prev,
-      [e.target.name]: e.target.value,
+      [e.target.name]: value,
     }));
   };
 
@@ -48,6 +49,7 @@ function LoginForm() {
         <div>
           <label htmlFor="username">Username:</label>
           <input
+            aria-label="username-field"
             type="text"
             name="username"
             value={formData.username}
@@ -59,6 +61,7 @@ function LoginForm() {
         <div>
           <label htmlFor="password">Password:</label>
           <input
+            aria-label="password-field"
             type="password"
             name="password"
             value={formData.password}
@@ -67,7 +70,7 @@ function LoginForm() {
             required
           />
         </div>
-        <input type="submit" disabled={formIncomplete()} value="Login" />
+        <input role="button" type="submit" disabled={formIncomplete()} value="Login" />
       </form>
       {error && <div id="error">{error}</div>}
       {loading && <div id="loading">Logging in . . .</div>}
