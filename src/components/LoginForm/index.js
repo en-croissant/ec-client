@@ -43,7 +43,7 @@ export default () => {
 
   return (
     <>
-      <form aria-label="login-form" role="form" onSubmit={handleSubmit} >
+      <form aria-label="login-form" onSubmit={handleSubmit} >
       <div>
           <label htmlFor="username-log">Username:</label>
           <input

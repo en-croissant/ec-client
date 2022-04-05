@@ -58,7 +58,7 @@ export default () => {
 
   return (
     <>
-      <form aria-label="reg-form" role="form" onSubmit={handleSubmit} >
+      <form aria-label="reg-form" onSubmit={handleSubmit} >
         <div>
           <label htmlFor="username-reg">Username:</label>
           <input
