@@ -13,6 +13,7 @@ const TableObjects = () => {
 
       <div id="chess_base"></div>
       <div id="chess_left"></div>
+      <div id="chess_front"></div>
     </>
   );
 };
