@@ -53,13 +53,24 @@
 }
 
 #chess_base {
-  background-color: rgb(132, 98, 24);
+  background-color: rgb(105, 78, 20);
   width: 150px;
   height: 40px;
   margin-left: 465px;
   border-radius: 3px;
   position: fixed;
   margin-top: -370px;
+  z-index: 20;
+  transform: skewX(60deg) skewY(-5deg);
+}
+#chess_base_inner {
+  background-color: rgb(112, 84, 21);
+  width: 120px;
+  height: 30px;
+  margin-left: 475px;
+  border-radius: 3px;
+  position: fixed;
+  margin-top: -365px;
   z-index: 20;
   transform: skewX(60deg) skewY(-5deg);
 }
