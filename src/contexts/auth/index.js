@@ -7,6 +7,8 @@ const AuthContext = React.createContext();
 
 export const useAuthContext = () => useContext(AuthContext);
 
+const API_URL = "https://en-croissant.herokuapp.com"
+
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(getCurrentUser());
 
@@ -28,7 +30,7 @@ export const AuthProvider = ({ children }) => {
         };
 
         const { data } = await axios.post(
-          `${process.env.REACT_APP_API_URL}auth/login`,
+          `${API_URL}/auth/login`,
           userData,
           options
         );
@@ -58,7 +60,7 @@ export const AuthProvider = ({ children }) => {
       };
 
       const { data } = await axios.post(
-        `${process.env.REACT_APP_API_URL}auth/register`,
+        `${API_URL}/auth/register`,
         userData,
         options
       );
