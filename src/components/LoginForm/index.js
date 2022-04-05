@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 
 import './style.css'
 
-export default () => {
+function LoginForm() {
   const { login } = useAuthContext()
   const navigate = useNavigate()
 
@@ -85,3 +85,5 @@ export default () => {
     </>
   )
 }
+
+export default LoginForm
