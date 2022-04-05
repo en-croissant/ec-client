@@ -25,6 +25,8 @@ function Home() {
         <div id="l_front_leg_b"></div>
         <div id="r_front_leg_a"></div>
         <div id="r_front_leg_b"></div>
+        <div id="r_back_leg_a"></div>
+        <div id="r_back_leg_b"></div>
       </div>
     </>
   );
