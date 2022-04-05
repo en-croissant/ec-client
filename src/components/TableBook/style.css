@@ -2,9 +2,21 @@
   background-color: red;
   width: 80px;
   height: 28px;
-  margin-left: 630px;
+  margin-left: 640px;
+  border-radius: 4px;
   position: fixed;
   margin-top: -380px;
   z-index: 20;
   transform: skewX(60deg) skewY(-5deg);
+}
+
+#side_book {
+  background-color: rgb(223, 8, 8);
+  width: 50px;
+  height: 10px;
+  margin-left: 625px;
+  position: fixed;
+  margin-top: -360px;
+  z-index: 15;
+  transform: skewY(30deg);
 }
