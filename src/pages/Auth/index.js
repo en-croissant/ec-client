@@ -7,8 +7,8 @@ import "./style.css";
 export default () => {
   return (
     <>
-      {/* <LoginForm/>
-      <RegForm/> */}
+      <LoginForm/>
+      <RegForm/>
     </>
   );
 };
