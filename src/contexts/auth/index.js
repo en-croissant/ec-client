@@ -18,34 +18,37 @@ export const AuthProvider = ({ children }) => {
     return null;
   }
 
-  const login = (userData) => {
-    return new Promise(async (res, rej) => {
+  const login = async (userData) => {
+    // return new Promise(async (res, rej) => {
       try {
         const options = {
           headers: {
-            "Content-Type": "application/json",
+            "Content-Type": "application/json"
           },
         };
 
         const { data } = await axios.post(
-          `${process.env.REACT_APP_API_URL}/auth/login`,
+          `${process.env.REACT_APP_API_URL}auth/login`,
           userData,
           options
         );
+
+        // console.log(data)
 
         if (data.success) {
           console.log("Success!");
         } else {
           throw new Error("Login not authorised");
-          // incorrectPassword(e);
         }
 
         loginUser(data.token);
-        res("Login successful");
+        // res("Login successful");
+        return "Login successful"
       } catch (err) {
-        rej(`Login error: ${err}`);
+        // rej(`Login error: ${err}`);
+        return err
       }
-    });
+    // });
   };
 
   const register = async (userData) => {

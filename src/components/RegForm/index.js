@@ -46,7 +46,7 @@ function RegForm() {
       const regResult = await register(formData)
       if (regResult==="Registration successful") {
         await login(formData)
-        navigate('/home')
+        navigate('/')
       } else {
         throw new Error('')
       }
@@ -60,10 +60,10 @@ function RegForm() {
     <>
       <form aria-label="reg-form" onSubmit={handleSubmit} >
         <div>
-          <label htmlFor="username-reg">Username:</label>
+          <label htmlFor="username">Username:</label>
           <input
             type="text"
-            name="username-reg"
+            name="username"
             value={formData.username}
             onChange={handleInput}
             placeholder="Enter username"
@@ -72,10 +72,10 @@ function RegForm() {
           />
         </div>
         <div>
-          <label htmlFor="email-reg">Email:</label>
+          <label htmlFor="email">Email:</label>
           <input
             type="text"
-            name="email-reg"
+            name="email"
             value={formData.email}
             onChange={handleInput}
             placeholder="Enter email"
@@ -84,10 +84,10 @@ function RegForm() {
           />
         </div>
         <div>
-          <label htmlFor="password-reg">Password:</label>
+          <label htmlFor="password">Password:</label>
           <input
             type="password"
-            name="password-reg"
+            name="password"
             value={formData.password}
             onChange={handleInput}
             placeholder="Password"

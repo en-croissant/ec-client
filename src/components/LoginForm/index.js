@@ -15,7 +15,7 @@ function LoginForm() {
 
   const handleInput = (e) => {
     setError()
-    return setFormData(prev => ({
+    return setFormData((prev) => ({
       ...prev,
       [e.target.name]: e.target.value
     }))
@@ -31,7 +31,7 @@ function LoginForm() {
       setLoading(true)
       const loginResult = await login(formData)
       if (loginResult==="Login successful") {
-        navigate("/home")
+        navigate("/")
       } else {
         throw new Error(loginResult)
       }
@@ -45,10 +45,10 @@ function LoginForm() {
     <>
       <form aria-label="login-form" onSubmit={handleSubmit} >
       <div>
-          <label htmlFor="username-log">Username:</label>
+          <label htmlFor="username">Username:</label>
           <input
             type="text"
-            name="username-log"
+            name="username"
             value={formData.username}
             onChange={handleInput}
             placeholder="Enter username"
@@ -56,10 +56,10 @@ function LoginForm() {
           />
         </div>
         <div>
-          <label htmlFor="password-log">Password:</label>
+          <label htmlFor="password">Password:</label>
           <input
             type="password"
-            name="password-log"
+            name="password"
             value={formData.password}
             onChange={handleInput}
             placeholder="Password"
