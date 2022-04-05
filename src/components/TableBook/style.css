@@ -1,9 +1,9 @@
 #top_book {
   background-color: red;
-  width: 80px;
+  width: 85px;
   height: 28px;
-  margin-left: 640px;
-  border-radius: 4px;
+  margin-left: 642px;
+  border-radius: 3px;
   position: fixed;
   margin-top: -380px;
   z-index: 20;
@@ -12,11 +12,22 @@
 
 #side_book {
   background-color: rgb(223, 8, 8);
-  width: 50px;
-  height: 10px;
+  width: 52px;
+  height: 12px;
   margin-left: 625px;
   position: fixed;
-  margin-top: -360px;
+  margin-top: -362px;
   z-index: 15;
   transform: skewY(30deg);
+}
+
+#pages {
+  background-color: rgb(215, 215, 215);
+  width: 63px;
+  height: 15px;
+  margin-left: 675px;
+  position: fixed;
+  margin-top: -354px;
+  z-index: 12;
+  transform: skewY(-6deg);
 }
