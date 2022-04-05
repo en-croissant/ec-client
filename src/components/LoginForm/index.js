@@ -46,6 +46,7 @@ function LoginForm() {
       <form aria-label="login-form" id="login_form" onSubmit={handleSubmit}>
         <div id="back_paper"></div>
         <div>
+          <h1> Login to compete again</h1>
           <label htmlFor="username">Username:</label>
           <input
             type="text"
