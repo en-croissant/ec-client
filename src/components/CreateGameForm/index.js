@@ -28,7 +28,7 @@ const CreateGameForm = () => {
       <>
         <h2>Create Lobby</h2>
 
-        <form>
+        <form role="form">
             {/* <label for="room-name" >Room name: </label>
             <input 
             type="text"
