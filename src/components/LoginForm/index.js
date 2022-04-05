@@ -44,6 +44,7 @@ function LoginForm() {
   return (
     <>
       <form aria-label="login-form" id="login_form" onSubmit={handleSubmit}>
+        <div id="back_paper"></div>
         <div>
           <label htmlFor="username">Username:</label>
           <input

@@ -1,1 +1,38 @@
+#login_form {
+  position: fixed;
 
+  /* height: calc(100% - 40px); */
+  background: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  margin: 26px auto 0;
+  max-width: 380px;
+  min-height: 300px;
+  padding: 50px;
+  display: block;
+  left: 50%;
+  top: 30%;
+  height: 300px;
+}
+
+#back_paper:before,
+#back_paper:after {
+  content: "";
+  height: 98%;
+  position: absolute;
+  width: 100%;
+  z-index: -1;
+}
+#back_paper:before {
+  background: #fafafa;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+  left: -5px;
+  top: 4px;
+  transform: rotate(-2.5deg);
+}
+#back_paper:after {
+  background: #f6f6f6;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+  right: -3px;
+  top: 1px;
+  transform: rotate(2.1deg);
+}
