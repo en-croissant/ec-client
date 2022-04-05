@@ -1,7 +1,7 @@
 import React from "react";
 import "./style.css";
 
-const TableBook = () => {
+const TableObjects = () => {
   return (
     <>
       <a href="/Book">
@@ -16,4 +16,4 @@ const TableBook = () => {
     </>
   );
 };
-export default TableBook;
+export default TableObjects;
