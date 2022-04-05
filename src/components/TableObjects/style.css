@@ -51,3 +51,15 @@
   z-index: 12;
   transform: skewY(-6deg);
 }
+
+#chessboard {
+  background-color: rgb(0, 0, 0);
+  width: 150px;
+  height: 35px;
+  margin-left: 470px;
+  border-radius: 3px;
+  position: fixed;
+  margin-top: -365px;
+  z-index: 20;
+  transform: skewX(60deg) skewY(-5deg);
+}
