@@ -45,10 +45,10 @@ export default () => {
     <>
       <form id="login-form" >
       <div>
-          <label for="username">Username:</label>
+          <label for="username-log">Username:</label>
           <input
             type="text"
-            name="username"
+            name="username-log"
             value={formData.username}
             onChange={handleInput}
             placeholder="Enter username"
@@ -56,10 +56,10 @@ export default () => {
           />
         </div>
         <div>
-          <label for="password">Password:</label>
+          <label for="password-log">Password:</label>
           <input
             type="password"
-            name="password"
+            name="password-log"
             value={formData.password}
             onChange={handleInput}
             placeholder="Password"
