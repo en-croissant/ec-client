@@ -11,10 +11,20 @@ const TableObjects = () => {
         <div id="pages"></div>
       </a>
 
-      <div id="chess_base"></div>
-      <div id="chess_base_inner"></div>
-      <div id="chess_left"></div>
-      <div id="chess_front"></div>
+      <div id="chessboard">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        
+      </div>
+      {/* <div id="chess_base"></div>
+      <div id="chess_base_inner"></div> */}
+      {/* <div id="chess_left"></div>
+      <div id="chess_front"></div> */}
     </>
   );
 };
