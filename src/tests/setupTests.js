@@ -4,15 +4,14 @@ import "@testing-library/jest-dom/extend-expect";
 import { render } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 
-import { Provider } from "react-redux";
-import { AuthProvider } from "../contexts/AuthContext/index";
+import { AuthProvider } from "../contexts/auth/index";
 
 import { MemoryRouter } from "react-router-dom";
 
-import 'setimmediate'
-if (!global.setImmediate) {
-  global.setImmediate = setTimeout
-}
+// import 'setimmediate'
+// if (!global.setImmediate) {
+//   global.setImmediate = setTimeout
+// }
 
 const TestProviders = () => {
   return ({ children }) => (
