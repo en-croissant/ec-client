@@ -58,7 +58,7 @@ function RegForm() {
 
   return (
     <>
-      <form aria-label="reg-form" onSubmit={handleSubmit} >
+      <form aria-label="reg-form" id="register_form"  onSubmit={handleSubmit}>
         <div>
           <label htmlFor="username">Username:</label>
           <input
@@ -113,18 +113,10 @@ function RegForm() {
           value="Create Account"
         />
       </form>
-      {error && (
-        <div id="error">
-          {error}
-        </div>
-      )}
-      {loading && (
-        <div id="loading">
-          Creating account . . .
-        </div>
-      )}
+      {error && <div id="error">{error}</div>}
+      {loading && <div id="loading">Creating account . . .</div>}
     </>
-  )
+  );
 }
 
 export default RegForm
