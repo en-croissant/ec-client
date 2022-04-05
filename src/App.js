@@ -13,9 +13,20 @@ function App() {
     <div className="App">
       <Routes>
         <Route exact path={"/"} element={<Pages.Home />} />
-        <Route path={"/lobby"} element={<Pages.Lobby />} />
-        <Route path={"/create"} element={<Pages.CreateGame />} />
         <Route path={"/book"} element={<Pages.Book />} />
+        { !user ? (
+          <>
+            <Route path={"/auth"} element={<Pages.Auth/>}/>
+            <Route path={"/login"} element={<Pages.Auth/>}/>
+            <Route path={"/register"} element={<Pages.Auth/>}/>
+            </>
+          ) : (
+            <>
+              <Route path={"/create"} element={<Pages.CreateGame />} />
+              <Route path={"/lobby"} element={<Pages.Lobby />} />
+            </>
+          )
+        }
       </Routes>
     </div>
   );

@@ -1,5 +1,6 @@
 import React from "react";
 import "./style.css";
+import { TableObjects } from "../../components";
 
 function Home() {
   return (
@@ -15,11 +16,19 @@ function Home() {
           <div id="whiteR_dgnl"></div>
         </div>
       </div>
+      <TableObjects />
       <div id="table">
-        <div id="table_top">
-          <div id="table_top_front"></div>
-          <div id="table_top_side"></div>
-        </div>
+        <div id="table_top"></div>
+        <div id="table_top_front"></div>
+        <div id="table_top_side"></div>
+        <div id="l_back_leg_a"></div>
+        <div id="l_back_leg_b"></div>
+        <div id="l_front_leg_a"></div>
+        <div id="l_front_leg_b"></div>
+        <div id="r_front_leg_a"></div>
+        <div id="r_front_leg_b"></div>
+        <div id="r_back_leg_a"></div>
+        <div id="r_back_leg_b"></div>
       </div>
     </>
   );

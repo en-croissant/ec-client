@@ -82,7 +82,7 @@ export const AuthProvider = ({ children }) => {
     setUser(null);
   };
 
-  const auth = { login, user, logout, setUser };
+  const auth = { login, user, logout, setUser, register };
 
   return (
     <>

@@ -53,14 +53,14 @@
   height: 190px;
   width: 862px;
   left: 0px;
-  top: 243px;
+  top: 280px;
   background-color: rgb(255, 255, 255);
   position: absolute;
   -webkit-transform: skewY(-5deg);
   -moz-transform: skewY(-5deg);
   -ms-transform: skewY(-5deg);
   -o-transform: skewY(-5deg);
-  transform: skewY(-10deg);
+  transform: skewY(-5deg);
   z-index: 10;
 }
 
@@ -71,4 +71,185 @@
   z-index: 10;
   position: absolute;
   width: 500px;
+}
+#table_top {
+  background-color: #a55c1b;
+  background-image: linear-gradient(
+    315deg,
+    #8e4f18 0%,
+    #a55c1b 50%,
+    #7a4618 74%
+  );
+  top: 30px;
+  left: 30px;
+  height: 50px;
+  width: 440px;
+  position: absolute;
+  transform: skewX(60deg) skewY(-5deg);
+  /* background: url(http://thenewcode.com/assets/images/woodgrain.jpg); */
+  z-index: 10;
+}
+#table_top_front {
+  background-color: rgb(88, 49, 21);
+  background-image: linear-gradient(
+    315deg,
+    rgb(68, 39, 18) 0%,
+    rgb(91, 53, 27) 74%,
+    rgb(59, 33, 15) 100%
+  );
+  top: 75px;
+  left: 110px;
+  height: 20px;
+  width: 360px;
+  position: absolute;
+  transform: skewY(-6deg);
+}
+
+#table_top_side {
+  background-color: rgb(88, 49, 21);
+  background-image: linear-gradient(
+    315deg,
+    rgb(91, 53, 27) 0%,
+    rgb(68, 39, 18) 74%,
+    rgb(59, 33, 15) 100%
+  );
+
+  top: 75px;
+  left: 30px;
+  height: 15px;
+  width: 80px;
+  position: absolute;
+  transform: skewY(30deg);
+}
+
+#l_back_leg_a {
+  background-color: rgb(119, 69, 33);
+  background-image: linear-gradient(
+    315deg,
+    rgb(119, 69, 33) 0%,
+    rgb(119, 69, 33) 50%,
+    rgb(49, 27, 11) 100%
+  );
+  top: 60px;
+  left: 30px;
+  height: 100px;
+  width: 10px;
+  position: absolute;
+  transform: skewY(35deg);
+}
+
+#l_back_leg_b {
+  background-color: rgb(119, 69, 33);
+  background-image: linear-gradient(
+    315deg,
+    rgb(77, 45, 23) 0%,
+    rgb(70, 41, 19) 50%,
+    rgb(39, 21, 9) 100%
+  );
+  top: 60px;
+  left: 39px;
+  height: 100px;
+  width: 10px;
+  position: absolute;
+  z-index: -1;
+  transform: skewY(-30deg);
+}
+
+#l_front_leg_a {
+  background-color: rgb(119, 69, 33);
+  background-image: linear-gradient(
+    315deg,
+    rgb(119, 69, 33) 0%,
+    rgb(119, 69, 33) 50%,
+    rgb(49, 27, 11) 100%
+  );
+  top: 90px;
+  left: 100px;
+  height: 110px;
+  width: 10px;
+  position: absolute;
+  transform: skewY(35deg);
+}
+
+#l_front_leg_b {
+  background-color: rgb(119, 69, 33);
+  background-image: linear-gradient(
+    315deg,
+    rgb(77, 45, 23) 0%,
+    rgb(70, 41, 19) 50%,
+    rgb(39, 21, 9) 100%
+  );
+  top: 90px;
+  left: 110px;
+  height: 110px;
+  width: 10px;
+  position: absolute;
+  z-index: -1;
+  transform: skewY(-30deg);
+}
+
+#r_front_leg_a {
+  background-color: rgb(119, 69, 33);
+  background-image: linear-gradient(
+    315deg,
+    rgb(68, 39, 18) 0%,
+    rgb(97, 57, 26) 50%,
+    rgb(39, 21, 9) 100%
+  );
+  top: 60px;
+  left: 460px;
+  height: 110px;
+  width: 12px;
+  position: absolute;
+  transform: skewY(-10deg);
+}
+
+#r_front_leg_b {
+  background-color: rgb(119, 69, 33);
+  background-image: linear-gradient(
+    315deg,
+    rgb(61, 36, 19) 0%,
+    rgb(53, 31, 15) 50%,
+    rgb(68, 39, 18) 100%
+  );
+  top: 60px;
+  left: 456px;
+  height: 110px;
+  width: 5px;
+  position: absolute;
+  z-index: -1;
+  transform: skewY(-135deg);
+}
+#r_back_leg_a {
+  background-color: rgb(119, 69, 33);
+  background-image: linear-gradient(
+    315deg,
+    rgb(84, 50, 27) 0%,
+    rgb(74, 44, 22) 50%,
+    rgb(32, 16, 6) 100%
+  );
+  top: 62px;
+  left: 400px;
+  height: 70px;
+  width: 5px;
+  position: absolute;
+  z-index: -1;
+  transform: skewY(-135deg);
+}
+
+#r_back_leg_b {
+  background-color: rgb(119, 69, 33);
+  background-image: linear-gradient(
+    315deg,
+    rgb(63, 38, 20) 0%,
+    rgb(60, 35, 18) 50%,
+    rgb(22, 11, 4) 100%
+  );
+  top: 63px;
+  left: 405px;
+  height: 70px;
+  width: 10px;
+  position: absolute;
+  z-index: -1;
+  transform: skewY(-10deg);
 }
