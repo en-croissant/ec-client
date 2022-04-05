@@ -37,3 +37,13 @@
   top: 1px;
   transform: rotate(2.1deg);
 }
+
+label {
+  font-family: "Grape Nuts", cursive;
+}
+
+input {
+  border: none;
+  background-color: transparent;
+  outline: none;
+}
