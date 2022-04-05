@@ -73,8 +73,8 @@ function LoginForm() {
         </div>
         <input role="button" type="submit" disabled={formIncomplete()} value="Login" />
       </form>
-      {error && <div id="error">{error}</div>}
-      {loading && <div id="loading">Logging in . . .</div>}
+      {error && <div data-testid="error" id="error">{error}</div>}
+      {loading && <div data-testid="loading" id="loading">Logging in . . .</div>}
     </>
   );
 }

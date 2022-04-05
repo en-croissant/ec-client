@@ -48,6 +48,14 @@ describe("LoginForm", () => {
       expect(password).toHaveValue('woo')
     })
 
+    test("on form submit render loading message", () => {
+      renderWithProviders(<LoginForm/>)
+      userEvent.type(screen.getByLabelText('username-field'), 'te')
+      userEvent.type(screen.getByLabelText('password-field'), 'st{enter}')
+      const loading = screen.getByTestId('loading')
+      expect(loading).toBeInTheDocument()
+    })
+
     // test("On form submit navigate to the home page", () => {
     //   renderWithProviders(<LoginForm/>)
     //   userEvent.submit(screen.getByRole('button'), )
