@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { useAuthContext } from "../../contexts/AuthContext";
+import { useAuthContext } from "../../contexts/auth";
 import { useNavigate } from "react-router-dom";
 
 import './style.css'
@@ -58,7 +58,7 @@ export default () => {
 
   return (
     <>
-      <form id="reg-form" >
+      <form id="reg-form" role="form" >
         <div>
           <label for="username-reg">Username:</label>
           <input

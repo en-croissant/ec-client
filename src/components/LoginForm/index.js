@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-import { useAuthContext } from "../../contexts/AuthContext";
+import { useAuthContext } from "../../contexts/auth";
 import { useNavigate } from "react-router-dom";
 
 import './style.css'
@@ -43,7 +43,7 @@ export default () => {
 
   return (
     <>
-      <form id="login-form" >
+      <form id="login-form" role="form" >
       <div>
           <label for="username-log">Username:</label>
           <input
