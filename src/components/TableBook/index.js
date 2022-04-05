@@ -1,11 +1,14 @@
 import React from "react";
+import "./style.css";
 
 const TableBook = () => {
   return (
     <>
-      <div id="top_book"></div>
-      <div id="side_book"></div>
-      <div id="pages"></div>
+      <a href="/Book">
+        <div id="top_book"></div>
+        <div id="side_book"></div>
+        <div id="pages"></div>
+      </a>
     </>
   );
 };

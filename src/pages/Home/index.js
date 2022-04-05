@@ -1,5 +1,6 @@
 import React from "react";
 import "./style.css";
+import { TableBook } from "../../components";
 
 function Home() {
   return (
@@ -15,6 +16,7 @@ function Home() {
           <div id="whiteR_dgnl"></div>
         </div>
       </div>
+      <TableBook />
       <div id="table">
         <div id="table_top"></div>
         <div id="table_top_front"></div>
