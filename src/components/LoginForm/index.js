@@ -30,7 +30,7 @@ export default () => {
     try {
       setLoading(true)
       const loginResult = await login(formData)
-      if (loginResult=="Login successful") {
+      if (loginResult==="Login successful") {
         navigate("/home")
       } else {
         throw new Error(loginResult)
@@ -43,7 +43,7 @@ export default () => {
 
   return (
     <>
-      <form aria-label="login-form" role="form" >
+      <form aria-label="login-form" role="form" onSubmit={handleSubmit} >
       <div>
           <label htmlFor="username-log">Username:</label>
           <input

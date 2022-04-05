@@ -44,7 +44,7 @@ export default () => {
     try {
       setLoading(true)
       const regResult = await register(formData)
-      if (regResult=="Registration successful") {
+      if (regResult==="Registration successful") {
         await login(formData)
         navigate('/home')
       } else {
@@ -58,7 +58,7 @@ export default () => {
 
   return (
     <>
-      <form aria-label="reg-form" role="form" >
+      <form aria-label="reg-form" role="form" onSubmit={handleSubmit} >
         <div>
           <label htmlFor="username-reg">Username:</label>
           <input
