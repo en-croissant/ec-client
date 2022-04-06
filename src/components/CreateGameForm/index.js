@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 // import { io } from "socket.io-client"
 import { useAuthContext } from '../../contexts/auth'
-import { useNavigate } from 'react-router-dom'
+import { Navigate, useNavigate } from 'react-router-dom'
 import axios from 'axios'
 
 const CreateGameForm = () => {
@@ -46,7 +46,7 @@ const CreateGameForm = () => {
       <>
         <h2>Create Lobby</h2>
         <form>
-            <label for="user2-name" >Room name: </label>
+            <label htmlFor="user2-name" >Room name: </label>
             <input 
             type="text"
             name="user2-name"
@@ -54,7 +54,7 @@ const CreateGameForm = () => {
             placeholder="Opponents username"
             onChange={(e) => setPlayer2Name(e.target.value)}
             value={player2Name}
-            isRequired />
+            required />
 
 
             {/* <label for="AI-difficulty" >AI Difficulty: </label>
