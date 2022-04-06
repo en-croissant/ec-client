@@ -47,6 +47,7 @@ function LoginForm() {
         <div id="back_paper"></div>
         <div>
           <h1> Login to compete again</h1>
+          <div id="user_icon"></div>
           <label htmlFor="username">Username:</label>
           <input
             type="text"
