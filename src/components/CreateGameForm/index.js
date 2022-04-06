@@ -27,6 +27,10 @@ const CreateGameForm = () => {
     //     socket.emit("create board", { settings })
     // }
 
+    const handleChange = (e) => {
+        setPlayer2Name(e.target.value)
+    }
+
     const handleSubmit = async () => {
         const lobbyData = {
             player_1_username: user,
@@ -46,13 +50,14 @@ const CreateGameForm = () => {
       <>
         <h2>Create Lobby</h2>
         <form aria-label="create-game-form">
-            <label htmlFor="user2-name" >Room name: </label>
+            <label htmlFor="user2-name" >Opponent name: </label>
             <input 
+            aria-label="opponent-name"
             type="text"
             name="user2-name"
             id="user2-name"
             placeholder="Opponents username"
-            onChange={(e) => setPlayer2Name(e.target.value)}
+            onChange={handleChange}
             value={player2Name}
             required />
 
@@ -109,6 +114,7 @@ const CreateGameForm = () => {
         </form>
 
         <button
+        aria-label="create-button"
         onClick={handleSubmit}
         >
         Create Game
