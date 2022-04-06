@@ -44,6 +44,7 @@ function Gameboard({ socket }) {
   return (
     <div>
       <Chessboard
+        aria-label="chessboard"
         id="PlayVsPlay"
         animationDuration={200}
         boardWidth={400}
