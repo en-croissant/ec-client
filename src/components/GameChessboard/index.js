@@ -35,7 +35,10 @@ function Gameboard({ socket }) {
   }
 
   socket.on('opponent move', ({chessMove}) => {
-    
+    console.log(chessMove)
+    safeGameMutate((chessMove) => {
+      game.move(chessMove)
+    })
   })
 
   return (
