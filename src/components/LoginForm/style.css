@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Grape+Nuts&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Grape+Nuts&display=swap");
 #login_form {
   position: fixed;
 
@@ -46,4 +47,8 @@ input {
   border: none;
   background-color: transparent;
   outline: none;
+}
+
+h1 {
+  font-size: 20px;
 }
