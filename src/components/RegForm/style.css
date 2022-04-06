@@ -34,3 +34,48 @@
 reg-input-username {
   margin-bottom: -20px;
 }
+
+#reg_btn_doodle {
+  margin-top: 80px;
+  margin-left: 180px;
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  height: 50px;
+}
+
+#reg_btn_doodle button {
+  padding: 8px 16px;
+  border: none;
+  background: none;
+  outline: none;
+}
+
+#reg_btn_doodle svg {
+  position: absolute;
+  top: -70px;
+  left: -30px;
+  width: 100px;
+  height: 50px;
+  pointer-events: none;
+}
+
+#reg_btn_doodle path {
+  stroke: #db3157;
+  stroke-width: 8px;
+  stroke-dasharray: 0 1500;
+}
+
+#reg_btn_doodle:hover path {
+  animation: draw 1s forwards;
+}
+
+@keyframes draw {
+  from {
+    stroke-dasharray: 0 1500;
+  }
+
+  to {
+    stroke-dasharray: 1500 1500;
+  }
+}
