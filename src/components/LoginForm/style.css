@@ -67,6 +67,7 @@ h1 {
 }
 #submit_btn {
   font-size: 24px;
+  margin-top: 25px;
 }
 
 #submit_btn:hover {
@@ -77,7 +78,6 @@ h1 {
 #btn_doodle {
   margin-top: 80px;
   margin-left: 180px;
-
   position: relative;
   display: inline-block;
   cursor: pointer;
