@@ -113,7 +113,7 @@ function RegForm() {
               name="passwordConfirmation"
               value={formData.passwordConfirmation}
               onChange={handleInput}
-              placeholder="Confirm Password"
+              placeholder="Password"
               required
               pattern={password}
             />
