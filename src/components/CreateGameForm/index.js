@@ -45,8 +45,8 @@ const CreateGameForm = () => {
     return (
       <>
         <h2>Create Lobby</h2>
-        <form>
-            <label for="user2-name" >Room name: </label>
+        <form aria-label="create-game-form">
+            <label htmlFor="user2-name" >Room name: </label>
             <input 
             type="text"
             name="user2-name"
