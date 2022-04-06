@@ -1,10 +1,20 @@
-import { screen } from '@testing-library/react'
+import { screen, act } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 
+import * as AuthContext from '../../contexts/auth'
 
 import { default as RegForm } from '.'
 
 describe("RegForm", () => {
+
+  beforeEach(() => {
+    jest.clearAllMocks()
+  })
+
+  afterEach(() => {
+    jest.resetAllMocks()
+  })
+
   describe("rendering", () => {
     test("it renders a username field", () => {
       renderWithProviders(<RegForm/>)
@@ -103,9 +113,42 @@ describe("RegForm", () => {
       expect(loading).toBeInTheDocument()
     })
 
-    // test("On form submit navigate to the home page", () => {
-    //   renderWithProviders(<RegForm/>)
-    //   userEvent.submit(screen.getByRole('button'), )
-    // })
+    test("It calls login on successful register", async () => {
+      const mockReg = jest.fn(() => "Registration successful")
+      const mockLogin = jest.fn()
+      const mockValues = {
+        login: mockLogin,
+        register: mockReg
+      }
+      jest.spyOn(AuthContext, 'useAuthContext').mockImplementation(() => mockValues)
+      renderWithProviders(<RegForm/>)
+      await act(async () => {
+        userEvent.type(screen.getByLabelText('username-field'), 't')
+        userEvent.type(screen.getByLabelText('email-field'), 'e')
+        userEvent.type(screen.getByLabelText('password-field'), 's')
+        userEvent.type(screen.getByLabelText('passwordConfirmation-field'), 't{enter}')
+      })
+      expect(mockReg).toHaveBeenCalled()
+      expect(mockLogin).toHaveBeenCalled()
+    })
+
+    test("it renders an error message on unsuccessful register attempt", async () => {
+      const mockReg = jest.fn(() => 'Register unsuccessful')
+      const mockValues = {
+        register: mockReg
+      }
+      jest.spyOn(AuthContext, 'useAuthContext').mockImplementation(() => mockValues)
+      renderWithProviders(<RegForm/>)
+      await act(async () => {
+        userEvent.type(screen.getByLabelText('username-field'), 't')
+        userEvent.type(screen.getByLabelText('email-field'), 'e')
+        userEvent.type(screen.getByLabelText('password-field'), 's')
+        userEvent.type(screen.getByLabelText('passwordConfirmation-field'), 't{enter}')
+      })
+      const loading = screen.queryByTestId('loading')
+      expect(loading).not.toBeInTheDocument()
+      const error = screen.getByTestId('error')
+      expect(error).toBeInTheDocument()
+    })
   })
 })
