@@ -1,7 +1,5 @@
 import { screen, act } from '@testing-library/react'
 
-// import * as Stuff from 'react-router-dom'
-// import { useNavigate } from 'react-router-dom'
 import * as AuthContext from '../../contexts/auth'
 
 import { default as LoginForm } from '.'
@@ -14,6 +12,15 @@ jest.mock('react-router-dom', () => ({
 }));
 
 describe("LoginForm", () => {
+
+  beforeEach(() => {
+    jest.clearAllMocks()
+  })
+
+  afterEach(() => {
+    jest.resetAllMocks()
+  })
+
   describe("rendering", () => {
     test("it renders a username field", () => {
       renderWithProviders(<LoginForm/>)
@@ -66,22 +73,22 @@ describe("LoginForm", () => {
       expect(loading).toBeInTheDocument()
     })
 
-    test("It calls navigate on successful login", () => {
+    test("It calls navigate on successful login", async () => {
       const mockLogin = jest.fn()
       mockLogin.mockReturnValue('Login successful')
       const mockValues = {
         login: mockLogin
       }
-      // const mockNavigate = jest.fn()
       jest.spyOn(AuthContext, 'useAuthContext').mockImplementation(() => mockValues)
-      // jest.spyOn(Stuff, 'useNavigate').mockImplementation(() => mockNavigate)
       renderWithProviders(<LoginForm/>)
-      userEvent.type(screen.getByLabelText('username-field'), 'te')
-      userEvent.type(screen.getByLabelText('password-field'), 'st{enter}')
+      await act(async () => {
+        userEvent.type(screen.getByLabelText('username-field'), 'te')
+        userEvent.type(screen.getByLabelText('password-field'), 'st{enter}')
+      })
       expect(mockNavigate).toHaveBeenCalled()
     })
 
-    test("it renders an error message on unsuccessful login attempt", () => {
+    test("it renders an error message on unsuccessful login attempt", async () => {
       const mockLogin = jest.fn()
       mockLogin.mockReturnValue('Login unsuccessful')
       const mockValues = {
@@ -89,9 +96,11 @@ describe("LoginForm", () => {
       }
       jest.spyOn(AuthContext, 'useAuthContext').mockImplementation(() => mockValues)
       renderWithProviders(<LoginForm/>)
-      userEvent.type(screen.getByLabelText('username-field'), 'te')
-      userEvent.type(screen.getByLabelText('password-field'), 'st{enter}')
-      setTimeout(() => {}, 1000)
+      await act(async () => {
+
+        userEvent.type(screen.getByLabelText('username-field'), 'te')
+        userEvent.type(screen.getByLabelText('password-field'), 'st{enter}')
+      })
       const loading = screen.queryByTestId('loading')
       expect(loading).not.toBeInTheDocument()
       const error = screen.getByTestId('error')
