@@ -1,6 +1,6 @@
 import React from "react";
 import "./style.css";
-import { TableObjects } from "../../components";
+import { TableObjects, LightSwitch } from "../../components";
 import { useAuthContext } from "../../contexts/auth";
 // import { useNavigate } from "react-router-dom";
 
@@ -19,6 +19,7 @@ function Home() {
       <div className="wrapper">
         <input type="submit" onClick={handleLogout} value="Logout" />
         <div id="homeDiv"></div>
+        <LightSwitch/>
         <div id="table">
           <TableObjects />
           <div id="table_top"></div>
