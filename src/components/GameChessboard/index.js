@@ -28,15 +28,15 @@ function Gameboard({ socket }) {
       to: targetSquare,
       promotion: "q", // always promote to a queen for example simplicity
     });
-    console.log(move.san)
-    socket.emit("move piece", move.san);
+    socket.emit("move piece", {"move":move.san});
     setGame(gameCopy);
     return move;
   }
 
   socket.on('opponent move', ({chessMove}) => {
     console.log(chessMove)
-    safeGameMutate((chessMove) => {
+    safeGameMutate((game) => {
+      console.log(chessMove)
       game.move(chessMove)
     })
   })
