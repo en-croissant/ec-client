@@ -59,10 +59,15 @@ function RegForm() {
 
   return (
     <>
-      <form aria-label="reg-form" id="register_form"  onSubmit={handleSubmit}>
-        <div>
-          <label htmlFor="username">Username:</label>
-          <input
+      <div id="clipboard_back">
+        <div id="clip"></div>
+        <form aria-label="login-form" id="login_form" onSubmit={handleSubmit}>
+          <div id="back_paper"></div>
+          <div>
+            <h1> Sign up here!</h1>
+            <div id="user_icon"></div>
+            <label htmlFor="username">Username:</label>
+            <input
             aria-label="username-field"
             type="text"
             name="username"
@@ -72,9 +77,9 @@ function RegForm() {
             required
             // pattern={"([0-9]|[A-Z]|[a-z]){4,20}"}
           />
-        </div>
-        <div>
-          <label htmlFor="email">Email:</label>
+          </div>
+          <div>
+            <label htmlFor="email">Email:</label>
           <input
             aria-label="email-field"
             type="text"
@@ -85,8 +90,8 @@ function RegForm() {
             required
             // pattern={"([0-9]|[A-Z]|[a-z]){1,30}@([0-9]|[A-Z]|[a-z]){1,10}.([0-9]|[A-Z]|[a-z]){1,10}(.([0-9]|[A-Z]|[a-z]){1,10})?"}
           />
-        </div>
-        <div>
+          </div>
+          <div>
           <label htmlFor="password">Password:</label>
           <input
             aria-label="password-field"
@@ -112,16 +117,36 @@ function RegForm() {
             pattern={password}
           />
         </div>
-        <input
-          type="submit"
-          disabled={formIncomplete()}
-          value="Create Account"
-        />
-      </form>
-      {error && <div data-testid="error" id="error">{error}</div>}
-      {loading && <div data-testid="loading" id="loading">Creating account . . .</div>}
+          <div id="btn_doodle">
+            <input
+              id="submit_btn_reg"
+              role="button"
+              type="submit"
+              disabled={formIncomplete()}
+              value="Create"
+            />
+            <svg viewBox="0 0 500 150" preserveAspectRatio="none">
+              <path
+                fill="none"
+                d="M325,18C228.7-8.3,118.5,8.3,78,21C22.4,38.4,4.6,54.6,5.6,77.6c1.4,32.4,52.2,54,142.6,63.7 c66.2,7.1,212.2,7.5,273.5-8.3c64.4-16.6,104.3-57.6,33.8-98.2C386.7-4.9,179.4-1.4,126.3,20.7"
+              />
+            </svg>
+          </div>
+        </form>
+      </div>
+      {error && (
+        <div data-testid="error" id="error">
+          {error}
+        </div>
+      )}
+      {loading && (
+        <div data-testid="loading" id="loading">
+          Creating Account . . .
+        </div>
+      )}
     </>
   );
 }
 
 export default RegForm
+

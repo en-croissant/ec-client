@@ -1,0 +1,11 @@
+#submit_btn_reg {
+  font-size: 24px;
+  margin-right: 100px;
+  position: absolute;
+}
+
+#submit_btn_reg:hover {
+  color: red;
+  font-weight: bold;
+}
+
