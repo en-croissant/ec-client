@@ -9,11 +9,4 @@ describe("Lobby page", () => {
     expect(lobbyTitle).toBeInTheDocument()
     expect(lobbyTitle.textContent).toMatch(/game settings/i)
   })
-
-  test("it renders the PlayGameButton component", () => {
-    renderWithProviders(<Lobby/>)
-    const button = screen.getByRole('button')
-    expect(button).toBeInTheDocument()
-    expect(button.textContent).toMatch(/play game/i)
-  })
 })
