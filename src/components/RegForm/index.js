@@ -113,7 +113,6 @@ function RegForm() {
           />
         </div>
         <input
-          role="button"
           type="submit"
           disabled={formIncomplete()}
           value="Create Account"

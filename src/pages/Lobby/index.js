@@ -1,12 +1,11 @@
 import React from "react";
-import {JoinGame, PlayGameButton} from "../../components";
+import {JoinGame} from "../../components";
 
 function Lobby() {
   return (
     <>
       <h1> test for join game page</h1>
       <JoinGame />
-      <PlayGameButton />
     </>
   );
 }

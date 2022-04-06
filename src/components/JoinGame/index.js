@@ -1,5 +1,9 @@
 import React from "react"; 
-import { useState } from "react";
+import { useState, useEffect} from "react";
+import { io } from "socket.io-client"
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
+
 
 const JoinGame = () => {
   
@@ -10,9 +14,31 @@ const JoinGame = () => {
   const [gameMode, setGameMode] = useState("");
   const [timeLimit, setTimeLimit] = useState("");
   const [saveGame, setSaveGame] = useState("");
+  const [redirect, setRedirect] = useState(false);
+
+  const socket = io("https://en-croissant.herokuapp.com");
+
+  const settings = { difficultyAI, gameMode, timeLimit, saveGame }
+  const navigate = useNavigate;
+
+  const fetchGameLobby = async () => {
+    const { settings } = await axios.post("https://en-croissant.herokuapp.com/lobby/");
+    // set(settings);
+  };
+
+  useEffect(fetchGameLobby, []);
+
+
+  const onClickEvent = (e) => {
+    e.preventDefault();
+    setRedirect(true);
+  };
 
     return (
       <>
+
+        {redirect ? navigate("/play") : undefined}
+
         <div>
           <h2>Game settings</h2>
           <ul>
@@ -25,6 +51,10 @@ const JoinGame = () => {
             <li>Save game: {saveGame}</li>
           </ul>
         </div>
+
+        <button
+        onClick={(e)=> onClickEvent(e)}
+        >Play Game</button>
       </>
     );
   };
