@@ -72,13 +72,15 @@ function LoginForm() {
             required
           />
         </div>
-        <input
-          id="submit_btn"
-          role="button"
-          type="submit"
-          disabled={formIncomplete()}
-          value="Login"
-        />
+        <div id="btn_doodle">
+          <input
+            id="submit_btn"
+            role="button"
+            type="submit"
+            disabled={formIncomplete()}
+            value="Login"
+          />
+        </div>
       </form>
       {error && (
         <div data-testid="error" id="error">
