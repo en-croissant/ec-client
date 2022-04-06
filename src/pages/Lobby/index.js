@@ -6,8 +6,10 @@ function Lobby() {
     <>
       <div id="poster">
         <div id="poster_border">
-          <h1> New and Upcoming! Join now!</h1>
-          <JoinGame />
+          <div id="inner_border">
+            <h1> New and Upcoming! Join now!</h1>
+            <JoinGame />
+          </div>
         </div>
       </div>
     </>
