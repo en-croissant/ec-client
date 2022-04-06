@@ -7,8 +7,7 @@
   background: #fff;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   margin: 26px auto 0;
-  max-width: 380px;
-  min-height: 300px;
+  width: 260px;
   padding: 50px;
   display: block;
   left: 50%;
@@ -41,7 +40,7 @@
 
 label {
   font-family: "Just Another Hand", cursive;
-  font-size: 26px;
+  font-size: 24px;
   background: linear-gradient(0deg, rgb(227, 239, 93), rgb(227, 239, 93))
     no-repeat right bottom / 0 var(--bg-h);
   transition: background-size 350ms;
@@ -60,13 +59,12 @@ input {
   margin-left: 10px;
   font-family: "Grape Nuts", cursive;
 
-  font-size: 20px;
+  font-size: 18px;
 }
 
 h1 {
   font-size: 20px;
   font-family: "Inknut Antiqua", serif;
-  margin-top: -5px;
 }
 
 #submit_btn:hover {
