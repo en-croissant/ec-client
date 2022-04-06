@@ -118,7 +118,7 @@ function RegForm() {
               pattern={password}
             />
           </div>
-          <div id="btn_doodle">
+          <div id="reg_btn_doodle">
             <input
               id="submit_btn_reg"
               role="button"

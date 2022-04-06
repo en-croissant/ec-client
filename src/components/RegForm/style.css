@@ -1,15 +1,14 @@
 #submit_btn_reg {
   font-size: 24px;
-  margin-right: 100px;
   position: absolute;
+  margin-top: 25px;
+  margin-left: 200px;
 }
 
 #submit_btn_reg:hover {
   color: red;
   font-weight: bold;
 }
-
-
 
 #reg_form {
   position: fixed;
