@@ -65,3 +65,14 @@
   background-position: right top, left center, left bottom, left top, left top,
     right top, left center, right center, right center, left bottom;
 }
+
+#poster_border {
+  background-color: rgba(0, 0, 255, 0.664);
+  width: 515px;
+  height: 515px;
+  padding: 7%;
+  position: fixed;
+  z-index: 20;
+  top: 0;
+  left: 0;
+}
