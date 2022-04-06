@@ -45,6 +45,7 @@ function LoginForm() {
   return (
     <>
       <div id="clipboard_back">
+        <div id="clip"></div>
         <form aria-label="login-form" id="login_form" onSubmit={handleSubmit}>
           <div id="back_paper"></div>
           <div>

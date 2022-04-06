@@ -131,6 +131,91 @@ h1 {
   top: 25%;
   height: 370px;
 }
+
+#clip {
+  height: 90px;
+  width: 190px;
+  position: absolute;
+  top: -10%;
+  left: 30%;
+  border-top-left-radius: 20%;
+  border-top-right-radius: 20%;
+  z-index: 99;
+  background: rgb(118, 119, 121);
+  background: -moz-linear-gradient(
+    top,
+    rgba(118, 119, 121, 1) 0%,
+    rgba(153, 154, 158, 1) 8%,
+    rgba(233, 233, 225, 1) 31%,
+    rgba(175, 176, 180, 1) 61%,
+    rgba(145, 153, 156, 1) 76%,
+    rgba(87, 94, 88, 1) 92%,
+    rgba(145, 153, 156, 1) 95%,
+    rgba(175, 176, 180, 1) 100%
+  );
+  background: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    color-stop(0%, rgba(118, 119, 121, 1)),
+    color-stop(8%, rgba(153, 154, 158, 1)),
+    color-stop(31%, rgba(233, 233, 225, 1)),
+    color-stop(61%, rgb(145, 146, 149)),
+    color-stop(76%, rgba(145, 153, 156, 1)),
+    color-stop(92%, rgba(87, 94, 88, 1)),
+    color-stop(95%, rgba(145, 153, 156, 1)),
+    color-stop(100%, rgba(175, 176, 180, 1))
+  );
+  background: -webkit-linear-gradient(
+    top,
+    rgba(118, 119, 121, 1) 0%,
+    rgba(153, 154, 158, 1) 8%,
+    rgba(233, 233, 225, 1) 31%,
+    rgba(175, 176, 180, 1) 61%,
+    rgba(145, 153, 156, 1) 76%,
+    rgba(87, 94, 88, 1) 92%,
+    rgba(145, 153, 156, 1) 95%,
+    rgb(128, 129, 131) 100%
+  );
+}
+
+#clip:before {
+  content: "";
+  position: absolute;
+  height: 50%;
+  width: 50%;
+  top: -50%;
+  left: 27%;
+  z-index: 50;
+  border-top-left-radius: 20%;
+  border-top-right-radius: 20%;
+  background-color: rgba(118, 119, 121, 1);
+  background: -webkit-linear-gradient(
+    top,
+    rgba(118, 119, 121, 1) 0%,
+    rgb(125, 126, 130) 8%,
+    rgba(233, 233, 225, 1) 31%,
+    rgb(125, 125, 128) 61%,
+    rgb(122, 129, 131) 76%,
+    rgba(87, 94, 88, 1) 92%,
+    rgb(63, 64, 65) 95%,
+    rgb(143, 143, 145) 100%
+  );
+}
+
+#clip:after {
+  content: "";
+  height: 20%;
+  width: 10%;
+  border-radius: 50%;
+  border: 1px solid rgba(65, 65, 67, 0.8);
+  top: -40%;
+  left: 45%;
+  z-index: 75;
+  background-color: white;
+  position: absolute;
+  top: ;
+}
 input:hover {
   background-color: red;
   cursor: url(https://cdn.custom-cursor.com/packs/5083/minimal-pencil-pack.png),
