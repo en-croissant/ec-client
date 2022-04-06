@@ -23,15 +23,15 @@
   height: 300px;
 }
 
-.reg-title {
+.reg-username {
   margin-bottom: -20px;
 }
 
-.reg-label-username {
+.reg-email {
   margin-bottom: -20px;
 }
 
-reg-input-username {
+.reg-password {
   margin-bottom: -20px;
 }
 
@@ -53,7 +53,7 @@ reg-input-username {
 
 #reg_btn_doodle svg {
   position: absolute;
-  top: -70px;
+  top: -40px;
   left: -30px;
   width: 100px;
   height: 50px;

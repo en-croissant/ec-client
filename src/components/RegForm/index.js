@@ -64,24 +64,22 @@ function RegForm() {
         <form aria-label="reg-form" id="reg_form" onSubmit={handleSubmit}>
           <div id="back_paper"></div>
           <div>
-            <h1 className="reg-title"> Sign up here!</h1>
-            <div id="user_icon"></div>
-            <label className="reg-label-username" htmlFor="username">
-              Username:
-            </label>
-            <input
-              className="reg-input-username"
-              aria-label="username-field"
-              type="text"
-              name="username"
-              value={formData.username}
-              onChange={handleInput}
-              placeholder="Enter username"
-              required
-              // pattern={"([0-9]|[A-Z]|[a-z]){4,20}"}
-            />
+            <h1> Sign up here!</h1>
+            <div id="user_icon" className="reg-username">
+              <label htmlFor="username">Username:</label>
+              <input
+                aria-label="username-field"
+                type="text"
+                name="username"
+                value={formData.username}
+                onChange={handleInput}
+                placeholder="Enter username"
+                required
+                // pattern={"([0-9]|[A-Z]|[a-z]){4,20}"}
+              />
+            </div>
           </div>
-          <div>
+          <div className="reg-email">
             <label htmlFor="email">Email:</label>
             <input
               aria-label="email-field"
@@ -94,7 +92,7 @@ function RegForm() {
               // pattern={"([0-9]|[A-Z]|[a-z]){1,30}@([0-9]|[A-Z]|[a-z]){1,10}.([0-9]|[A-Z]|[a-z]){1,10}(.([0-9]|[A-Z]|[a-z]){1,10})?"}
             />
           </div>
-          <div>
+          <div className="reg-password">
             <label htmlFor="password">Password:</label>
             <input
               aria-label="password-field"
@@ -107,7 +105,7 @@ function RegForm() {
               required
             />
           </div>
-          <div>
+          <div >
             <label htmlFor="passwordConfirmation">Confirm Password:</label>
             <input
               aria-label="passwordConfirmation-field"
