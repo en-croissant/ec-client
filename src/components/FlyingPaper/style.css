@@ -28,26 +28,20 @@ body {
   overflow: hidden;
 }
 
-body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: var(--color-bg);
-}
-
 #app {
-  height: 70vmin;
-  width: 40vmin;
+  height: 50px;
+  width: 40px;
   display: flex;
   justify-content: center;
   align-items: center;
   transform: translateX(25vw) rotateX(-20deg) rotateY(-55deg);
   background: var(--color-blue);
   border-radius: 2vmin;
-  perspective: 10000px;
+
+  /* transform: scale(0.2); */
 }
 #app:before {
-  border: 10vmin solid white;
+  border: 10vmin solid red;
   border-left-width: 2vmin;
   border-right-width: 2vmin;
   border-radius: inherit;
@@ -57,7 +51,7 @@ body {
   width: 100%;
   top: 0;
   left: 0;
-  border: 10vmin solid white;
+  border: 10vmin solid red;
   border-left-width: 2vmin;
   border-right-width: 2vmin;
   background: var(--color-blue);
@@ -126,7 +120,7 @@ body {
 .papers {
   width: 30vmin;
   height: 40vmin;
-  background: white;
+  background: red;
 }
 
 .paper {
@@ -170,7 +164,7 @@ body {
   --rotate: 20deg;
   height: 100%;
   transform-origin: top center;
-  background: white;
+  background: red;
   border: 1px solid rgba(0, 0, 0, 0.2);
   border-top: none;
   border-bottom: none;
