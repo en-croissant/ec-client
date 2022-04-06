@@ -20,6 +20,7 @@ function Home() {
       <div className="wrapper">
         {!!user && <input type="submit" onClick={handleLogout} value="Logout" />}
         <div id="homeDiv"></div>
+        <div className ="HomeTitle">En Croissant</div>
         <LightSwitch />
         <div id="table">
           <TableObjects />
