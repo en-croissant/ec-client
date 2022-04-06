@@ -4,3 +4,4 @@ export { default as LoginForm } from "./LoginForm";
 export { default as RegForm } from "./RegForm";
 export { default as GameChessboard } from "./GameChessboard";
 export { default as TableObjects } from "./TableObjects";
+export { default as LightSwitch } from "./LightSwitch";

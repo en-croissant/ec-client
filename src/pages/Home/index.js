@@ -1,24 +1,25 @@
 import React from "react";
 import "./style.css";
-import { TableObjects } from "../../components";
+import { TableObjects, LightSwitch } from "../../components";
 import { useAuthContext } from "../../contexts/auth";
 // import { useNavigate } from "react-router-dom";
 
 function Home() {
-  const { user, logout } = useAuthContext()
+  const { user, logout } = useAuthContext();
   // const navigate = useNavigate()
 
   const handleLogout = async () => {
-    await logout()
+    await logout();
     // navigate('/')
-    window.location.reload(false)
-  }
+    window.location.reload(false);
+  };
 
   return (
     <>
       <div className="wrapper">
-        { !!user && <input type="submit" onClick={handleLogout} value="Logout" />}
+        <input type="submit" onClick={handleLogout} value="Logout" />
         <div id="homeDiv"></div>
+        <LightSwitch />
         <div id="table">
           <TableObjects />
           <div id="table_top"></div>
@@ -33,6 +34,7 @@ function Home() {
           <div id="r_back_leg_a"></div>
           <div id="r_back_leg_b"></div>
         </div>
+        <div id="home_clip_board"></div>
       </div>
     </>
   );
@@ -40,13 +42,8 @@ function Home() {
 
 export default Home;
 
-
-
-
-
-
-          {
-            /* <div id="black_l">
+{
+  /* <div id="black_l">
             <div id="black_dgnl"></div>
           </div>
           <div id="white_l">
@@ -55,4 +52,4 @@ export default Home;
           <div id="white_r">
             <div id="whiteR_dgnl"></div>
           </div> */
-          }
+}

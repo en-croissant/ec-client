@@ -81,7 +81,6 @@
   position: absolute;
   width: 500px;
   transform: scale(1.25);
-
 }
 #table_top {
   background-color: #a55c1b;
@@ -263,4 +262,20 @@
   position: absolute;
   z-index: -1;
   transform: skewY(-10deg);
+}
+
+#home_clip_board {
+  background-color: rgb(232, 149, 102);
+  /* background-image: url("https://www.transparenttextures.com/patterns/wood-pattern.png"); */
+  width: 65px;
+  border-radius: 5px;
+  position: fixed;
+  left: 1000px;
+  box-shadow: 10px 0px 15px rgba(0, 0, 0, 0.3);
+  margin: 26px auto 0;
+  top: 25%;
+  height: 90px;
+  border-left: solid 5px;
+  border-left-color: rgb(103, 56, 29);
+  transform: skewY(-6deg);
 }

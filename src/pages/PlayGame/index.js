@@ -12,6 +12,7 @@ function PlayGame() {
         socket.on("hello world", ({ data }) => console.log(data));
     }, [])
 
+
     return (
         <>
             <div>
