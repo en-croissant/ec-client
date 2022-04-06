@@ -80,6 +80,8 @@
   z-index: 10;
   position: absolute;
   width: 500px;
+  transform: scale(1.25);
+
 }
 #table_top {
   background-color: #a55c1b;
