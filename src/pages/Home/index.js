@@ -36,7 +36,7 @@ function Home() {
           <div id="r_back_leg_b"></div>
         </div>
         <div id="home_clip_board">
-          <FlyingPaper />
+          {/* <FlyingPaper /> */}
           <div id="home-clip"></div>
         </div>
       </div>
