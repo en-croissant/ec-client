@@ -9,6 +9,7 @@
     "@testing-library/user-event": "^13.5.0",
     "axios": "^0.26.1",
     "chess.js": "^0.12.1",
+    "jest": "^27.5.1",
     "jest-localstorage-mock": "^2.4.19",
     "jwt-decode": "^3.1.2",
     "react": "^17.0.2",
@@ -44,5 +45,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "setimmediate": "^1.0.5"
   }
 }
