@@ -132,8 +132,8 @@ h1 {
   height: 370px;
 }
 #clipboard_left {
-  background-color: rgb(120, 64, 32);
-  /* background-image: url("https://www.transparenttextures.com/patterns/wood-pattern.png"); */
+  /* background-color: rgb(149, 80, 39); */
+  background-image: linear-gradient(rgb(133, 71, 35), rgb(107, 61, 33));
   width: 15px;
   position: fixed;
   box-shadow: 455px 0px 15px rgba(0, 0, 0, 0.3);
