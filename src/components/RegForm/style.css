@@ -1,0 +1,82 @@
+#submit_btn_reg {
+  color: black;
+  font-size: 24px;
+  position: absolute;
+  margin-top: -25px;
+  margin-left: -15px;
+}
+
+#submit_btn_reg:hover {
+  color: red;
+  font-weight: bold;
+}
+
+#reg_form {
+  position: fixed;
+  background: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  margin: 26px auto 0;
+  width: 260px;
+  padding: 50px;
+  display: block;
+  left: 50%;
+  top: 28%;
+  height: 300px;
+}
+
+/* .reg-username {
+  margin-bottom: -10px;
+}
+
+.reg-email {
+  margin-bottom: -10px;
+}
+
+.reg-password {
+  margin-bottom: -10px;
+} */
+
+#reg_btn_doodle {
+  margin-top: 80px;
+  margin-left: 180px;
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  height: 50px;
+}
+
+#reg_btn_doodle button {
+  padding: 8px 16px;
+  border: none;
+  background: none;
+  outline: none;
+}
+
+#reg_btn_doodle svg {
+  position: absolute;
+  top: -35px;
+  left: -30px;
+  width: 100px;
+  height: 50px;
+  pointer-events: none;
+}
+
+#reg_btn_doodle path {
+  stroke: #db3157;
+  stroke-width: 8px;
+  stroke-dasharray: 0 1500;
+}
+
+#reg_btn_doodle:hover path {
+  animation: draw 1s forwards;
+}
+
+@keyframes draw {
+  from {
+    stroke-dasharray: 0 1500;
+  }
+
+  to {
+    stroke-dasharray: 1500 1500;
+  }
+}

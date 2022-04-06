@@ -1,0 +1,15 @@
+.authbutton {
+    background-color: red;
+    border: none;
+    padding: 15px 20px;
+    text-align: center;
+    display: inline;
+    border-radius: 16px;
+    font-size: 20px;
+    font-weight: 600;
+    cursor: pointer;
+    margin: auto;
+    margin-bottom: 10px;
+    color: whitesmoke;
+    margin-left: 10px;
+}
