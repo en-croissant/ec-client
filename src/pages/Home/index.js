@@ -5,7 +5,7 @@ import { useAuthContext } from "../../contexts/auth";
 // import { useNavigate } from "react-router-dom";
 
 function Home() {
-  const { logout } = useAuthContext()
+  const { user, logout } = useAuthContext()
   // const navigate = useNavigate()
 
   const handleLogout = async () => {
@@ -16,20 +16,12 @@ function Home() {
 
   return (
     <>
-      <input type="submit" onClick={handleLogout} value="Logout"/>
-      <div id="homeDiv">
-        <div id="black_l">
-          <div id="black_dgnl"></div>
+      <div className ="wrapper">
+        <input type="submit" onClick={handleLogout} value="Logout" />
+        <div id="homeDiv">
         </div>
-        <div id="white_l">
-          <div id="white_dgnl"></div>
-        </div>
-        <div id="white_r">
-          <div id="whiteR_dgnl"></div>
-        </div>
-      </div>
-      <TableObjects />
-      <div id="table">
+        <TableObjects />
+        <div id="table">
         <div id="table_top"></div>
         <div id="table_top_front"></div>
         <div id="table_top_side"></div>
@@ -42,8 +34,26 @@ function Home() {
         <div id="r_back_leg_a"></div>
         <div id="r_back_leg_b"></div>
       </div>
+      </div>
     </>
   );
 }
 
 export default Home;
+
+
+
+
+
+
+          {
+            /* <div id="black_l">
+            <div id="black_dgnl"></div>
+          </div>
+          <div id="white_l">
+            <div id="white_dgnl"></div>
+          </div>
+          <div id="white_r">
+            <div id="whiteR_dgnl"></div>
+          </div> */
+          }
