@@ -23,18 +23,22 @@ const JoinGame = () => {
 
   // const settings = { difficultyAI, gameMode, timeLimit, saveGame }
   
-  useEffect(() => {
+  useEffect(async () => {
     const lobby_id = window.location.pathname.split('/')[2]
+    let hostName;
+    console.log(user)
     const fetchLobbyData = async () => {
       const { data } = await axios.get(`https://en-croissant.herokuapp.com/lobby/${lobby_id}`);
       setUsername1(data.player_1_username)
       setUsername2(data.player_2_username)
       setRoomName(data.lobby_id)
-      if (user===data.player_1_username) {
-        setIsHost(true)
-      }
+      hostName = data.player_1_username
     }
-    fetchLobbyData()
+    await fetchLobbyData()
+    console.log(hostName)
+    if (user===hostName) {
+      setIsHost(true)
+    }
   }, []);
 
 
@@ -59,6 +63,7 @@ const JoinGame = () => {
 
         {isHost ? (
           <button
+            aria-label="play-button"
             onClick={onClickEvent}
           >Start Game</button>
         ) : (
