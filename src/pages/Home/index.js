@@ -5,7 +5,7 @@ import { useAuthContext } from "../../contexts/auth";
 // import { useNavigate } from "react-router-dom";
 
 function Home() {
-  const { logout } = useAuthContext()
+  const { user, logout } = useAuthContext()
   // const navigate = useNavigate()
 
   const handleLogout = async () => {
@@ -16,7 +16,7 @@ function Home() {
 
   return (
     <>
-      <input type="submit" onClick={handleLogout} value="Logout"/>
+      { user && <input type="submit" onClick={handleLogout} value="Logout"/>}
       <div id="homeDiv">
         <div id="black_l">
           <div id="black_dgnl"></div>
