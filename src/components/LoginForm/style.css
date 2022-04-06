@@ -119,6 +119,22 @@ h1 {
     stroke-dasharray: 1500 1500;
   }
 }
+#clipboard_back {
+  background-color: rgb(165, 87, 42);
+  width: 345px;
+  position: fixed;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  margin: 26px auto 0;
+  padding: 50px;
+  left: 47%;
+  top: 25%;
+  height: 370px;
+}
+input:hover {
+  background-color: red;
+  cursor: url(https://cdn.custom-cursor.com/packs/5083/minimal-pencil-pack.png),
+    auto;
+}
 /* .cb {
   vertical-align: middle;
   -moz-appearance: none;
@@ -132,8 +148,6 @@ h1 {
 }
 .cb:before {
   animation: eraseA 0.5s steps(1) forwards;
-  background: url("https://s22.postimg.cc/fi4blx4gx/checkmark.png") 0 100%/1.2em
-    1.35em no-repeat;
   bottom: 0.2em;
   left: 0.3em;
   width: 0;
