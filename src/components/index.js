@@ -5,3 +5,4 @@ export { default as RegForm } from "./RegForm";
 export { default as GameChessboard } from "./GameChessboard";
 export { default as TableObjects } from "./TableObjects";
 export { default as LightSwitch } from "./LightSwitch";
+export { default as FlyingPaper } from "./FlyingPaper";

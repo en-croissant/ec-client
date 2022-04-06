@@ -1,6 +1,7 @@
 import React from "react";
 import "./style.css";
-import { TableObjects, LightSwitch } from "../../components";
+import { TableObjects, LightSwitch, FlyingPaper } from "../../components";
+
 import { useAuthContext } from "../../contexts/auth";
 // import { useNavigate } from "react-router-dom";
 
@@ -35,6 +36,7 @@ function Home() {
           <div id="r_back_leg_b"></div>
         </div>
         <div id="home_clip_board">
+          <FlyingPaper />
           <div id="home-clip"></div>
         </div>
       </div>
