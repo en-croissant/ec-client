@@ -1,5 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Grape+Nuts&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Grape+Nuts&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Just+Another+Hand&display=swap");
+
 #login_form {
   position: fixed;
   background: #fff;
@@ -38,8 +40,16 @@
 }
 
 label {
-  font-family: "Grape Nuts", cursive;
-  font-size: 20px;
+  font-family: "Just Another Hand", cursive;
+  font-size: 26px;
+  background: linear-gradient(0deg, rgb(227, 239, 93), rgb(227, 239, 93))
+    no-repeat right bottom / 0 var(--bg-h);
+  transition: background-size 350ms;
+  --bg-h: 100%;
+}
+label:where(:hover, :focus-visible) {
+  background-size: 100% var(--bg-h);
+  background-position-x: left;
 }
 
 input {
@@ -47,10 +57,19 @@ input {
   background-color: transparent;
   outline: none;
   margin-top: 30px;
+  margin-left: 10px;
+  font-family: "Grape Nuts", cursive;
+
+  font-size: 20px;
 }
 
 h1 {
   font-size: 20px;
   font-family: "Inknut Antiqua", serif;
+  margin-top: -5px;
 }
 
+#submit_btn:hover {
+  color: red;
+  font-weight: bold;
+}

@@ -15,7 +15,7 @@ function LoginForm() {
 
   const handleInput = (e) => {
     setError();
-    const value = e.target.value
+    const value = e.target.value;
     return setFormData((prev) => ({
       ...prev,
       [e.target.name]: value,
@@ -72,10 +72,24 @@ function LoginForm() {
             required
           />
         </div>
-        <input role="button" type="submit" disabled={formIncomplete()} value="Login" />
+        <input
+          id="submit_btn"
+          role="button"
+          type="submit"
+          disabled={formIncomplete()}
+          value="Login"
+        />
       </form>
-      {error && <div data-testid="error" id="error">{error}</div>}
-      {loading && <div data-testid="loading" id="loading">Logging in . . .</div>}
+      {error && (
+        <div data-testid="error" id="error">
+          {error}
+        </div>
+      )}
+      {loading && (
+        <div data-testid="loading" id="loading">
+          Logging in . . .
+        </div>
+      )}
     </>
   );
 }
