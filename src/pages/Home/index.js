@@ -5,7 +5,7 @@ import { useAuthContext } from "../../contexts/auth";
 // import { useNavigate } from "react-router-dom";
 
 function Home() {
-  const { logout } = useAuthContext()
+  const { user, logout } = useAuthContext()
   // const navigate = useNavigate()
 
   const handleLogout = async () => {
