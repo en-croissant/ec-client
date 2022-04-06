@@ -24,15 +24,23 @@
   height: 300px;
 }
 
-.reg-title{
+
+.reg-username{
   margin-bottom: -20px;
 }
 
 
-.reg-label-username{
+
+.reg-email{
   margin-bottom: -20px;
 }
 
-reg-input-username{
+
+.reg-password{
+  margin-bottom: -20px;
+}
+
+
+.reg-confirmpassword{
   margin-bottom: -20px;
 }
