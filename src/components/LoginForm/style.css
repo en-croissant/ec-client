@@ -121,6 +121,7 @@ h1 {
 }
 #clipboard_back {
   background-color: rgb(165, 87, 42);
+  background-image: url("https://www.transparenttextures.com/patterns/wood-pattern.png");
   width: 345px;
   position: fixed;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
