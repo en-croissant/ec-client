@@ -20,7 +20,7 @@ function Auth() {
 
   return (
     <>
-      <span className="authbutton" onClick={onClick}>
+      <span data-testid="form-button" className="authbutton" onClick={onClick}>
         hehehe
       </span>
       {showLogin ? <LoginForm /> : <RegForm />}
