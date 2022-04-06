@@ -1,15 +1,14 @@
 #submit_btn_reg {
   font-size: 24px;
-  margin-right: 100px;
   position: absolute;
+  margin-top: -50px;
+  margin-left: -10px;
 }
 
 #submit_btn_reg:hover {
   color: red;
   font-weight: bold;
 }
-
-
 
 #reg_form {
   position: fixed;
@@ -24,15 +23,14 @@
   height: 300px;
 }
 
-.reg-title{
+.reg-title {
   margin-bottom: -20px;
 }
 
-
-.reg-label-username{
+.reg-label-username {
   margin-bottom: -20px;
 }
 
-reg-input-username{
+reg-input-username {
   margin-bottom: -20px;
 }
