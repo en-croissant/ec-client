@@ -78,9 +78,8 @@
   left: 300px;
   height: 300px;
   z-index: 10;
-  position: fixed;
+  position: absolute;
   width: 500px;
-  background-color: red;
 }
 #table_top {
   background-color: #a55c1b;
@@ -90,11 +89,11 @@
     #a55c1b 50%,
     #7a4618 74%
   );
-  top: 300px;
+  top: 30px;
   left: 30px;
   height: 50px;
   width: 440px;
-  position: fixed;
+  position: absolute;
   transform: skewX(60deg) skewY(-5deg);
   /* background: url(http://thenewcode.com/assets/images/woodgrain.jpg); */
   z-index: 10;
@@ -107,11 +106,11 @@
     rgb(91, 53, 27) 74%,
     rgb(59, 33, 15) 100%
   );
-  top: 345px;
+  top: 75px;
   left: 110px;
   height: 20px;
   width: 360px;
-  position: fixed;
+  position: absolute;
   transform: skewY(-6deg);
 }
 
@@ -124,11 +123,11 @@
     rgb(59, 33, 15) 100%
   );
 
-  top: 345px;
+  top: 75px;
   left: 30px;
   height: 15px;
   width: 80px;
-  position: fixed;
+  position: absolute;
   transform: skewY(30deg);
 }
 
@@ -140,11 +139,11 @@
     rgb(119, 69, 33) 50%,
     rgb(49, 27, 11) 100%
   );
-  top: 330px;
+  top: 60px;
   left: 30px;
   height: 100px;
   width: 10px;
-  position: fixed;
+  position: absolute;
   transform: skewY(35deg);
 }
 
@@ -156,11 +155,11 @@
     rgb(70, 41, 19) 50%,
     rgb(39, 21, 9) 100%
   );
-  top: 330px;
+  top: 60px;
   left: 39px;
   height: 100px;
   width: 10px;
-  position: fixed;
+  position: absolute;
   z-index: -1;
   transform: skewY(-30deg);
 }
@@ -173,11 +172,11 @@
     rgb(119, 69, 33) 50%,
     rgb(49, 27, 11) 100%
   );
-  top: 360px;
+  top: 90px;
   left: 100px;
   height: 110px;
   width: 10px;
-  position: fixed;
+  position: absolute;
   transform: skewY(35deg);
 }
 
@@ -189,11 +188,11 @@
     rgb(70, 41, 19) 50%,
     rgb(39, 21, 9) 100%
   );
-  top: 360px;
+  top: 90px;
   left: 110px;
   height: 110px;
   width: 10px;
-  position: fixed;
+  position: absolute;
   z-index: -1;
   transform: skewY(-30deg);
 }
@@ -206,11 +205,11 @@
     rgb(97, 57, 26) 50%,
     rgb(39, 21, 9) 100%
   );
-  top: 330px;
+  top: 60px;
   left: 460px;
   height: 110px;
   width: 12px;
-  position: fixed;
+  position: absolute;
   transform: skewY(-10deg);
 }
 
@@ -222,11 +221,11 @@
     rgb(53, 31, 15) 50%,
     rgb(68, 39, 18) 100%
   );
-  top: 330px;
+  top: 60px;
   left: 456px;
   height: 110px;
   width: 5px;
-  position: fixed;
+  position: absolute;
   z-index: -1;
   transform: skewY(-135deg);
 }
@@ -238,11 +237,11 @@
     rgb(74, 44, 22) 50%,
     rgb(32, 16, 6) 100%
   );
-  top: 332px;
+  top: 62px;
   left: 400px;
   height: 70px;
   width: 5px;
-  position: fixed;
+  position: absolute;
   z-index: -1;
   transform: skewY(-135deg);
 }
@@ -255,11 +254,11 @@
     rgb(60, 35, 18) 50%,
     rgb(22, 11, 4) 100%
   );
-  top: 333px;
+  top: 63px;
   left: 405px;
   height: 70px;
   width: 10px;
-  position: fixed;
+  position: absolute;
   z-index: -1;
   transform: skewY(-10deg);
 }
