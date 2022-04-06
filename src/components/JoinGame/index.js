@@ -47,8 +47,7 @@ const JoinGame = () => {
   return (
     <>
       <div>
-        <h2>Game settings</h2>
-
+        <h3>Game settings</h3>
         <h3>Room name: {roomName}</h3>
         <h3>Player 1: {username1}</h3>
         <h3>Player 2: {username2}</h3>
