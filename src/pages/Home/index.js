@@ -1,10 +1,22 @@
 import React from "react";
 import "./style.css";
 import { TableObjects } from "../../components";
+import { useAuthContext } from "../../contexts/auth";
+// import { useNavigate } from "react-router-dom";
 
 function Home() {
+  const { logout } = useAuthContext()
+  // const navigate = useNavigate()
+
+  const handleLogout = async () => {
+    await logout()
+    // navigate('/')
+    window.location.reload(false)
+  }
+
   return (
     <>
+      <input type="submit" onClick={handleLogout} value="Logout"/>
       <div id="homeDiv">
         <div id="black_l">
           <div id="black_dgnl"></div>

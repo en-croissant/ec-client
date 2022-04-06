@@ -120,7 +120,6 @@ function RegForm() {
           <div id="reg_btn_doodle">
             <input
               id="submit_btn_reg"
-              role="button"
               type="submit"
               disabled={formIncomplete()}
               value="Create"

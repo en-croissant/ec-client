@@ -1,10 +1,14 @@
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import Chess from "chess.js";
 import { Chessboard } from "react-chessboard";
 
 // socket.on("hello world", ({ data }) => console.log(data));
 
 function Gameboard({ socket }) {
+
+  useEffect(() => {
+    socket.emit('join', {lobby_id:'play'})
+  }, [])
 
   const chessboardRef = useRef();
   const [game, setGame] = useState(new Chess());
@@ -24,6 +28,7 @@ function Gameboard({ socket }) {
       to: targetSquare,
       promotion: "q", // always promote to a queen for example simplicity
     });
+    console.log(move.san)
     socket.emit("move piece", move.san);
     setGame(gameCopy);
     return move;
