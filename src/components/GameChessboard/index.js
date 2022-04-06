@@ -2,8 +2,9 @@ import { useRef, useState } from "react";
 import Chess from "chess.js";
 import { Chessboard } from "react-chessboard";
 
+// socket.on("hello world", ({ data }) => console.log(data));
+
 function Gameboard({ socket }) {
-  socket.on("hello world", ({ data }) => console.log(data));
 
   const chessboardRef = useRef();
   const [game, setGame] = useState(new Chess());
