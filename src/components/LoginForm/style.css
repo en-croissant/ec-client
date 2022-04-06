@@ -133,10 +133,10 @@ h1 {
 }
 
 #clip {
-  height: 90px;
+  height: 70px;
   width: 190px;
   position: absolute;
-  top: -10%;
+  top: -4%;
   left: 30%;
   border-top-left-radius: 20%;
   border-top-right-radius: 20%;
@@ -147,7 +147,7 @@ h1 {
     rgba(118, 119, 121, 1) 0%,
     rgba(153, 154, 158, 1) 8%,
     rgba(233, 233, 225, 1) 31%,
-    rgba(175, 176, 180, 1) 61%,
+    rgb(153, 154, 157) 61%,
     rgba(145, 153, 156, 1) 76%,
     rgba(87, 94, 88, 1) 92%,
     rgba(145, 153, 156, 1) 95%,
@@ -169,22 +169,22 @@ h1 {
   background: -webkit-linear-gradient(
     top,
     rgba(118, 119, 121, 1) 0%,
-    rgba(153, 154, 158, 1) 8%,
+    rgb(125, 126, 130) 8%,
     rgba(233, 233, 225, 1) 31%,
-    rgba(175, 176, 180, 1) 61%,
-    rgba(145, 153, 156, 1) 76%,
+    rgb(91, 91, 93) 61%,
+    rgb(103, 109, 111) 76%,
     rgba(87, 94, 88, 1) 92%,
-    rgba(145, 153, 156, 1) 95%,
-    rgb(128, 129, 131) 100%
+    rgb(63, 64, 65) 95%,
+    rgb(143, 143, 145) 100%
   );
 }
 
 #clip:before {
   content: "";
   position: absolute;
-  height: 50%;
+  height: 30px;
   width: 50%;
-  top: -50%;
+  top: -40%;
   left: 27%;
   z-index: 50;
   border-top-left-radius: 20%;
@@ -195,8 +195,8 @@ h1 {
     rgba(118, 119, 121, 1) 0%,
     rgb(125, 126, 130) 8%,
     rgba(233, 233, 225, 1) 31%,
-    rgb(125, 125, 128) 61%,
-    rgb(122, 129, 131) 76%,
+    rgb(91, 91, 93) 61%,
+    rgb(103, 109, 111) 76%,
     rgba(87, 94, 88, 1) 92%,
     rgb(63, 64, 65) 95%,
     rgb(143, 143, 145) 100%
@@ -214,5 +214,5 @@ h1 {
   z-index: 75;
   background-color: white;
   position: absolute;
-  top: ;
+  top: -20px;
 }
