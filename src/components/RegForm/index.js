@@ -105,7 +105,7 @@ function RegForm() {
               required
             />
           </div>
-          <div className="reg-confirmpassword">
+          <div >
             <label htmlFor="passwordConfirmation">Confirm Password:</label>
             <input
               aria-label="passwordConfirmation-field"
