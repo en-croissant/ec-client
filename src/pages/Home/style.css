@@ -1,7 +1,12 @@
+.wrapper{
+  background: url(chess-background.png) no-repeat center center fixed;
+}
+
+
 #homeDiv {
   height: 100vh;
   width: 100vw;
-  background-color: black;
+  /* background-color: black; */
 }
 #black_l {
   height: 500px;
