@@ -1,6 +1,6 @@
-import { default as CreateGame } from ".";
 import { screen, render } from "@testing-library/react";
-import { CreateGame } from "../../pages";
+
+import { default as CreateGame } from ".";
 
 describe("CreateGame", () => {
   it("renders lobby", () => {
