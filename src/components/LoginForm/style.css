@@ -1,0 +1,119 @@
+@import url("https://fonts.googleapis.com/css2?family=Grape+Nuts&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Grape+Nuts&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Just+Another+Hand&display=swap");
+
+#login_form {
+  position: fixed;
+  background: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  margin: 26px auto 0;
+  width: 260px;
+  padding: 50px;
+  display: block;
+  left: 50%;
+  top: 30%;
+  height: 300px;
+}
+
+#back_paper:before,
+#back_paper:after {
+  content: "";
+  height: 98%;
+  position: absolute;
+  width: 100%;
+  z-index: -1;
+}
+#back_paper:before {
+  background: #fafafa;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+  left: -5px;
+  top: 4px;
+  transform: rotate(-2.5deg);
+}
+#back_paper:after {
+  background: #f6f6f6;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+  right: -3px;
+  top: 1px;
+  transform: rotate(2.1deg);
+}
+
+label {
+  font-family: "Just Another Hand", cursive;
+  font-size: 24px;
+  background: linear-gradient(0deg, rgb(227, 239, 93), rgb(227, 239, 93))
+    no-repeat right bottom / 0 var(--bg-h);
+  transition: background-size 350ms;
+  --bg-h: 100%;
+}
+label:where(:hover, :focus-visible) {
+  background-size: 100% var(--bg-h);
+  background-position-x: left;
+}
+
+input {
+  border: none;
+  background-color: transparent;
+  outline: none;
+  margin-top: 30px;
+  margin-left: 20px;
+  font-family: "Grape Nuts", cursive;
+  font-size: 18px;
+}
+
+h1 {
+  font-size: 20px;
+  font-family: "Inknut Antiqua", serif;
+}
+#submit_btn {
+  margin-top: 100px;
+  margin-left: 190px;
+  font-size: 24px;
+}
+
+#submit_btn:hover {
+  color: red;
+  font-weight: bold;
+}
+
+#btn_doodle {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+#btn_doodle button {
+  padding: 8px 16px;
+  border: none;
+  background: none;
+  outline: none;
+}
+
+#btn_doodle svg {
+  position: absolute;
+  top: 90px;
+  left: 170px;
+  width: 100px;
+  height: 50px;
+  pointer-events: none;
+}
+
+#btn_doodle path {
+  stroke: #db3157;
+  stroke-width: 8px;
+  stroke-dasharray: 0 1500;
+}
+
+#btn_doodle:hover path {
+  animation: draw 1s forwards;
+}
+
+@keyframes draw {
+  from {
+    stroke-dasharray: 0 1500;
+  }
+
+  to {
+    stroke-dasharray: 1500 1500;
+  }
+}

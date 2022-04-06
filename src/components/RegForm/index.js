@@ -23,9 +23,10 @@ function RegForm() {
   const handleInput = (e) => {
     setPassword(formData.password)
     setError()
+    const value = e.target.value
     return setFormData(prev => ({
       ...prev, 
-      [e.target.name]: e.target.value
+      [e.target.name]: value
     }))
   }
 
@@ -58,10 +59,11 @@ function RegForm() {
 
   return (
     <>
-      <form aria-label="reg-form" onSubmit={handleSubmit} >
+      <form aria-label="reg-form" id="register_form"  onSubmit={handleSubmit}>
         <div>
           <label htmlFor="username">Username:</label>
           <input
+            aria-label="username-field"
             type="text"
             name="username"
             value={formData.username}
@@ -74,6 +76,7 @@ function RegForm() {
         <div>
           <label htmlFor="email">Email:</label>
           <input
+            aria-label="email-field"
             type="text"
             name="email"
             value={formData.email}
@@ -86,6 +89,7 @@ function RegForm() {
         <div>
           <label htmlFor="password">Password:</label>
           <input
+            aria-label="password-field"
             type="password"
             name="password"
             value={formData.password}
@@ -98,6 +102,7 @@ function RegForm() {
         <div>
           <label htmlFor="passwordConfirmation">Confirm Password:</label>
           <input
+            aria-label="passwordConfirmation-field"
             type="password"
             name="passwordConfirmation"
             value={formData.passwordConfirmation}
@@ -108,23 +113,16 @@ function RegForm() {
           />
         </div>
         <input
+          role="button"
           type="submit"
           disabled={formIncomplete()}
           value="Create Account"
         />
       </form>
-      {error && (
-        <div id="error">
-          {error}
-        </div>
-      )}
-      {loading && (
-        <div id="loading">
-          Creating account . . .
-        </div>
-      )}
+      {error && <div data-testid="error" id="error">{error}</div>}
+      {loading && <div data-testid="loading" id="loading">Creating account . . .</div>}
     </>
-  )
+  );
 }
 
 export default RegForm

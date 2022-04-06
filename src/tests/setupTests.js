@@ -8,10 +8,10 @@ import { AuthProvider } from "../contexts/auth/index";
 
 import { MemoryRouter } from "react-router-dom";
 
-// import 'setimmediate'
-// if (!global.setImmediate) {
-//   global.setImmediate = setTimeout
-// }
+import 'setimmediate'
+if (!global.setImmediate) {
+  global.setImmediate = setTimeout
+}
 
 const TestProviders = () => {
   return ({ children }) => (

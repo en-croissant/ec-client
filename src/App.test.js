@@ -6,3 +6,7 @@ test("renders learn react link", () => {
   render(<Pages.Home />);
   expect(screen).toBeDefined();
 });
+
+// If user is logged in they can access these routes
+
+// If user is not logged in the can access those routes
