@@ -12,7 +12,7 @@
 #black_dgnl {
   height: 858px;
   width: 300px;
-  left: 260px;
+  left: 264px;
   top: -47px;
   background-color: rgb(0, 0, 0);
   position: absolute;
@@ -32,9 +32,9 @@
 }
 
 #white_dgnl {
-  height: 600px;
+  height: 605px;
   width: 300px;
-  bottom: -280px;
+  bottom: -275px;
   left: 866px;
   background-color: rgb(255, 255, 255);
   position: absolute;
@@ -53,7 +53,7 @@
   height: 190px;
   width: 862px;
   left: 0px;
-  top: 280px;
+  top: 283px;
   background-color: rgb(255, 255, 255);
   position: absolute;
   -webkit-transform: skewY(-5deg);
@@ -65,12 +65,13 @@
 }
 
 #table {
-  top: 50%;
+  top: 100%;
   left: 300px;
   height: 300px;
   z-index: 10;
   position: absolute;
   width: 500px;
+  background-color: red;
 }
 #table_top {
   background-color: #a55c1b;
