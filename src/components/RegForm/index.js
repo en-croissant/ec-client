@@ -1,61 +1,60 @@
-import React, { useState } from 'react'
+import React, { useState } from "react";
 
 import { useAuthContext } from "../../contexts/auth";
 import { useNavigate } from "react-router-dom";
 
-import './style.css'
+import "./style.css";
 
 function RegForm() {
-  const { register, login } = useAuthContext()
-  const navigate = useNavigate()
+  const { register, login } = useAuthContext();
+  const navigate = useNavigate();
 
-  
-  const [password, setPassword] = useState("")
+  const [password, setPassword] = useState("");
   const [formData, setFormData] = useState({
     username: "",
     email: "",
     password: "",
-    passwordConfirmation: ""
+    passwordConfirmation: "",
   });
   const [error, setError] = useState();
   const [loading, setLoading] = useState(false);
 
   const handleInput = (e) => {
-    setPassword(formData.password)
-    setError()
-    const value = e.target.value
-    return setFormData(prev => ({
-      ...prev, 
-      [e.target.name]: value
-    }))
-  }
+    setPassword(formData.password);
+    setError();
+    const value = e.target.value;
+    return setFormData((prev) => ({
+      ...prev,
+      [e.target.name]: value,
+    }));
+  };
 
   const formIncomplete = () => {
     return (
-      Object.values(formData).some(value => !value) || passwordNotMatch()
-    )
-  }
+      Object.values(formData).some((value) => !value) || passwordNotMatch()
+    );
+  };
 
   const passwordNotMatch = () => {
-    return formData.password !== formData.passwordConfirmation
-  }
+    return formData.password !== formData.passwordConfirmation;
+  };
 
   const handleSubmit = async (e) => {
-    e.preventDefault()
+    e.preventDefault();
     try {
-      setLoading(true)
-      const regResult = await register(formData)
-      if (regResult==="Registration successful") {
-        await login(formData)
-        navigate('/')
+      setLoading(true);
+      const regResult = await register(formData);
+      if (regResult === "Registration successful") {
+        await login(formData);
+        navigate("/");
       } else {
-        throw new Error('')
+        throw new Error("");
       }
     } catch (err) {
-      setLoading(false)
-      setError(err.message)
+      setLoading(false);
+      setError(err.message);
     }
-  }
+  };
 
   return (
     <>
@@ -105,15 +104,15 @@ function RegForm() {
               required
             />
           </div>
-          <div >
-            <label htmlFor="passwordConfirmation">Confirm Password:</label>
+          <div>
+            <label htmlFor="passwordConfirmation">Confirm:</label>
             <input
               aria-label="passwordConfirmation-field"
               type="password"
               name="passwordConfirmation"
               value={formData.passwordConfirmation}
               onChange={handleInput}
-              placeholder="Password"
+              placeholder=" Confirm Password"
               required
               pattern={password}
             />
@@ -149,5 +148,4 @@ function RegForm() {
   );
 }
 
-export default RegForm
-
+export default RegForm;
