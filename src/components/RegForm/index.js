@@ -44,11 +44,12 @@ function RegForm() {
     try {
       setLoading(true);
       const regResult = await register(formData);
+      console.log(regResult)
       if (regResult === "Registration successful") {
         await login(formData);
         navigate("/");
       } else {
-        throw new Error("");
+        throw new Error("Unsuccessful registration");
       }
     } catch (err) {
       setLoading(false);
