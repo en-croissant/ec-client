@@ -1,6 +1,6 @@
 import React from "react";
 import { JoinGame } from "../../components";
-
+import "./style.css";
 function Lobby() {
   return (
     <>
