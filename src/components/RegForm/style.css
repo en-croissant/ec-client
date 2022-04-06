@@ -1,8 +1,9 @@
 #submit_btn_reg {
+  color: black;
   font-size: 24px;
   position: absolute;
-  margin-top: 25px;
-  margin-left: 200px;
+  margin-top: -65px;
+  margin-left: -15px;
 }
 
 #submit_btn_reg:hover {
@@ -24,15 +25,15 @@
 }
 
 .reg-username {
-  margin-bottom: -20px;
+  margin-bottom: -10px;
 }
 
 .reg-email {
-  margin-bottom: -20px;
+  margin-bottom: -10px;
 }
 
 .reg-password {
-  margin-bottom: -20px;
+  margin-bottom: -10px;
 }
 
 #reg_btn_doodle {
@@ -53,7 +54,7 @@
 
 #reg_btn_doodle svg {
   position: absolute;
-  top: -40px;
+  top: -70px;
   left: -30px;
   width: 100px;
   height: 50px;
