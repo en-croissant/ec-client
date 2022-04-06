@@ -265,9 +265,10 @@
 }
 
 #home_clip_board {
-  background-color: rgb(149, 80, 39);
-  background-image: url("https://www.transparenttextures.com/patterns/wood-pattern.png");
-  width: 80px;
+  background-color: rgb(232, 149, 102);
+  /* background-image: url("https://www.transparenttextures.com/patterns/wood-pattern.png"); */
+  width: 65px;
+  border-radius: 5px;
   position: fixed;
   left: 1000px;
   box-shadow: 10px 0px 15px rgba(0, 0, 0, 0.3);
