@@ -24,7 +24,7 @@ const JoinGame = () => {
   // const settings = { difficultyAI, gameMode, timeLimit, saveGame }
   
   useEffect(() => {
-    const lobby_id = window.location.pathname.split('/')[1]
+    const lobby_id = window.location.pathname.split('/')[2]
     const fetchLobbyData = async () => {
       const { data } = await axios.get(`https://en-croissant.herokuapp.com/lobby/${lobby_id}`);
       setUsername1(data.player_1_username)
