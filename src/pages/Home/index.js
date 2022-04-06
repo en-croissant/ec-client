@@ -17,7 +17,7 @@ function Home() {
   return (
     <>
       <div className="wrapper">
-        <input type="submit" onClick={handleLogout} value="Logout" />
+        {!!user && <input type="submit" onClick={handleLogout} value="Logout" />}
         <div id="homeDiv"></div>
         <LightSwitch />
         <div id="table">
