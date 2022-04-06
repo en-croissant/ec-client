@@ -130,9 +130,10 @@ h1 {
   left: 47%;
   top: 25%;
   height: 370px;
+  border-left: solid 15px;
+  border-left-color: rgb(115, 62, 32);
 }
-#clipboard_left {
-  /* background-color: rgb(149, 80, 39); */
+/* #clipboard_left {
   background-image: linear-gradient(rgb(133, 71, 35), rgb(107, 61, 33));
   width: 15px;
   position: fixed;
@@ -140,7 +141,8 @@ h1 {
   left: 709px;
   top: 25%;
   height: 470px;
-}
+} */
+
 #clip {
   height: 70px;
   width: 190px;
