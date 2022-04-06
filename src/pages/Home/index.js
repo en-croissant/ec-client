@@ -34,7 +34,9 @@ function Home() {
           <div id="r_back_leg_a"></div>
           <div id="r_back_leg_b"></div>
         </div>
-        <div id="home_clip_board"></div>
+        <div id="home_clip_board">
+          <div id="home-clip"></div>
+        </div>
       </div>
     </>
   );
