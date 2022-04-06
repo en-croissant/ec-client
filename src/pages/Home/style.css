@@ -92,8 +92,8 @@
     #7a4618 74%
   );
   top: 30px;
-  left: 30px;
-  height: 50px;
+  left: 35px;
+  height: 60px;
   width: 440px;
   position: absolute;
   transform: skewX(60deg) skewY(-5deg);
@@ -108,10 +108,10 @@
     rgb(91, 53, 27) 74%,
     rgb(59, 33, 15) 100%
   );
-  top: 75px;
+  top: 80px;
   left: 110px;
-  height: 20px;
-  width: 360px;
+  height: 30px;
+  width: 367px;
   position: absolute;
   transform: skewY(-6deg);
 }
@@ -125,9 +125,9 @@
     rgb(59, 33, 15) 100%
   );
 
-  top: 75px;
+  top: 80px;
   left: 30px;
-  height: 15px;
+  height: 25px;
   width: 80px;
   position: absolute;
   transform: skewY(30deg);
@@ -141,9 +141,9 @@
     rgb(119, 69, 33) 50%,
     rgb(49, 27, 11) 100%
   );
-  top: 60px;
-  left: 30px;
-  height: 100px;
+  top: 55px;
+  left: 20px;
+  height: 110px;
   width: 10px;
   position: absolute;
   transform: skewY(35deg);
@@ -157,9 +157,9 @@
     rgb(70, 41, 19) 50%,
     rgb(39, 21, 9) 100%
   );
-  top: 60px;
-  left: 39px;
-  height: 100px;
+  top: 55px;
+  left: 29px;
+  height: 110px;
   width: 10px;
   position: absolute;
   z-index: -1;
@@ -176,7 +176,7 @@
   );
   top: 90px;
   left: 100px;
-  height: 110px;
+  height: 120px;
   width: 10px;
   position: absolute;
   transform: skewY(35deg);
@@ -192,7 +192,7 @@
   );
   top: 90px;
   left: 110px;
-  height: 110px;
+  height: 120px;
   width: 10px;
   position: absolute;
   z-index: -1;
@@ -207,9 +207,9 @@
     rgb(97, 57, 26) 50%,
     rgb(39, 21, 9) 100%
   );
-  top: 60px;
-  left: 460px;
-  height: 110px;
+  top: 71px;
+  left: 480px;
+  height: 120px;
   width: 12px;
   position: absolute;
   transform: skewY(-10deg);
@@ -223,9 +223,9 @@
     rgb(53, 31, 15) 50%,
     rgb(68, 39, 18) 100%
   );
-  top: 60px;
-  left: 456px;
-  height: 110px;
+  top: 70px;
+  left: 476px;
+  height: 120px;
   width: 5px;
   position: absolute;
   z-index: -1;
@@ -241,7 +241,7 @@
   );
   top: 62px;
   left: 400px;
-  height: 70px;
+  height: 80px;
   width: 5px;
   position: absolute;
   z-index: -1;
@@ -258,7 +258,7 @@
   );
   top: 63px;
   left: 405px;
-  height: 70px;
+  height: 80px;
   width: 10px;
   position: absolute;
   z-index: -1;
