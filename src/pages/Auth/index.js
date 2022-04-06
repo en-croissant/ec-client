@@ -9,7 +9,7 @@ function Auth() {
    const [showLogin, setShowLogin] = useState(true);
 
       const onClick = () => {
-        if (showLogin) {
+        if (showLogin == true) {
           setShowLogin(false)
           setShowReg(true)
         } else {

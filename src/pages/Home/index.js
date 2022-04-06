@@ -1,6 +1,6 @@
 import React from "react";
 import "./style.css";
-import { TableObjects } from "../../components";
+import { TableObjects, LightSwitch } from "../../components";
 import { useAuthContext } from "../../contexts/auth";
 // import { useNavigate } from "react-router-dom";
 
@@ -17,8 +17,9 @@ function Home() {
   return (
     <>
       <div className="wrapper">
-        { !!user && <input type="submit" onClick={handleLogout} value="Logout" />}
+        <input type="submit" onClick={handleLogout} value="Logout" />
         <div id="homeDiv"></div>
+        <LightSwitch />
         <div id="table">
           <TableObjects />
           <div id="table_top"></div>
@@ -33,11 +34,7 @@ function Home() {
           <div id="r_back_leg_a"></div>
           <div id="r_back_leg_b"></div>
         </div>
-        <div id="home_clip_board">
-          <div id="home_clip">
-            <div id="home_papers"></div>
-          </div>
-        </div>
+        <div id="home_clip_board"></div>
       </div>
     </>
   );

@@ -1,17 +1,18 @@
 import { screen, act } from '@testing-library/react'
 
-// import * as Stuff from 'react-router-dom'
-// import { useNavigate } from 'react-router-dom'
-import * as AuthContext from '../../contexts/auth'
-
 import { default as LoginForm } from '.'
 
-const mockNavigate = jest.fn();
-import 'react-router-dom'
-jest.mock('react-router-dom', () => ({
-   ...jest.requireActual('react-router-dom'),
-  useNavigate: () => mockNavigate
-}));
+global.axios = jest.fn(() => 
+  Promise.resolve({
+    json: () => 
+      Promise.resolve({
+        data: {
+          success: true,
+          token: "Bearer testtoken"
+        }
+      })
+  })
+)
 
 describe("LoginForm", () => {
   describe("rendering", () => {
@@ -66,37 +67,21 @@ describe("LoginForm", () => {
       expect(loading).toBeInTheDocument()
     })
 
-    test("It calls navigate on successful login", () => {
-      const mockLogin = jest.fn()
-      mockLogin.mockReturnValue('Login successful')
-      const mockValues = {
-        login: mockLogin
-      }
-      // const mockNavigate = jest.fn()
-      jest.spyOn(AuthContext, 'useAuthContext').mockImplementation(() => mockValues)
-      // jest.spyOn(Stuff, 'useNavigate').mockImplementation(() => mockNavigate)
-      renderWithProviders(<LoginForm/>)
-      userEvent.type(screen.getByLabelText('username-field'), 'te')
-      userEvent.type(screen.getByLabelText('password-field'), 'st{enter}')
-      expect(mockNavigate).toHaveBeenCalled()
-    })
+    // test("It stores token in local storage on successful login", async () => {
+    //   renderWithProviders(<LoginForm/>)
+    //   userEvent.type(screen.getByLabelText('username-field'), 'te')
+    //   userEvent.type(screen.getByLabelText('password-field'), 'st{enter}')
+    //   const token = await act(async () => localStorage.getItem('token'))
+    //   expect(token).toBeTruthy()
+    // })
 
-    test("it renders an error message on unsuccessful login attempt", () => {
-      const mockLogin = jest.fn()
-      mockLogin.mockReturnValue('Login unsuccessful')
-      const mockValues = {
-        login: mockLogin
-      }
-      jest.spyOn(AuthContext, 'useAuthContext').mockImplementation(() => mockValues)
-      renderWithProviders(<LoginForm/>)
-      userEvent.type(screen.getByLabelText('username-field'), 'te')
-      userEvent.type(screen.getByLabelText('password-field'), 'st{enter}')
-      setTimeout(() => {}, 1000)
-      const loading = screen.queryByTestId('loading')
-      expect(loading).not.toBeInTheDocument()
-      const error = screen.getByTestId('error')
-      expect(error).toBeInTheDocument()
-    })
+    // test("it renders an error message on unsuccessful login attempt", async () => {
+    //   renderWithProviders(<LoginForm/>)
+    //   userEvent.type(screen.getByLabelText('username-field'), 'fakeuser')
+    //   userEvent.type(screen.getByLabelText('password-field'), 'sldglsdflanf{enter}')
+    //   const error = await act(async () => screen.getByTestId('error'))
+    //   expect(error).toBeInTheDocument()
+    // })
   })
 })
 
