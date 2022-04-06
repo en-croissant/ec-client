@@ -6,7 +6,7 @@ import { Chessboard } from "react-chessboard";
 
 function Gameboard({ socket }) {
 
-  useEffect(() => {
+  useEffect((socket) => {
     socket.emit('join', {lobby_id:'play'})
   }, [])
 

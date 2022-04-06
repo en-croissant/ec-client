@@ -1,46 +1,63 @@
-import React from "react"; 
-import { useState, useEffect } from "react";
-import { io } from "socket.io-client"
-
-
+import React, { useState } from "react";
+// import { io } from "socket.io-client"
+import { useAuthContext } from '../../contexts/auth'
+import { useNavigate } from 'react-router-dom'
+import axios from 'axios'
 
 const CreateGameForm = () => {
+
+    const { user } = useAuthContext()
+    const navigate = useNavigate()
     
-    // const [roomName, setRoomName] = useState("");
-    const [difficultyAI, setDifficultyAI] = useState("");
-    const [gameMode, setGameMode] = useState("");
-    const [timeLimit, setTimeLimit] = useState("");
-    const [saveGame, setSaveGame] = useState("");
+    const [player2Name, setPlayer2Name] = useState("")
+    // const [difficultyAI, setDifficultyAI] = useState("");
+    // const [gameMode, setGameMode] = useState("");
+    // const [timeLimit, setTimeLimit] = useState("");
+    // const [saveGame, setSaveGame] = useState("");
     // const [redirect, setRedirect] = useState(false);
     
     
-    const socket = io("https://en-croissant.herokuapp.com");
-    const settings = { difficultyAI, gameMode, timeLimit, saveGame }
+    // const settings = { difficultyAI, gameMode, timeLimit, saveGame }
 
-    // socket.emit("lobby", { roomName });
-    function createGameFunc () {
-        socket.emit("create board", { settings })
+    // const socket = io("https://en-croissant.herokuapp.com");
 
+    // // socket.emit("lobby", { roomName });
+
+    // function createGameFunc () {
+    //     socket.emit("create board", { settings })
+    // }
+
+    const handleSubmit = async () => {
+        const lobbyData = {
+            player_1_username: user,
+            player_2_username: player2Name,
+            history: ""
+        }
+        const headers = {
+            "Content-Type": "application/json"
+        }
+        const { lobby_id } = await axios.post('https://en-croissant.herokuapp.com/lobby', lobbyData, headers)
+        navigate(`/lobby/${lobby_id}`)
     }
-    socket.on("new game", ({chessboard}) => { console.log(chessboard)})
+    
+    // socket.on("new game", ({chessboard}) => { console.log(chessboard)})
   
     return (
       <>
         <h2>Create Lobby</h2>
-
-        <form role="form">
-            {/* <label for="room-name" >Room name: </label>
+        <form>
+            <label for="user2-name" >Room name: </label>
             <input 
             type="text"
-            name="room-name"
-            id="room-name"
-            placeholder="name of the room"
-            onChange={(e) => setRoomName(e.target.value)}
-            value={roomName}
-            isRequired /> */}
+            name="user2-name"
+            id="user2-name"
+            placeholder="Opponents username"
+            onChange={(e) => setPlayer2Name(e.target.value)}
+            value={player2Name}
+            isRequired />
 
 
-            <label for="AI-difficulty" >AI Difficulty: </label>
+            {/* <label for="AI-difficulty" >AI Difficulty: </label>
             <select 
             name="AI-difficulty" 
             id="AI-difficulty"
@@ -88,15 +105,15 @@ const CreateGameForm = () => {
              >
                 <option value="yes">Yes</option>
                 <option value="no">No</option>
-            </select>
-
+            </select> */}
         </form>
 
-            <button
-            onClick={createGameFunc}
-            >
-            Create Game
-            </button>
+        <button
+        onClick={handleSubmit}
+        >
+        Create Game
+        </button>
+
         
       </>
     );
