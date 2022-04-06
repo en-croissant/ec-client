@@ -44,6 +44,7 @@ function LoginForm() {
 
   return (
     <>
+      {/* <div id="clipboard_back"></div> */}
       <form aria-label="login-form" id="login_form" onSubmit={handleSubmit}>
         <div id="back_paper"></div>
         <div>
@@ -51,6 +52,7 @@ function LoginForm() {
           <div id="user_icon"></div>
           <label htmlFor="username">Username:</label>
           <input
+            className="password-field"
             aria-label="username-field"
             type="text"
             name="username"
@@ -63,6 +65,7 @@ function LoginForm() {
         <div>
           <label htmlFor="password">Password:</label>
           <input
+            className="cb pristine"
             aria-label="password-field"
             type="password"
             name="password"
@@ -72,6 +75,7 @@ function LoginForm() {
             required
           />
         </div>
+
         <div id="btn_doodle">
           <input
             id="submit_btn"
