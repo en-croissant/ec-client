@@ -18,15 +18,21 @@ const JoinGame = () => {
 
   const socket = io("https://en-croissant.herokuapp.com");
 
-  const settings = { difficultyAI, gameMode, timeLimit, saveGame }
-  const navigate = useNavigate;
-
-  const fetchGameLobby = async () => {
-    const { settings } = await axios.post("https://en-croissant.herokuapp.com/lobby/");
-    // set(settings);
-  };
-
-  useEffect(fetchGameLobby, []);
+  // const settings = { difficultyAI, gameMode, timeLimit, saveGame }
+  
+  useEffect(() => {
+    const lobby_id = window.location.pathname.split('/')[2]
+    const fetchLobbyData = async () => {
+      const { data } = await axios.get(`https://en-croissant.herokuapp.com/lobby/${lobby_id}`);
+      setUsername1(data.player_1_username)
+      setUsername2(data.player_2_username)
+      setRoomName(data.lobby_id)
+      if (user===data.player_1_username) {
+        setIsHost(true)
+      }
+    }
+    fetchLobbyData()
+  }, []);
 
 
   const onClickEvent = (e) => {
@@ -34,28 +40,28 @@ const JoinGame = () => {
     setRedirect(true);
   };
 
-    return (
-      <>
+  return (
+    <>
 
-        {redirect ? navigate("/play") : undefined}
+      {redirect ? navigate("/play") : undefined}
 
-        <div>
-          <h2>Game settings</h2>
-          <ul>
-            <li>Room name: {roomName}</li>
-            <li>Player 1: {username1}</li>
-            <li>Player 2: {username2}</li>
-            <li>AI difficulty: {difficultyAI}</li>
-            <li>Game mode: {gameMode}</li>
-            <li>Time limit: {timeLimit}</li>
-            <li>Save game: {saveGame}</li>
-          </ul>
-        </div>
+      <div>
+        <h2>Game settings</h2>
+        <ul>
+          <li>Room name: {roomName}</li>
+          <li>Player 1: {username1}</li>
+          <li>Player 2: {username2}</li>
+          <li>AI difficulty: {difficultyAI}</li>
+          <li>Game mode: {gameMode}</li>
+          <li>Time limit: {timeLimit}</li>
+          <li>Save game: {saveGame}</li>
+        </ul>
+      </div>
 
-        <button
-        onClick={(e)=> onClickEvent(e)}
-        >Play Game</button>
-      </>
-    );
-  };
-  export default JoinGame;
+      <button
+      onClick={(e)=> onClickEvent(e)}
+      >Play Game</button>
+    </>
+  );
+};
+export default JoinGame;
