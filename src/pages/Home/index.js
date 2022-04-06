@@ -1,10 +1,17 @@
 import React from "react";
 import "./style.css";
-import { TableObjects, LightSwitch, FlyingPaper } from "../../components";
+import { TableObjects } from "../../components";
+import { fadeIn } from "react-animations";
+import Radium, { StyleRoot } from "radium";
 
 import { useAuthContext } from "../../contexts/auth";
 // import { useNavigate } from "react-router-dom";
-
+const styles = {
+  fadeIn: {
+    animation: "x 2s",
+    animationName: Radium.keyframes(fadeIn, "fadeIn"),
+  },
+};
 function Home() {
   const { user, logout } = useAuthContext();
   // const navigate = useNavigate()
@@ -18,10 +25,16 @@ function Home() {
   return (
     <>
       <div className="wrapper">
-        {!!user && <input type="submit" onClick={handleLogout} value="Logout" />}
+        {!!user && (
+          <input type="submit" onClick={handleLogout} value="Logout" />
+        )}
         <div id="homeDiv"></div>
-        <div className ="HomeTitle">En Croissant</div>
-        <LightSwitch />
+        <StyleRoot>
+          <div className="HomeTitle" style={styles.fadeIn}>
+            En Croissant
+          </div>
+        </StyleRoot>
+        {/* <LightSwitch /> */}
         <div id="table">
           <TableObjects />
           <div id="table_top"></div>
