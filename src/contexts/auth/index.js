@@ -15,7 +15,7 @@ export const AuthProvider = ({ children }) => {
   function getCurrentUser() {
     const token = localStorage.getItem("token");
     if (token) {
-      return jwt_decode(token).username;
+      return jwt_decode(token).sub;
     }
     return null;
   }
