@@ -1,6 +1,9 @@
 import { renderHook, act } from "@testing-library/react-hooks";
 import "jest-localstorage-mock";
 
+import axios from 'axios'
+jest.mock('axios')
+
 import { AuthProvider, useAuthContext } from ".";
 
 describe("useAuthContext", () => {

@@ -1,13 +1,8 @@
-import React, { useEffect } from "react";
+import React from "react";
 import "./style.css";
 import { TableObjects } from "../../components";
-// import { useAuthContext } from '../../contexts/auth'
 
 function Home() {
-  // const {user} = useAuthContext()
-  // useEffect(() => {
-  //   console.log(user)
-  // }, [])
   return (
     <>
       <div id="homeDiv">
