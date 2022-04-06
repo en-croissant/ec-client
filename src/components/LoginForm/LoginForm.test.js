@@ -1,7 +1,18 @@
-import { screen } from '@testing-library/react'
-
+import { screen, act } from '@testing-library/react'
 
 import { default as LoginForm } from '.'
+
+global.axios = jest.fn(() => 
+  Promise.resolve({
+    json: () => 
+      Promise.resolve({
+        data: {
+          success: true,
+          token: "Bearer testtoken"
+        }
+      })
+  })
+)
 
 describe("LoginForm", () => {
   describe("rendering", () => {
@@ -56,9 +67,20 @@ describe("LoginForm", () => {
       expect(loading).toBeInTheDocument()
     })
 
-    // test("On form submit navigate to the home page", () => {
+    // test("It stores token in local storage on successful login", async () => {
     //   renderWithProviders(<LoginForm/>)
-    //   userEvent.submit(screen.getByRole('button'), )
+    //   userEvent.type(screen.getByLabelText('username-field'), 'te')
+    //   userEvent.type(screen.getByLabelText('password-field'), 'st{enter}')
+    //   const token = await act(async () => localStorage.getItem('token'))
+    //   expect(token).toBeTruthy()
+    // })
+
+    // test("it renders an error message on unsuccessful login attempt", async () => {
+    //   renderWithProviders(<LoginForm/>)
+    //   userEvent.type(screen.getByLabelText('username-field'), 'fakeuser')
+    //   userEvent.type(screen.getByLabelText('password-field'), 'sldglsdflanf{enter}')
+    //   const error = await act(async () => screen.getByTestId('error'))
+    //   expect(error).toBeInTheDocument()
     // })
   })
 })
