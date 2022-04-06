@@ -26,7 +26,6 @@ const JoinGame = () => {
   useEffect(async () => {
     const lobby_id = window.location.pathname.split('/')[2]
     let hostName;
-    console.log(user)
     const fetchLobbyData = async () => {
       const { data } = await axios.get(`https://en-croissant.herokuapp.com/lobby/${lobby_id}`);
       setUsername1(data.player_1_username)
@@ -35,7 +34,6 @@ const JoinGame = () => {
       hostName = data.player_1_username
     }
     await fetchLobbyData()
-    console.log(hostName)
     if (user===hostName) {
       setIsHost(true)
     }

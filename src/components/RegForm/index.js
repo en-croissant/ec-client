@@ -44,7 +44,6 @@ function RegForm() {
     try {
       setLoading(true);
       const regResult = await register(formData);
-      console.log(regResult)
       if (regResult === "Registration successful") {
         await login(formData);
         navigate("/");
