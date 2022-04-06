@@ -61,62 +61,65 @@ function RegForm() {
     <>
       <div id="clipboard_back">
         <div id="clip"></div>
-        <form aria-label="login-form" id="login_form" onSubmit={handleSubmit}>
+        <form aria-label="reg-form" id="reg_form" onSubmit={handleSubmit}>
           <div id="back_paper"></div>
           <div>
-            <h1> Sign up here!</h1>
+            <h1 className="reg-title"> Sign up here!</h1>
             <div id="user_icon"></div>
-            <label htmlFor="username">Username:</label>
+            <label className="reg-label-username" htmlFor="username">
+              Username:
+            </label>
             <input
-            aria-label="username-field"
-            type="text"
-            name="username"
-            value={formData.username}
-            onChange={handleInput}
-            placeholder="Enter username"
-            required
-            // pattern={"([0-9]|[A-Z]|[a-z]){4,20}"}
-          />
+              className="reg-input-username"
+              aria-label="username-field"
+              type="text"
+              name="username"
+              value={formData.username}
+              onChange={handleInput}
+              placeholder="Enter username"
+              required
+              // pattern={"([0-9]|[A-Z]|[a-z]){4,20}"}
+            />
           </div>
           <div>
             <label htmlFor="email">Email:</label>
-          <input
-            aria-label="email-field"
-            type="text"
-            name="email"
-            value={formData.email}
-            onChange={handleInput}
-            placeholder="Enter email"
-            required
-            // pattern={"([0-9]|[A-Z]|[a-z]){1,30}@([0-9]|[A-Z]|[a-z]){1,10}.([0-9]|[A-Z]|[a-z]){1,10}(.([0-9]|[A-Z]|[a-z]){1,10})?"}
-          />
+            <input
+              aria-label="email-field"
+              type="text"
+              name="email"
+              value={formData.email}
+              onChange={handleInput}
+              placeholder="Enter email"
+              required
+              // pattern={"([0-9]|[A-Z]|[a-z]){1,30}@([0-9]|[A-Z]|[a-z]){1,10}.([0-9]|[A-Z]|[a-z]){1,10}(.([0-9]|[A-Z]|[a-z]){1,10})?"}
+            />
           </div>
           <div>
-          <label htmlFor="password">Password:</label>
-          <input
-            aria-label="password-field"
-            type="password"
-            name="password"
-            value={formData.password}
-            onChange={handleInput}
-            placeholder="Password"
-            // pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,30}$"
-            required
-          />
-        </div>
-        <div>
-          <label htmlFor="passwordConfirmation">Confirm Password:</label>
-          <input
-            aria-label="passwordConfirmation-field"
-            type="password"
-            name="passwordConfirmation"
-            value={formData.passwordConfirmation}
-            onChange={handleInput}
-            placeholder="Confirm Password"
-            required
-            pattern={password}
-          />
-        </div>
+            <label htmlFor="password">Password:</label>
+            <input
+              aria-label="password-field"
+              type="password"
+              name="password"
+              value={formData.password}
+              onChange={handleInput}
+              placeholder="Password"
+              // pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,30}$"
+              required
+            />
+          </div>
+          <div>
+            <label htmlFor="passwordConfirmation">Confirm Password:</label>
+            <input
+              aria-label="passwordConfirmation-field"
+              type="password"
+              name="passwordConfirmation"
+              value={formData.passwordConfirmation}
+              onChange={handleInput}
+              placeholder="Confirm Password"
+              required
+              pattern={password}
+            />
+          </div>
           <div id="btn_doodle">
             <input
               id="submit_btn_reg"

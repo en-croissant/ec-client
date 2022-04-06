@@ -9,3 +9,30 @@
   font-weight: bold;
 }
 
+
+
+#reg_form {
+  position: fixed;
+  background: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  margin: 26px auto 0;
+  width: 260px;
+  padding: 50px;
+  display: block;
+  left: 50%;
+  top: 28%;
+  height: 300px;
+}
+
+.reg-title{
+  margin-bottom: -20px;
+}
+
+
+.reg-label-username{
+  margin-bottom: -20px;
+}
+
+reg-input-username{
+  margin-bottom: -20px;
+}

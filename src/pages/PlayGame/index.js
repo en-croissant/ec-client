@@ -6,11 +6,12 @@ function PlayGame() {
 
 
     const socket = io("https://en-croissant.herokuapp.com");
+    socket.on("hello world", ({ data }) => console.log(data));
 
     return (
         <>
             <div>
-                <GameChessboard />
+                <GameChessboard socket={socket} />
             </div>
         </>
   );
@@ -24,3 +25,4 @@ export default PlayGame;
 // 
 // 
 // dont want make random move but have savegamemutate from github 
+
