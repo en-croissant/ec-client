@@ -16,24 +16,23 @@ function Home() {
 
   return (
     <>
-      <div className ="wrapper">
+      <div className="wrapper">
         <input type="submit" onClick={handleLogout} value="Logout" />
-        <div id="homeDiv">
-        </div>
-        <TableObjects />
+        <div id="homeDiv"></div>
         <div id="table">
-        <div id="table_top"></div>
-        <div id="table_top_front"></div>
-        <div id="table_top_side"></div>
-        <div id="l_back_leg_a"></div>
-        <div id="l_back_leg_b"></div>
-        <div id="l_front_leg_a"></div>
-        <div id="l_front_leg_b"></div>
-        <div id="r_front_leg_a"></div>
-        <div id="r_front_leg_b"></div>
-        <div id="r_back_leg_a"></div>
-        <div id="r_back_leg_b"></div>
-      </div>
+          <TableObjects />
+          <div id="table_top"></div>
+          <div id="table_top_front"></div>
+          <div id="table_top_side"></div>
+          <div id="l_back_leg_a"></div>
+          <div id="l_back_leg_b"></div>
+          <div id="l_front_leg_a"></div>
+          <div id="l_front_leg_b"></div>
+          <div id="r_front_leg_a"></div>
+          <div id="r_front_leg_b"></div>
+          <div id="r_back_leg_a"></div>
+          <div id="r_back_leg_b"></div>
+        </div>
       </div>
     </>
   );
