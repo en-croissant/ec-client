@@ -5,6 +5,7 @@
   background: linear-gradient(315deg, #8e4f18 0%, #a55c1b 50%, #7a4618 74%);
   display: flex;
   align-items: center;
+  transform: scale(1.2);
 }
 
 .bookfonttext {
@@ -21,7 +22,7 @@
 }
 
 h3 {
-  font-size: 15px;
+  font-size: 10px;
 }
 h4 {
   font-family: "Special Elite", cursive;
