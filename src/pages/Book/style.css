@@ -21,6 +21,10 @@
   font-weight: bold;
 }
 
+.backpiece:hover {
+  opacity: 50%;
+}
+
 h3 {
   font-size: 10px;
 }

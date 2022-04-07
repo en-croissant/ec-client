@@ -11,3 +11,16 @@
   border-bottom: solid 10px rgb(100, 54, 28);
   border-left: solid 10px rgb(93, 51, 27);
 }
+
+
+.backpieceplay {
+  position: absolute;
+  bottom: 100px;
+  left: 200px;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.backpieceplay:hover {
+  opacity: 50%;
+}

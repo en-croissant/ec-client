@@ -17,7 +17,7 @@ function PlayGame() {
           <GameChessboard socket={socket} />
         </div>
         <a href="/">
-          <div class="backpiece">&#9820; Go Back</div>
+          <div class="backpieceplay">&#9820; Go Back</div>
         </a>
       </div>
     </>
