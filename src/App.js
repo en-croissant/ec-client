@@ -22,7 +22,7 @@ function App() {
           <>
             <Route path={"/main"} element={<Pages.Main />} />
             <Route path={"/create"} element={<Pages.CreateGame />} />
-            <Route path={"/play"} element={<Pages.PlayGame />} />
+            <Route path={"/play/*"} element={<Pages.PlayGame />} />
             <Route path={"/lobby/*"} element={<Pages.Lobby />} />
           </>
         )}
