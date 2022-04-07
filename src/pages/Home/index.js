@@ -18,8 +18,13 @@ function Home() {
      const [showLogin, setShowLogin] = useState(false);
 
      const onClick = () => {
-         setShowLogin(true);
-     };
+       if (showLogin == true || showReg == true) {
+         setShowLogin(false);
+         setShowReg(false)
+     } else {
+       setShowLogin(true)
+     }
+    }
 
      const onClickbutton = () => {
        if (showLogin ==true) {
@@ -30,6 +35,9 @@ function Home() {
          setShowLogin(true)
        }
      }
+
+
+   
 
   return (
     <>
