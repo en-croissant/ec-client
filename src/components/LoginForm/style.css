@@ -50,12 +50,26 @@ label:where(:hover, :focus-visible) {
   background-position-x: left;
 }
 
+input {
+  border: none;
+  background-color: transparent;
+  outline: none;
+  margin-top: 15px;
+  margin-left: 20px;
+  font-family: "Grape Nuts", cursive;
+  font-size: 15px;
+}
+
+#login-title {
+  margin-bottom: 1em;
+}
+
 #username {
   border: none;
   background-color: transparent;
   outline: none;
   margin-top: 10px;
-  margin-left: 15px;
+  margin-left: 10px;
   font-family: "Grape Nuts", cursive;
   font-size: 20px;
 }
@@ -63,10 +77,13 @@ label:where(:hover, :focus-visible) {
   border: none;
   background-color: transparent;
   outline: none;
-
-  margin-left: 15px;
+  margin-left: 10px;
   font-family: "Grape Nuts", cursive;
   font-size: 20px;
+}
+
+.field-div {
+  display: flex;
 }
 
 h1 {
