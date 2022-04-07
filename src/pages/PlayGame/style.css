@@ -2,8 +2,6 @@
   height: 500px;
   width: 500px;
   background: rgb(233, 223, 196);
-
-  background-size: 120px;
   background-repeat: repeat;
   display: flex;
   justify-content: center;

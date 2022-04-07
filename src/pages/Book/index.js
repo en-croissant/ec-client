@@ -30,12 +30,22 @@ function Book(props) {
           </div>
           {/* </div> */}
         </div>
-        <div className="leftpage">Page 1</div>
-        <div className="rightpage">Page 2</div>
-        <div className="leftpage">Page 3</div>
-        <div className="rightpage">Page 4</div>
-        <div className="leftpage">Page 5</div>
-        <div className="rightpage">Page 6</div>
+        <div className="leftpage">
+          <br></br>1
+        </div>
+        <div className="rightpage">
+          <br></br>2
+        </div>
+        <div className="leftpage">
+          <br></br>3
+        </div>
+        <div className="rightpage">
+          <br></br>4
+        </div>
+        <div className="leftpage">
+          <br></br>5
+        </div>
+        <div className="rightpage"><br></br>6</div>
       </HTMLFlipBook>
       ;
       <a className="goBack" href="/">
