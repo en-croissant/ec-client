@@ -1,11 +1,14 @@
 .leftpage {
   background-color: whitesmoke;
   border-radius: 10px;
+  border-left:6px solid grey;
 }
 
 .rightpage {
   background-color: whitesmoke;
-  border-radius: 10px;
+  border-radius: 0px 10px 10px 0px;
+  border-right: 6px solid grey;
+  border-left: solid 1px black;
 }
 
 .bookfront {
@@ -15,23 +18,8 @@
   height: 600px;
   width: 420px;
 
-  /* background-color: rgb(182, 16, 16);
-  box-shadow: 0 4px 5px 0 rgba(0, 0, 0);
-  height: 600px;
-  width: 500px;
-  top: 50%;
-  left: 50%;
-  border-radius: 2px 5px 5px 2px;
-  position: fixed;
-  margin-left: -320px;
-  margin-top: -303px;
-  transform: skewY(0deg);
-  z-index: -1; */
 }
 
-.bookfrontpage{
-  margin-right: 200px;
-}
 
 /* .bookfronttext {
   background-color: whitesmoke;
@@ -199,3 +187,79 @@
   transform: skewY(0deg);
   z-index: -1;
 } 
+
+
+
+
+
+
+
+
+
+
+
+
+.front,
+.right_page,
+.right_mid,
+.right_last {
+  transform-style: preserve-3d;
+  position: absolute;
+  height: 100%;
+  top: 0;
+  right: 0;
+  transform-origin: left center;
+  transition: transform 0.5s ease-in-out, box-shadow 0.35s ease-in-out;
+}
+.back,
+.left_page,
+.left_mid,
+.left_last {
+  transform-style: preserve-3d;
+  position: absolute;
+  height: 100%;
+  top: 0;
+  left: 0;
+  transform-origin: right center;
+  transition: transform 0.5s ease-in-out, box-shadow 0.35s ease-in-out;
+}
+
+.front {
+  transform: rotateY(-10deg) scale(1.1);
+  box-shadow: 0 1em 3em 0 rgba(0, 0, 0, 0.2);
+}
+.right_mid {
+  transform: rotateY(-12deg) scale(1.1);
+  box-shadow: 0 1em 3em 0 rgba(0, 0, 0, 0.2);
+  background-color: var(--bg_white);
+  width: 50%;
+}
+.right_last {
+  transform: rotateY(-14deg) scale(1.1);
+  box-shadow: 0 1em 3em 0 rgba(0, 0, 0, 0.2);
+  background-color: var(--bg_white);
+  width: 50%;
+}
+.right_page {
+  transform: rotateY(-16deg) scale(1.1);
+  box-shadow: 0 1em 3em 0 rgba(0, 0, 0, 0.2);
+  /* background-color: var(--bg_white); */
+}
+
+.left_page {
+  transform: rotateY(22deg) scale(1.1);
+  box-shadow: 0 1em 3em 0 rgba(0, 0, 0, 0.2);
+  /* background-color: var(--bg_white); */
+}
+.left_mid {
+  transform: rotateY(18deg) scale(1.1);
+  box-shadow: 0 1em 3em 0 rgba(0, 0, 0, 0.2);
+  background-color: var(--bg_white);
+  width: 50%;
+}
+.left_last {
+  transform: rotateY(14deg) scale(1.1);
+  box-shadow: 0 1em 3em 0 rgba(0, 0, 0, 0.2);
+  background-color: var(--bg_white);
+  width: 50%;
+}
