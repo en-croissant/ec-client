@@ -24,58 +24,58 @@ describe("useAuthContext", () => {
     expect(localStorage.clear).toHaveBeenCalled();
   });
 
-  // describe("register", () => {
-  //   test("if no error recieved from axios then login is called", async () => {
-  //     const testUser = {
-  //       username: "tester",
-  //       password: "testword"
-  //     };
-  //     const { result } = renderHook(() => useAuthContext(), {
-  //       wrapper
-  //     });
-  //     jest.spyOn(axios, "post").mockResolvedValue({ data: {} });
-  //     jest.spyOn(result.current, "login");
-  //     act(async () => {
-  //       await axios.post.mockImplementationOnce(() => Promise.resolve({data: {}}))
-  //       await result.current.register(testUser)
-  //     });
-  //     expect(result.current.login).toHaveBeenCalled();
-  //   });
+  describe("register", () => {
+    test("if no error recieved from axios then login is called", async () => {
+      const testUser = {
+        username: "tester",
+        password: "testword"
+      };
+      const { result } = renderHook(() => useAuthContext(), {
+        wrapper
+      });
+      jest.spyOn(axios, "post").mockResolvedValue({ data: {} });
+      jest.spyOn(result.current, "login");
+      act(async () => {
+        await axios.post.mockImplementationOnce(() => Promise.resolve({data: {}}))
+        await result.current.register(testUser)
+      });
+      expect(result.current.login).toHaveBeenCalled();
+    });
 
-  //   test("it should catch an error thrown by axios", async () => {
-  //     let authContext;
-  //     const testUser = {
-  //       username: "tester",
-  //       password: "testword"
-  //     };
-  //     const { result } = renderHook(() => (authContext = useAuthContext()), {
-  //       wrapper
-  //     });
-  //     jest.spyOn(axios, "post").mockImplementation(() => {
-  //       throw new Error("test error");
-  //     });
-  //     await act(async () => await result.current.register(testUser));
-  //     expect(authContext.register).toThrow("test error");
-  //   });
-  // });
+    test("it should catch an error thrown by axios", async () => {
+      let authContext;
+      const testUser = {
+        username: "tester",
+        password: "testword"
+      };
+      const { result } = renderHook(() => (authContext = useAuthContext()), {
+        wrapper
+      });
+      jest.spyOn(axios, "post").mockImplementation(() => {
+        throw new Error("test error");
+      });
+      await act(async () => await result.current.register(testUser));
+      expect(authContext.register).toThrow("test error");
+    });
+  });
 
-  // describe("login", () => {
-  //   test("if login successful it should set localStorage and setCurrentUser", async () => {});
+  describe("login", () => {
+    test("if login successful it should set localStorage and setCurrentUser", async () => {});
 
-  //   test("it should catch an error if token generation is unsuccessful", async () => {
-  //     const testUser = {
-  //       username: "tester",
-  //       password: "testword"
-  //     };
-  //     const { result } = renderHook(() => useAuthContext(), {
-  //       wrapper
-  //     });
-  //     let res;
-  //     await act(async () => {
-  //       await axios.post.mockImplementationOnce(() => Promise.resolve({data: {err: "not authorized"}}))
-  //       res = result.current.login(testUser)
-  //     });
-  //     expect(res).toMatch(/not authorised/i);
-  //   });
-  // });
+    test("it should catch an error if token generation is unsuccessful", async () => {
+      const testUser = {
+        username: "tester",
+        password: "testword"
+      };
+      const { result } = renderHook(() => useAuthContext(), {
+        wrapper
+      });
+      let res;
+      await act(async () => {
+        await axios.post.mockImplementationOnce(() => Promise.resolve({data: {err: "not authorized"}}))
+        res = result.current.login(testUser)
+      });
+      expect(res).toMatch(/not authorised/i);
+    });
+  });
 });

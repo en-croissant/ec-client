@@ -8,9 +8,17 @@
     font-weight: 600;
     cursor: pointer;
     margin: auto;
-    margin-bottom: 10px;
+    margin-bottom: 0px;
+    margin-top: -50px;
     color: black;
-    margin-left: 10px;
+    margin-left: 0px;
+    z-index: 10;
+    background-color: whitesmoke;
+    width: 100px
+}
+
+.authbutton:hover{
+    opacity: 50%;
 }
 
 

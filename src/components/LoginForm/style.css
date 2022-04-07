@@ -15,6 +15,7 @@
   height: 300px;
 }
 
+
 #back_paper:before,
 #back_paper:after {
   content: "";
@@ -122,14 +123,14 @@ h1 {
 #clipboard_back {
   background-color: rgb(149, 80, 39);
   background-image: url("https://www.transparenttextures.com/patterns/wood-pattern.png");
-  width: 345px;
+  width: 360px;
   position: fixed;
   box-shadow: 10px 0px 15px rgba(0, 0, 0, 0.3);
-  margin: 26px auto 0;
-  padding: 50px;
+  margin: 10px 0 0 0;
+  padding: 10px;
   left: 47%;
   top: 25%;
-  height: 370px;
+  height: 420px;
   border-left: solid 15px;
   border-left-color: rgb(115, 62, 32);
 }
@@ -139,7 +140,7 @@ h1 {
   width: 190px;
   position: absolute;
   top: -4%;
-  left: 30%;
+  left: 25%;
   border-top-left-radius: 20%;
   border-top-right-radius: 20%;
   z-index: 99;

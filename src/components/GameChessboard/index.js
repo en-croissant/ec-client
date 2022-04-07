@@ -1,11 +1,11 @@
 import { useRef, useState, useEffect } from "react";
 import Chess from "chess.js";
 import { Chessboard } from "react-chessboard";
+import { MatchResult } from "../"
 
-// socket.on("hello world", ({ data }) => console.log(data));
+import "./style.css"
 
 function Gameboard({ socket }) {
-
   useEffect(() => {
     const lobby_id = window.location.pathname.split("/")[2];
     socket.emit('join', {lobby_id:lobby_id})
@@ -13,7 +13,6 @@ function Gameboard({ socket }) {
       console.log(game.fen())
       setGame(new Chess(board))
     socket.on('opponent move', ({chessMove}) => {
-      setLastMove(chessMove)
       safeGameMutate((game) => {
         game.move(chessMove)
       })
@@ -21,13 +20,9 @@ function Gameboard({ socket }) {
     })
   }, [socket])
 
-
-
   const chessboardRef = useRef();
   const [game, setGame] = useState(new Chess());
-  const [lastMove, setLastMove] = useState("");
-  
-
+  const [outcome, setOutcome] = useState("");
 
   function safeGameMutate(modify) {
     setGame((g) => {
@@ -44,13 +39,23 @@ function Gameboard({ socket }) {
       to: targetSquare,
       promotion: "q", // always promote to a queen for example simplicity
     });
-    socket.emit("move piece", {"move":move});
-    setGame(gameCopy);
+    socket.emit("move piece", { move: move });
+    safeGameMutate((game) => {
+      game.move(move)
+      if(game.game_over()){
+        if(game.in_checkmate()){
+          const loser = game.fen().split(" ")[1]
+          const winner = loser == "b" ? "1" : "2"
+          setOutcome(`Player ${winner} has won the match`)
+          }else{
+          setOutcome("Match is a tie")
+      }}
+    });
     return move;
   }
 
   return (
-    <div>
+    <div id="chessboard">
       <Chessboard
         aria-label="chessboard"
         id="PlayVsPlay"
@@ -60,10 +65,15 @@ function Gameboard({ socket }) {
         onPieceDrop={onDrop}
         customBoardStyle={{
           borderRadius: "4px",
-          boxShadow: "0 5px 15px rgba(0, 0, 0, 0.5)",
+          // boxShadow: "0 5px 15px rgba(0, 0, 0, 0.5)",
         }}
         ref={chessboardRef}
       />
+      {outcome ? (
+          <MatchResult outcome={outcome} />
+      ) : (
+        <></>
+      )}
       {/* <button
         className="rc-button"
         onClick={() => {

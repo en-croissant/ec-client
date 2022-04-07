@@ -13,9 +13,12 @@ function Header() {
   };
 
   return (
-    <>
-      <span className = "header"> 
-        <input className="logoutheader" type="submit" onClick={handleLogout} value="Logout" />
+    <> 
+      <span className = "header float"> 
+        <a className="goBack float some-font" href="/">
+          <span>Go back</span>
+        </a>
+          <input className="logoutheader" type="submit" onClick={handleLogout} value="Logout" />
       </span>
     </>
   );

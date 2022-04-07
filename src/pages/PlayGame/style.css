@@ -1,0 +1,14 @@
+#chessboard_border {
+  height: 500px;
+  width: 500px;
+  background-color: rgb(124, 67, 33);
+  background-image: url("https://www.transparenttextures.com/patterns/wood-pattern.png");
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  margin-top: 100px;
+  align-items: center;
+  border-radius: 10px;
+  border-bottom: solid 10px rgb(100, 54, 28);
+  border-left: solid 10px rgb(93, 51, 27);
+}

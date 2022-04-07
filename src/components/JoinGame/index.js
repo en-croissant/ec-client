@@ -51,7 +51,7 @@ const JoinGame = () => {
 
   return (
     <>
-      <div>
+      <div className="gameSettings">
         <h3>Game settings</h3>
         <h3>Room name: {roomName}</h3>
         <h3>Player 1: {username1}</h3>
@@ -62,7 +62,7 @@ const JoinGame = () => {
       </div>
 
       {/* {isHost ? ( */}
-        <button aria-label="play-button" onClick={onClickEvent}>
+        <button aria-label="play-button" className = "lobbybutton" onClick={onClickEvent}>
           Start Game
         </button>
       {/* ) : (

@@ -1,11 +1,11 @@
-import React from "react";
+import React, {useState} from "react";
 import "./style.css";
 import { TableObjects, TextScroller } from "../../components";
 import { fadeIn } from "react-animations";
 import Radium, { StyleRoot } from "radium";
 // import {Header} from "../../layout"
 import { useAuthContext } from "../../contexts/auth";
-
+import { LoginForm, RegForm } from "../../components";
 
 const styles = {
   fadeIn: {
@@ -14,7 +14,22 @@ const styles = {
   },
 };
 function Home() {
-  const { user } = useAuthContext();
+     const [showReg, setShowReg] = useState(false);
+     const [showLogin, setShowLogin] = useState(false);
+
+     const onClick = () => {
+         setShowLogin(true);
+     };
+
+     const onClickbutton = () => {
+       if (showLogin ==true) {
+         setShowReg(true)
+         setShowLogin(false)
+       } else {
+         setShowReg(false)
+         setShowLogin(true)
+       }
+     }
 
   return (
     <>
@@ -40,21 +55,42 @@ function Home() {
           <div id="r_back_leg_a"></div>
           <div id="r_back_leg_b"></div>
         </div>
-        <a data-testid="login-link" href={!user ? "/auth" : "/main" }>
-          <div id="home_clip_board">
-            <div id="home_clip_board_paper">
-              <h6>Sign in</h6>
-            </div>
-            {/* <FlyingPaper /> */}
-            <div id="home-clip"></div>
+        {/* <a data-testid="login-link" href={!user ? "/auth" : "/main"}> */}
+        <div onClick={onClick} id="home_clip_board">
+          <div id="home_clip_board_paper">
+            <h6>Sign in</h6>
           </div>
-        </a>
+          {/* <FlyingPaper /> */}
+          <div id="home-clip"></div>
+        </div>
+        {/* </a> */}
+        <div className="homesignup">
+          {showLogin ? (
+            <span
+              data-testid="form-button"
+              className="authbutton"
+              onClick={onClickbutton}
+            >
+              Sign up
+            </span>
+          ) : showReg ? (
+            <span
+              data-testid="form-button"
+              className="authbutton"
+              onClick={onClickbutton}
+            >
+              Login
+            </span>
+          ) : null}
+
+          {showLogin ? <LoginForm /> : showReg ? <RegForm /> : null}
+        </div>
         <TextScroller />
         {/* <Header/> */}
       </div>
     </>
   );
-}
+  };
 
 export default Home;
 

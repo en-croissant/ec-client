@@ -7,6 +7,19 @@
   z-index: -10;
 }
 
+.homebutton {
+  position: fixed;
+  left: -10px;
+  top: -30px;
+}
+
+.homesignup {
+  position: fixed;
+  transform: scale(0.7);
+  top: 60px;
+  left: 1100px;
+}
+
 .HomeTitle {
   color: whitesmoke;
   z-index: 10;
