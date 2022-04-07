@@ -44,10 +44,10 @@ function Gameboard({ socket }) {
     setGame(gameCopy);
     safeGameMutate((game) => {
       const currentTurn = game.fen().split(" ")[1]
-      setTurn(currentTurn == "b" ? "2" : "1")
+      setTurn(currentTurn === "b" ? "2" : "1")
       if(game.game_over()){
         if(game.in_checkmate()){
-          const winner = turn == "2" ? "1" : "2"
+          const winner = turn === "2" ? "1" : "2"
           setOutcome(`Player ${winner} has won the match`)
           }else{
           setOutcome("Match is a tie")
