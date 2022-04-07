@@ -1,5 +1,6 @@
 import React from "react";
 import HTMLFlipBook from "react-pageflip";
+import { Header } from "../../layout";
 import "./style.css";
 
 function Book(props) {
@@ -130,10 +131,7 @@ function Book(props) {
             <h3>En Passant and Castling</h3>
           </div>
         </HTMLFlipBook>
-        ;
-        <a className="goBack" href="/">
-          <span>Go back</span>
-        </a>
+        <Header />
       </div>
     </>
   );
