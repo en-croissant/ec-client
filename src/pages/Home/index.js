@@ -1,26 +1,31 @@
 import React from "react";
 import "./style.css";
-import { TableObjects, LightSwitch, FlyingPaper } from "../../components";
-
+import { TableObjects, TextScroller } from "../../components";
+import { fadeIn } from "react-animations";
+import Radium, { StyleRoot } from "radium";
+// import {Header} from "../../layout"
 import { useAuthContext } from "../../contexts/auth";
-// import { useNavigate } from "react-router-dom";
 
+
+const styles = {
+  fadeIn: {
+    animation: "x 5s",
+    animationName: Radium.keyframes(fadeIn, "fadeIn"),
+  },
+};
 function Home() {
-  const { user, logout } = useAuthContext();
-  // const navigate = useNavigate()
-
-  const handleLogout = async () => {
-    await logout();
-    // navigate('/')
-    window.location.reload(false);
-  };
+  const { user } = useAuthContext();
 
   return (
     <>
       <div className="wrapper">
-        {!!user && <input type="submit" onClick={handleLogout} value="Logout" />}
         <div id="homeDiv"></div>
-        <LightSwitch />
+        <StyleRoot>
+          <div className="HomeTitle" style={styles.fadeIn}>
+            En Croissant
+          </div>
+        </StyleRoot>
+        {/* <LightSwitch /> */}
         <div id="table">
           <TableObjects />
           <div id="table_top"></div>
@@ -35,10 +40,17 @@ function Home() {
           <div id="r_back_leg_a"></div>
           <div id="r_back_leg_b"></div>
         </div>
-        <div id="home_clip_board">
-          {/* <FlyingPaper /> */}
-          <div id="home-clip"></div>
-        </div>
+        <a data-testid="login-link" href={!user ? "/auth" : "/main" }>
+          <div id="home_clip_board">
+            <div id="home_clip_board_paper">
+              <h6>Sign in</h6>
+            </div>
+            {/* <FlyingPaper /> */}
+            <div id="home-clip"></div>
+          </div>
+        </a>
+        <TextScroller />
+        {/* <Header/> */}
       </div>
     </>
   );
@@ -57,3 +69,4 @@ export default Home;
             <div id="whiteR_dgnl"></div>
           </div> */
 }
+

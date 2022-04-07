@@ -38,7 +38,7 @@ h1 {
   background-size: 49% 100%;
   background-position: 2% 0, 98% 0;
 }
-#poster:after {
+/* #poster:after {
   height: 100%;
   top: 0px;
   z-index: 2;
@@ -73,7 +73,7 @@ h1 {
     50% 33.3333%;
   background-position: right top, left center, left bottom, left top, left top,
     right top, left center, right center, right center, left bottom;
-}
+} */
 
 #cork_board {
   background: url(https://www.pikpng.com/pngl/b/282-2820639_pin-board-cork-wood-memo-frame-pin-cork.png)

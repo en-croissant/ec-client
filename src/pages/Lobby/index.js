@@ -1,10 +1,12 @@
 import React from "react";
 import { JoinGame } from "../../components";
+import { Header } from '../../layout'
 import "./style.css";
 function Lobby() {
   return (
     <>
-      <div id="cork_board"></div>
+    <Header />
+    <div id="cork_board"></div>
       <div id="poster">
         <div id="poster_border">
           <div id="inner_border">
@@ -13,6 +15,9 @@ function Lobby() {
           </div>
         </div>
       </div>
+      <a className="goBack" href="/main">
+        <span>Go back</span>
+      </a>
     </>
   );
 }

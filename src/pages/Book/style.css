@@ -26,3 +26,8 @@
   padding-top: 30px;
   border-bottom: green solid 25px;
 }
+
+.HTMLFlipBook {
+  margin-left: 420px;
+  position: fixed;
+}

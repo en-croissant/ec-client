@@ -1,0 +1,22 @@
+#createGame {
+   width: 250px;
+  height: 200px;
+  text-align: justify;
+  position: relative;
+  display: inline-block;
+  margin-top: 20px;
+  font-size: 20px;
+}
+
+
+#joinGame {
+  width: 250px;
+  height: 200px;
+  text-align: justify;
+  position: relative;
+  display: inline-block;
+  margin-top: 20px;
+  font-size: 20px;
+
+
+}
