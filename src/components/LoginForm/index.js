@@ -77,7 +77,16 @@ function LoginForm() {
               required
             />
           </div>
-
+          {error && (
+            <div data-testid="error" id="error">
+              Incorrect Username or Password
+            </div>
+          )}
+          {loading && (
+            <div data-testid="loading" id="loading">
+              Logging in . . .
+            </div>
+          )}
           <div id="btn_doodle">
             <input
               id="submit_btn"
@@ -94,16 +103,6 @@ function LoginForm() {
           </div>
         </form>
       </div>
-      {error && (
-        <div data-testid="error" id="error">
-          {error}
-        </div>
-      )}
-      {loading && (
-        <div data-testid="loading" id="loading">
-          Logging in . . .
-        </div>
-      )}
     </>
   );
 }
