@@ -1,3 +1,4 @@
 #chessboard{
-    position: relative
+    position: relative;
+    display: flex;
 }
