@@ -72,7 +72,7 @@ function RegForm() {
                 name="username"
                 value={formData.username}
                 onChange={handleInput}
-                placeholder="Enter username"
+                placeholder="username"
                 required
                 // pattern={"([0-9]|[A-Z]|[a-z]){4,20}"}
               />
@@ -86,7 +86,7 @@ function RegForm() {
               name="email"
               value={formData.email}
               onChange={handleInput}
-              placeholder="Enter email"
+              placeholder="email"
               required
               // pattern={"([0-9]|[A-Z]|[a-z]){1,30}@([0-9]|[A-Z]|[a-z]){1,10}.([0-9]|[A-Z]|[a-z]){1,10}(.([0-9]|[A-Z]|[a-z]){1,10})?"}
             />
@@ -99,7 +99,7 @@ function RegForm() {
               name="password"
               value={formData.password}
               onChange={handleInput}
-              placeholder="Password"
+              placeholder="password"
               // pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,30}$"
               required
             />
@@ -112,7 +112,7 @@ function RegForm() {
               name="passwordConfirmation"
               value={formData.passwordConfirmation}
               onChange={handleInput}
-              placeholder=" Confirm Password"
+              placeholder="password"
               required
               pattern={password}
             />
