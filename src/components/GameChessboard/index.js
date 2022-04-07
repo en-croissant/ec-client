@@ -8,11 +8,26 @@ function Gameboard({ socket }) {
 
   useEffect(() => {
     socket.emit('join', {lobby_id:'play'})
-  }, [])
+    socket.on('initial board', ({board}) => {
+      console.log(board)
+      console.log(game.fen())
+      setGame(new Chess(board))
+    socket.on('opponent move', ({chessMove}) => {
+      setLastMove(chessMove)
+      safeGameMutate((game) => {
+        game.move(chessMove)
+      })
+    })
+    })
+  }, [socket])
+
+
 
   const chessboardRef = useRef();
   const [game, setGame] = useState(new Chess());
   const [lastMove, setLastMove] = useState("");
+  
+
 
   function safeGameMutate(modify) {
     setGame((g) => {
@@ -29,21 +44,11 @@ function Gameboard({ socket }) {
       to: targetSquare,
       promotion: "q", // always promote to a queen for example simplicity
     });
-    socket.emit("move piece", {"move":move, "lobby_id":"play"});
+    socket.emit("move piece", {"move":move});
     setGame(gameCopy);
+    console.log(game.fen())
     return move;
   }
-
-  useEffect(()=>{
-    safeGameMutate(game => game.move(lastMove))
-  },[lastMove])
-
-  socket.on('opponent move', ({chessMove}) => {
-    setLastMove(chessMove)
-    // safeGameMutate((game) => {
-    //   game.move(chessMove)
-    // })
-  })
 
   return (
     <div>
