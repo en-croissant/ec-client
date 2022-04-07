@@ -60,6 +60,10 @@ input {
   font-size: 15px;
 }
 
+#login-title {
+  margin-bottom: 1em;
+}
+
 #username {
   border: none;
   background-color: transparent;
