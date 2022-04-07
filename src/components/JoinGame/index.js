@@ -62,7 +62,7 @@ const JoinGame = () => {
       </div>
 
       {/* {isHost ? ( */}
-        <button aria-label="play-button" onClick={onClickEvent}>
+        <button aria-label="play-button" className = "lobbybutton" onClick={onClickEvent}>
           Start Game
         </button>
       {/* ) : (
