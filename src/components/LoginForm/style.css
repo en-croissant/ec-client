@@ -14,7 +14,6 @@
   height: 320px;
 }
 
-
 #back_paper:before,
 #back_paper:after {
   content: "";
@@ -40,7 +39,7 @@
 
 label {
   font-family: "Just Another Hand", cursive;
-  font-size: 20px;
+  font-size: 34px;
   background: linear-gradient(0deg, rgb(227, 239, 93), rgb(227, 239, 93))
     no-repeat right bottom / 0 var(--bg-h);
   transition: background-size 350ms;
@@ -61,11 +60,44 @@ input {
   font-size: 15px;
 }
 
+#login-title {
+  margin-bottom: 1em;
+}
+
+#username {
+  border: none;
+  background-color: transparent;
+  outline: none;
+  margin-top: 10px;
+  margin-left: 10px;
+  font-family: "Grape Nuts", cursive;
+  font-size: 20px;
+}
+#password {
+  border: none;
+  background-color: transparent;
+  outline: none;
+  margin-left: 10px;
+  font-family: "Grape Nuts", cursive;
+  font-size: 20px;
+}
+
+.field-div {
+  display: flex;
+}
+
 h1 {
   font-size: 20px;
   font-family: "Inknut Antiqua", serif;
 }
 #submit_btn {
+  border: none;
+  background-color: transparent;
+  outline: none;
+  margin-top: 30px;
+  margin-left: 15px;
+  font-family: "Grape Nuts", cursive;
+  font-size: 20px;
   font-size: 24px;
   margin-top: 25px;
 }

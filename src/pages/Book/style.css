@@ -3,6 +3,8 @@
   height: 100vh;
   z-index: -10;
   background: linear-gradient(315deg, #8e4f18 0%, #a55c1b 50%, #7a4618 74%);
+  display: flex;
+  align-items: center;
 }
 
 .bookfonttext {
@@ -67,7 +69,6 @@ h5 {
 
 .HTMLFlipBook {
   margin-left: 450px;
-  margin-top: 150px;
   position: fixed;
   z-index: 10;
   transform: scale(1.3);

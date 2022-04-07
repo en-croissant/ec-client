@@ -1,9 +1,10 @@
 import React from "react";
 import { useAuthContext } from "../../contexts/auth";
 import { useNavigate } from "react-router-dom";
-import "./style.css"
 
-function Header() {
+import './style.css'
+
+function Logout() {
   const { logout } = useAuthContext();
   const navigate = useNavigate();
 
@@ -14,14 +15,9 @@ function Header() {
 
   return (
     <> 
-      <span className = "header float"> 
-        <a className="goBack float some-font" href="/">
-          <span>Home</span>
-        </a>
-          <input className="logoutheader" type="submit" onClick={handleLogout} value="Logout" />
-      </span>
+      <input className="logout-btn" type="submit" onClick={handleLogout} value="Logout" />
     </>
   );
 }
 
-export default Header;
+export default Logout;

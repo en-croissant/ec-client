@@ -1,10 +1,9 @@
 import { useRef, useState, useEffect } from "react";
 import Chess from "chess.js";
 import { Chessboard } from "react-chessboard";
-import { MatchResult } from "../"
+import { MatchResult, PlayerTurn, PlayerName } from "../"
 
 import "./style.css"
-import { is } from "@react-spring/shared";
 
 function Gameboard({ socket }) {
   useEffect(() => {
@@ -24,6 +23,12 @@ function Gameboard({ socket }) {
   const chessboardRef = useRef();
   const [game, setGame] = useState(new Chess());
   const [outcome, setOutcome] = useState("");
+  const [turn, setTurn] = useState("1");
+
+  const [moveFrom, setMoveFrom] = useState('');
+  const [rightClickedSquares, setRightClickedSquares] = useState({});
+  const [moveSquares, setMoveSquares] = useState({});
+  const [optionSquares, setOptionSquares] = useState({});
 
   function safeGameMutate(modify) {
     setGame((g) => {
@@ -35,31 +40,101 @@ function Gameboard({ socket }) {
 
   function onDrop(sourceSquare, targetSquare) {
     const gameCopy = { ...game };
-    try {
-      const move = gameCopy.move({
-      from: sourceSquare,
-      to: targetSquare,
-      promotion: "q",
-      });
-      socket.emit("move piece", { move: move });
-      setGame(gameCopy);
-      safeGameMutate((game) => {
-        if(game.game_over()){
-          if(game.in_checkmate()){
-            const loser = game.fen().split(" ")[1]
-            const winner = loser == "b" ? "1" : "2"
-            setOutcome(`Player ${winner} has won the match`)
-            }else{
-            setOutcome("Match is a tie")
-        }} 
-      });
-      return move; 
-    } catch (err) {
-      console.log("bad move")
-    }
-    
-    
+    const move = gameCopy.move({
+    from: sourceSquare,
+    to: targetSquare,
+    promotion: "q",
+    });
+    socket.emit("move piece", { move: move });
+    setGame(gameCopy);
+    safeGameMutate((game) => {
+      const currentTurn = game.fen().split(" ")[1]
+      setTurn(currentTurn === "b" ? "2" : "1")
+      if(game.game_over()){
+        if(game.in_checkmate()){
+          const winner = turn === "2" ? "1" : "2"
+          setOutcome(`Player ${winner} has won the match`)
+          }else{
+          setOutcome("Match is a tie")
+      }} 
+    });
+    setMoveFrom('');
+    setOptionSquares({});
+    return move;
+  }
 
+  function getMoveOptions(square) {
+    const moves = game.moves({
+      square,
+      verbose: true
+    });
+    if (moves.length === 0) {
+      return;
+    }
+
+    const newSquares = {};
+    moves.map((move) => {
+      newSquares[move.to] = {
+        background:
+          game.get(move.to) && game.get(move.to).color !== game.get(square).color
+            ? 'radial-gradient(circle, rgba(0,0,0,.1) 85%, transparent 85%)'
+            : 'radial-gradient(circle, rgba(0,0,0,.1) 25%, transparent 25%)',
+        borderRadius: '50%'
+      };
+      return move;
+    });
+    newSquares[square] = {
+      background: 'rgba(255, 255, 0, 0.4)'
+    };
+    setOptionSquares(newSquares);
+  }
+
+  function onSquareClick(square) {
+    setRightClickedSquares({});
+
+    function resetFirstMove(square) {
+      setMoveFrom(square);
+      getMoveOptions(square);
+    }
+
+    // from square
+    if (!moveFrom) {
+      resetFirstMove(square);
+      return;
+    }
+
+    // attempt to make move
+    const gameCopy = { ...game };
+    const move = gameCopy.move({
+      from: moveFrom,
+      to: square,
+      promotion: 'q' // always promote to a queen for example simplicity
+    });
+    setGame(gameCopy);
+
+    // if invalid, setMoveFrom and getMoveOptions
+    if (move === null) {
+      resetFirstMove(square);
+      return;
+    }
+
+    setMoveFrom('');
+    setOptionSquares({});
+  }
+
+  function onSquareRightClick(square) {
+    const colour = 'rgba(0, 0, 255, 0.4)';
+    setRightClickedSquares({
+      ...rightClickedSquares,
+      [square]:
+        rightClickedSquares[square] && rightClickedSquares[square].backgroundColor === colour
+          ? undefined
+          : { backgroundColor: colour }
+    });
+  }
+
+  function onPieceDragBegin(piece, sourceSquare){
+    onSquareClick(sourceSquare)
   }
 
   return (
@@ -71,9 +146,17 @@ function Gameboard({ socket }) {
         boardWidth={400}
         position={game.fen()}
         onPieceDrop={onDrop}
+        onPieceDragBegin={onPieceDragBegin}
+        onSquareClick={onSquareClick}
+        onSquareRightClick={onSquareRightClick}
         customBoardStyle={{
           borderRadius: "4px",
           // boxShadow: "0 5px 15px rgba(0, 0, 0, 0.5)",
+        }}
+        customSquareStyles={{
+          ...moveSquares,
+          ...optionSquares,
+          ...rightClickedSquares
         }}
         ref={chessboardRef}
       />
@@ -82,28 +165,9 @@ function Gameboard({ socket }) {
       ) : (
         <></>
       )}
-      {/* <button
-        className="rc-button"
-        onClick={() => {
-          safeGameMutate((game) => {
-            game.reset();
-          });
-          chessboardRef.current.clearPremoves();
-        }}
-      >
-        reset
-      </button>
-      <button
-        className="rc-button"
-        onClick={() => {
-          safeGameMutate((game) => {
-            game.undo();
-          });
-          chessboardRef.current.clearPremoves();
-        }}
-      >
-        undo
-      </button> */}
+      <PlayerTurn turn={turn} /> 
+      <PlayerName playerName="Player 1" isActive={turn==1} isPlayer1="1"/>
+      <PlayerName playerName="Player 2" isActive={turn==2} isPlayer1=""/>
     </div>
   );
 }

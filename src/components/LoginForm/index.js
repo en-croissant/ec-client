@@ -49,22 +49,24 @@ function LoginForm() {
         <form aria-label="login-form" id="login_form" onSubmit={handleSubmit}>
           <div id="back_paper"></div>
           <div>
-            <h1> Login Sheet</h1>
+            <h1 id="login-title"> Login Sheet</h1>
             <div id="user_icon"></div>
-            <label htmlFor="username">Username:</label>
-            <input
-              id="username"
-              className="password-field"
-              aria-label="username-field"
-              type="text"
-              name="username"
-              value={formData.username}
-              onChange={handleInput}
-              placeholder="username"
-              required
-            />
+            <div className="field-div">
+              <label htmlFor="username">Username:</label>
+              <input
+                id="username"
+                className="password-field"
+                aria-label="username-field"
+                type="text"
+                name="username"
+                value={formData.username}
+                onChange={handleInput}
+                placeholder="username"
+                required
+              />
+            </div>
           </div>
-          <div>
+          <div className="field-div">
             <label htmlFor="password">Password:</label>
             <input
               id="password"
@@ -77,7 +79,16 @@ function LoginForm() {
               required
             />
           </div>
-
+          {error && (
+            <div data-testid="error" id="error">
+              Incorrect Username or Password
+            </div>
+          )}
+          {loading && (
+            <div data-testid="loading" id="loading">
+              Logging in . . .
+            </div>
+          )}
           <div id="btn_doodle">
             <input
               id="submit_btn"
@@ -94,16 +105,6 @@ function LoginForm() {
           </div>
         </form>
       </div>
-      {error && (
-        <div data-testid="error" id="error">
-          {error}
-        </div>
-      )}
-      {loading && (
-        <div data-testid="loading" id="loading">
-          Logging in . . .
-        </div>
-      )}
     </>
   );
 }

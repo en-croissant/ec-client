@@ -1,12 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Special+Elite&display=swap");
 
 .gameSettings {
+  margin-top: 50px;
+  margin-bottom: -35px;
+}
+.gameSettings h3 {
   font-family: "Special Elite", cursive;
-  font-size: 26px;
+  font-size: 1.6em;
   font-weight: 100;
   margin-left: -200px;
-  margin-top: 70px;
-  margin-bottom: -35px;
 }
 
 .lobbybutton {

@@ -1,22 +1,22 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 
-import { LoginForm, RegForm } from '../../components'
+import { LoginForm, RegForm } from "../../components";
 
 import "./style.css";
 
 function Auth() {
-   const [showReg, setShowReg] = useState(false);
-   const [showLogin, setShowLogin] = useState(true);
+  const [showReg, setShowReg] = useState(false);
+  const [showLogin, setShowLogin] = useState(true);
 
-      const onClick = () => {
-        if (showLogin == true) {
-          setShowLogin(false)
-          setShowReg(true)
-        } else {
-          setShowLogin(true);
-          setShowReg(false);
-        }
-      };
+  const onClick = () => {
+    if (showLogin == true) {
+      setShowLogin(false);
+      setShowReg(true);
+    } else {
+      setShowLogin(true);
+      setShowReg(false);
+    }
+  };
 
   return (
     <>
@@ -35,6 +35,6 @@ function Auth() {
       </a>
     </>
   );
-};
+}
 
-export default Auth
+export default Auth;
