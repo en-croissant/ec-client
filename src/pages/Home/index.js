@@ -40,7 +40,7 @@ function Home() {
           <div id="r_back_leg_a"></div>
           <div id="r_back_leg_b"></div>
         </div>
-        <a href={!user ? "/auth" : "/main" }>
+        <a data-testid="login-link" href={!user ? "/auth" : "/main" }>
           <div id="home_clip_board">
             <div id="home_clip_board_paper">
               <h6>Sign in</h6>

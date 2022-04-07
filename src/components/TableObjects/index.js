@@ -4,7 +4,7 @@ import "./style.css";
 const TableObjects = () => {
   return (
     <>
-      <a href="/Book">
+      <a data-testid="tableobj-component" href="/Book">
         <div id="top_book"></div>
         <div id="top_page"></div>
         <div id="side_book"></div>
