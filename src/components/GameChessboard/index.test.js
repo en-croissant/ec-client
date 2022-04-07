@@ -1,7 +1,14 @@
 import { default as GameChessboard } from ".";
-import { screen, render } from "@testing-library/react";
+import { screen } from "@testing-library/react";
+import MockedSocket from "socket.io-mock";
 
 describe("GameChessboard", () => {
-  xit("successfully makes socket connections", () => {
+  it("successfully makes socket connections", () => {
+    let socket = new MockedSocket();
+    socket.onEmit("join",(board)=>{
+      setGame(new Chess(board))
+    })
+    renderWithProviders(<GameChessboard socket={socket}/>)
+    expect().toBeInTheDocument()
   });
 });

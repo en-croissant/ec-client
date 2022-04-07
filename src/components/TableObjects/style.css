@@ -10,6 +10,11 @@
   transform: skewX(60deg) skewY(-5deg);
 }
 
+h7 {
+  font-size: 12px;
+  color: black;
+  font-weight: bolder;
+}
 #top_page {
   background-color: rgb(201, 201, 201);
   width: 80px;

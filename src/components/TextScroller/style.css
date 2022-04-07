@@ -8,8 +8,6 @@
   font-size: 20px;
 } */
 
-
-
 .marquee {
   height: 25px;
   width: 200vw;
@@ -19,9 +17,10 @@
   font-weight: bold;
   font-style: italic;
   font-size: 23px;
-  background-color:#EAE8E4;
+  background-color: #f0e110;
   padding-top: 7px;
   padding-bottom: 7px;
+  border: solid 3px black;
 }
 
 .marquee div {
@@ -32,7 +31,7 @@
   position: absolute;
   overflow: hidden;
 
-  animation: marquee 10s linear infinite;
+  animation: marquee 15s linear infinite;
 }
 
 .marquee span {
@@ -41,6 +40,10 @@
 }
 
 @keyframes marquee {
-  0% { left: 0; }
-  100% { left: -100%; }
+  0% {
+    left: 0;
+  }
+  100% {
+    left: -100%;
+  }
 }
