@@ -12,7 +12,6 @@
   width: 250px;
   height: 200px;
   text-align: justify;
-  position: relative;
   display: inline-block;
   margin-top: 20px;
   font-size: 20px;
@@ -20,9 +19,7 @@
 
 #create_doodle {
   margin-top: 80px;
-  margin-left: 180px;
   position: relative;
-  display: inline-block;
   cursor: pointer;
   height: 50px;
 }
@@ -37,7 +34,7 @@
 #create_doodle svg {
   position: absolute;
   top: 15px;
-  left: -20px;
+  left: 40px;
   width: 155px;
   height: 50px;
   pointer-events: none;
@@ -55,9 +52,7 @@
 
 #join_doodle {
   margin-top: 80px;
-  margin-left: 180px;
   position: relative;
-  display: inline-block;
   cursor: pointer;
   height: 50px;
 }
@@ -72,7 +67,7 @@
 #join_doodle svg {
   position: absolute;
   top: 15px;
-  left: -20px;
+  left: 40px;
   width: 155px;
   height: 50px;
   pointer-events: none;

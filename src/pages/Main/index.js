@@ -11,7 +11,7 @@ function Main() {
       <div id="poster">
         <div id="poster_border">
           <div id="inner_border">
-            <h1> This is the page after you log in</h1>
+            <h1> Where the game begins...</h1>
 
             <div id="create_doodle">
               <a href="/create">
