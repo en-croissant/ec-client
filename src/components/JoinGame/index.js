@@ -5,6 +5,8 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { useAuthContext } from "../../contexts/auth";
 
+import "./style.css";
+
 const JoinGame = () => {
   const { user } = useAuthContext();
   const navigate = useNavigate();
