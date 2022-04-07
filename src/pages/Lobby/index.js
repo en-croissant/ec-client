@@ -4,6 +4,7 @@ import "./style.css";
 function Lobby() {
   return (
     <>
+      <div id="cork_board"></div>
       <div id="poster">
         <div id="poster_border">
           <div id="inner_border">
