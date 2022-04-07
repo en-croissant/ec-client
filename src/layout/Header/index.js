@@ -16,7 +16,7 @@ function Header() {
     <> 
       <span className = "header float"> 
         <a className="goBack float some-font" href="/">
-          <span>Go back</span>
+          <span>Return Home</span>
         </a>
           <input className="logoutheader" type="submit" onClick={handleLogout} value="Logout" />
       </span>
