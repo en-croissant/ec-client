@@ -20,7 +20,7 @@ function Auth() {
 
   return (
     <>
-      <div className="wrapper">
+      <div>
         <span
           data-testid="form-button"
           className="authbutton"

@@ -13,15 +13,6 @@
     margin-left: 10px;
 }
 
-.wrapper {
-  background: url(../Home/chess-background.png) no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  z-index: -10;
-}
-
 
 .goBack {
     text-align: center;
