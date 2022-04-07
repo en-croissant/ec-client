@@ -69,6 +69,7 @@ function RegForm() {
               <input
                 aria-label="username-field"
                 type="text"
+                id="username"
                 name="username"
                 value={formData.username}
                 onChange={handleInput}
@@ -83,6 +84,7 @@ function RegForm() {
             <input
               aria-label="email-field"
               type="text"
+              id="email"
               name="email"
               value={formData.email}
               onChange={handleInput}
@@ -96,6 +98,7 @@ function RegForm() {
             <input
               aria-label="password-field"
               type="password"
+              id="password"
               name="password"
               value={formData.password}
               onChange={handleInput}
@@ -109,6 +112,7 @@ function RegForm() {
             <input
               aria-label="passwordConfirmation-field"
               type="password"
+              id="passwordConfirmation"
               name="passwordConfirmation"
               value={formData.passwordConfirmation}
               onChange={handleInput}

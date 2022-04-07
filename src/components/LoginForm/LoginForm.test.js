@@ -97,7 +97,6 @@ describe("LoginForm", () => {
       jest.spyOn(AuthContext, 'useAuthContext').mockImplementation(() => mockValues)
       renderWithProviders(<LoginForm/>)
       await act(async () => {
-
         userEvent.type(screen.getByLabelText('username-field'), 'te')
         userEvent.type(screen.getByLabelText('password-field'), 'st{enter}')
       })

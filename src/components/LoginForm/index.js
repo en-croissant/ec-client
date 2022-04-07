@@ -53,7 +53,7 @@ function LoginForm() {
             <div id="user_icon"></div>
             <label htmlFor="username">Username:</label>
             <input
-              id="cb pristine"
+              id="username"
               className="password-field"
               aria-label="username-field"
               type="text"
@@ -67,7 +67,7 @@ function LoginForm() {
           <div>
             <label htmlFor="password">Password:</label>
             <input
-              id="cb pristine"
+              id="password"
               aria-label="password-field"
               type="password"
               name="password"
