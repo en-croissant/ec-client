@@ -1,3 +1,15 @@
 .header {
-  
+    position: relative;
+    width: 100vw;
+    background-color: #B4B4B4;
+    padding: 20px;
+    margin-bottom: 30px;
+    display: flex;
+    justify-content:right;
+    color: #222222;
+}
+
+.logoutheader {
+  margin-right: 100px;
+  margin-bottom: 10px;
 }

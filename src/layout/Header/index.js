@@ -1,6 +1,7 @@
 import React from "react";
 import { useAuthContext } from "../../contexts/auth";
 import { useNavigate } from "react-router-dom";
+import "./style.css"
 
 function Header() {
   const { logout } = useAuthContext();
@@ -14,7 +15,7 @@ function Header() {
   return (
     <>
       <span className = "header"> 
-        <input type="submit" onClick={handleLogout} value="Logout" />
+        <input className="logoutheader" type="submit" onClick={handleLogout} value="Logout" />
       </span>
     </>
   );
