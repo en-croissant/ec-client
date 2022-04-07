@@ -7,7 +7,7 @@ import "./style.css";
 function Book(props) {
   return (
     <>
-      <div>
+      <div className = "bookbackground">
         <div>
           <h1></h1>
         </div>

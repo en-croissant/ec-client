@@ -8,4 +8,6 @@
   margin: auto;
   align-items: center;
   border-radius: 10px;
+  border-bottom: solid 10px rgb(100, 54, 28);
+  border-left: solid 10px rgb(93, 51, 27);
 }
