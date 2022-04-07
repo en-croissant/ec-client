@@ -4,6 +4,7 @@ import { TableObjects, TextScroller } from "../../components";
 import { fadeIn } from "react-animations";
 import Radium, { StyleRoot } from "radium";
 // import {Header} from "../../layout"
+import { useAuthContext } from "../../contexts/auth";
 
 
 const styles = {
@@ -13,6 +14,7 @@ const styles = {
   },
 };
 function Home() {
+  const { user } = useAuthContext();
 
   return (
     <>
@@ -38,14 +40,16 @@ function Home() {
           <div id="r_back_leg_a"></div>
           <div id="r_back_leg_b"></div>
         </div>
-         <a href="/auth">
-           <div id="home_clip_board">
-             <div id="home_clip_board_paper"><h6>Sign in</h6></div>
+        <a href={!user ? "/auth" : "/main" }>
+          <div id="home_clip_board">
+            <div id="home_clip_board_paper">
+              <h6>Sign in</h6>
+            </div>
             {/* <FlyingPaper /> */}
             <div id="home-clip"></div>
           </div>
-          </a>
-        <TextScroller/>
+        </a>
+        <TextScroller />
         {/* <Header/> */}
       </div>
     </>
