@@ -39,9 +39,9 @@ const JoinGame = () => {
       hostName = user1.data[0].username;
     };
     fetchLobbyData();
-    if (user === hostName) {
-      setIsHost(true);
-    }
+    // if (user === hostName) {
+    //   setIsHost(true);
+    // }
   }, []);
 
   const onClickEvent = (e) => {
