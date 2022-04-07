@@ -156,6 +156,9 @@ function Book(props) {
             <h3>En Passant and Castling</h3>
           </div>
         </HTMLFlipBook>
+        <a href="/">
+          <div class="backpiece">&#9820; Go Back</div>
+        </a>
       </div>
     </>
   );
