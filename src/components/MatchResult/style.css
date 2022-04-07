@@ -1,0 +1,12 @@
+#box{
+    background-color: whitesmoke;
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    translate: -50%;
+    z-index: 10;
+    font-size: 3rem;
+    width: 300px;
+    border-radius: 10px;
+    box-shadow: 0 0 30px;
+}
