@@ -41,11 +41,11 @@ const CreateGameForm = () => {
         const headers = {
             "Content-Type": "application/json"
         }
-        const { lobby_id } = await axios.post('https://en-croissant.herokuapp.com/lobby', lobbyData, headers)
+        const {data} = await axios.post('https://en-croissant.herokuapp.com/lobby', lobbyData, headers)
         // console.log(lobbyData)
         // const { lobby_id } = await axios.post('localhost:5000/lobby', lobbyData, headers)
         
-        navigate(`/lobby/${lobby_id}`)
+        navigate(`/lobby/${data}`)
     }
     
     // socket.on("new game", ({chessboard}) => { console.log(chessboard)})
