@@ -1,6 +1,9 @@
 import { useRef, useState, useEffect } from "react";
 import Chess from "chess.js";
 import { Chessboard } from "react-chessboard";
+import { MatchResult } from "../"
+
+import "./style.css"
 
 function Gameboard({ socket }) {
   useEffect(() => {
@@ -19,6 +22,7 @@ function Gameboard({ socket }) {
 
   const chessboardRef = useRef();
   const [game, setGame] = useState(new Chess());
+  const [outcome, setOutcome] = useState("");
 
   function safeGameMutate(modify) {
     setGame((g) => {
@@ -36,12 +40,22 @@ function Gameboard({ socket }) {
       promotion: "q", // always promote to a queen for example simplicity
     });
     socket.emit("move piece", { move: move });
-    setGame(gameCopy);
+    safeGameMutate((game) => {
+      game.move(move)
+      if(game.game_over()){
+        if(game.in_checkmate()){
+          const loser = game.fen().split(" ")[1]
+          const winner = loser == "b" ? "1" : "2"
+          setOutcome(`Player ${winner} has won the match`)
+          }else{
+          setOutcome("Match is a tie")
+      }}
+    });
     return move;
   }
 
   return (
-    <div>
+    <div id="chessboard">
       <Chessboard
         aria-label="chessboard"
         id="PlayVsPlay"
@@ -55,6 +69,11 @@ function Gameboard({ socket }) {
         }}
         ref={chessboardRef}
       />
+      {outcome ? (
+          <MatchResult outcome={outcome} />
+      ) : (
+        <></>
+      )}
       {/* <button
         className="rc-button"
         onClick={() => {
