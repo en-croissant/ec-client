@@ -1,4 +1,10 @@
-@import url("https://fonts.googleapis.com/css2?family=Just+Another+Hand&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Special+Elite&display=swap");
+
 h3 {
-  font-family: "Just Another Hand", cursive;
+  font-family: "Special Elite", cursive;
+  font-size: 26px;
+  font-weight: 100;
+  margin-left: -200px;
+  margin-top: 70px;
+  margin-bottom: -35px;
 }
