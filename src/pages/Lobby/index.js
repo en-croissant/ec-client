@@ -6,9 +6,6 @@ function Lobby() {
   return (
     <>
       <Header />
-      <a className="goBack" href="/main">
-        <span>Go back</span>
-      </a>
       <div id="cork_board"></div>
       <div id="poster">
         <div id="poster_border">
