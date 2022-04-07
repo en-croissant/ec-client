@@ -31,7 +31,7 @@
   position: absolute;
   overflow: hidden;
 
-  animation: marquee 15s linear infinite;
+  animation: marquee 10s linear infinite;
 }
 
 .marquee span {
@@ -41,9 +41,9 @@
 
 @keyframes marquee {
   0% {
-    left: 0;
+    left: -25%;
   }
   100% {
-    left: -100%;
+    left: -140%;
   }
 }
