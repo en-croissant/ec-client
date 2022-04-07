@@ -3,8 +3,8 @@ import {GameChessboard } from "../../components";
 import { io } from "socket.io-client"
 
 
-const socket = io("http://localhost:5000");
-// const socket = io("https://en-croissant.herokuapp.com");
+// const socket = io("http://localhost:5000");
+const socket = io("https://en-croissant.herokuapp.com");
 
 function PlayGame() {
     
