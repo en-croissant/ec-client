@@ -1,22 +1,21 @@
 import React from "react";
-import { useAuthContext } from "../../contexts/auth";
-import { useNavigate } from "react-router-dom";
+
 import {Header} from "../../layout"
+import "./style.css"
 
 function Main() {
-    const { user, logout } = useAuthContext();
-    const navigate = useNavigate()
 
-    const handleLogout = async () => {
-      await logout();
-      navigate("/");
-    };
 
   return (
     <>
-      <Header/>
+      <Header />
       <h1> This is the page after you log in</h1>
-      <input type="submit" onClick={handleLogout} value="Logout" />
+      <a href="/create">
+        <div id="createGame">Create Game</div>
+      </a>
+      <a href="/lobby">
+        <div id="joinGame">Join Game</div>
+      </a>
     </>
   );
 }
