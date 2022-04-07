@@ -17,12 +17,7 @@ const JoinGame = () => {
   // const [difficultyAI, setDifficultyAI] = useState("");
   // const [gameMode, setGameMode] = useState("");
   // const [timeLimit, setTimeLimit] = useState("");
-<<<<<<< HEAD
-  // const [saveGame, setSaveGame] = useState("");
-  const [redirect, setRedirect] = useState(false);
-=======
   const [isHost, setIsHost] = useState(false)
->>>>>>> 6c878b6f8e3a0c5fb41e0322c257e52463549077
 
   // const socket = io("https://en-croissant.herokuapp.com");
 
