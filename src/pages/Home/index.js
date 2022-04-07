@@ -52,6 +52,7 @@ function Home() {
         </div>
          <a href="/auth">
            <div id="home_clip_board">
+             <div id="home_clip_board_paper"><h6>Sign in</h6></div>
             {/* <FlyingPaper /> */}
             <div id="home-clip"></div>
           </div>

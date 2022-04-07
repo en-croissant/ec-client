@@ -289,6 +289,25 @@
   border-left-color: rgb(103, 56, 29);
   transform: skewY(-6deg);
 }
+#home_clip_board_paper {
+  background-color: whitesmoke;
+  /* background-image: url("https://www.transparenttextures.com/patterns/wood-pattern.png"); */
+  width: 55px;
+  border-radius: 5px;
+  position: fixed;
+  box-shadow: -5px -5px 10px rgba(0, 0, 0, 0.3);
+  margin: 26px auto 0;
+  height: 78px;
+  bottom: 7px;
+  left: 4px;
+  color: black;
+  
+  z-index: 10;
+}
+
+#home_clip_board:hover {
+  opacity: 50%;
+}
 
 #home-clip {
   height: 15px;
