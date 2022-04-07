@@ -1,6 +1,6 @@
 import React from "react";
 import "./style.css";
-import { TableObjects } from "../../components";
+import { TableObjects, TextScroller } from "../../components";
 import { fadeIn } from "react-animations";
 import Radium, { StyleRoot } from "radium";
 
@@ -53,6 +53,7 @@ function Home() {
           {/* <FlyingPaper /> */}
           <div id="home-clip"></div>
         </div>
+        <TextScroller/>
       </div>
     </>
   );
