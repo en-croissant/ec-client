@@ -5,29 +5,24 @@ import { Chessboard } from "react-chessboard";
 // socket.on("hello world", ({ data }) => console.log(data));
 
 function Gameboard({ socket }) {
-
   useEffect(() => {
     const lobby_id = window.location.pathname.split("/")[2];
-    socket.emit('join', {lobby_id:lobby_id})
-    socket.on('initial board', ({board}) => {
-      console.log(game.fen())
-      setGame(new Chess(board))
-    socket.on('opponent move', ({chessMove}) => {
-      setLastMove(chessMove)
-      safeGameMutate((game) => {
-        game.move(chessMove)
-      })
-    })
-    })
-  }, [socket])
-
-
+    socket.emit("join", { lobby_id: lobby_id });
+    socket.on("initial board", ({ board }) => {
+      console.log(game.fen());
+      setGame(new Chess(board));
+      socket.on("opponent move", ({ chessMove }) => {
+        setLastMove(chessMove);
+        safeGameMutate((game) => {
+          game.move(chessMove);
+        });
+      });
+    });
+  }, [socket]);
 
   const chessboardRef = useRef();
   const [game, setGame] = useState(new Chess());
   const [lastMove, setLastMove] = useState("");
-  
-
 
   function safeGameMutate(modify) {
     setGame((g) => {
@@ -44,7 +39,7 @@ function Gameboard({ socket }) {
       to: targetSquare,
       promotion: "q", // always promote to a queen for example simplicity
     });
-    socket.emit("move piece", {"move":move});
+    socket.emit("move piece", { move: move });
     setGame(gameCopy);
     return move;
   }
@@ -60,7 +55,7 @@ function Gameboard({ socket }) {
         onPieceDrop={onDrop}
         customBoardStyle={{
           borderRadius: "4px",
-          boxShadow: "0 5px 15px rgba(0, 0, 0, 0.5)",
+          // boxShadow: "0 5px 15px rgba(0, 0, 0, 0.5)",
         }}
         ref={chessboardRef}
       />

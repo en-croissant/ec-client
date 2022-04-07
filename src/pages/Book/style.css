@@ -1,33 +1,201 @@
 .leftpage {
-  border: solid 1px black;
   background-color: whitesmoke;
-  border-radius: 20px;
+  border-radius: 10px;
 }
 
 .rightpage {
-  border: solid 1px black;
   background-color: whitesmoke;
-  border-radius: 20px;
+  border-radius: 10px;
 }
 
 .bookfront {
-  border: solid 1px black;
-  background-color: red;
-  border-radius: 20px;
-  /* add pages sitcking out pls help Jumaanah  */
+  background-color: rgb(182, 16, 16);
+  border-radius: 2px 5px 5px 2px;
+  box-shadow: 1px 1px 10px gray;
+  height: 600px;
+  width: 420px;
+
+  /* background-color: rgb(182, 16, 16);
+  box-shadow: 0 4px 5px 0 rgba(0, 0, 0);
+  height: 600px;
+  width: 500px;
+  top: 50%;
+  left: 50%;
+  border-radius: 2px 5px 5px 2px;
+  position: fixed;
+  margin-left: -320px;
+  margin-top: -303px;
+  transform: skewY(0deg);
+  z-index: -1; */
 }
 
-.bookfronttext {
+.bookfrontpage{
+  margin-right: 200px;
+}
+
+/* .bookfronttext {
   background-color: whitesmoke;
   height: 50px;
-  margin-top: 200px;
+  margin-top: 350px;
   text-align: center;
   vertical-align: middle;
   padding-top: 30px;
   border-bottom: green solid 25px;
-}
+} */
 
 .HTMLFlipBook {
-  margin-left: 420px;
+  margin-left: 300px;
   position: fixed;
+  z-index: 10;
+  
 }
+
+
+
+.extrafrontbook{
+  transform: scale(0.7);
+  position: fixed;
+  top: 100px;
+  z-index: -5;
+  left: 100px;
+}
+
+
+#login_front_cover {
+  background-color: rgb(182, 16, 16);
+  border-radius: 2px 5px 5px 2px;
+  box-shadow: 1px 1px 10px gray;
+  height: 600px;
+  width: 420px;
+  margin-right: 200px;
+}
+
+ #login_back_cover {
+  background-color: rgb(137, 45, 45);
+  height: 600px;
+  width: 400px;
+  top: 50%;
+  left: 50%;
+  border-radius: 2px 5px 5px 2px;
+  position: fixed;
+  box-shadow: -88px 25px 10px rgb(149, 101, 101);
+  margin-left: -300px;
+  margin-top: -325px;
+  z-index: -1;
+  transform: skewY(-4deg);
+}
+
+#login_bottom_spine {
+  background-color: rgb(91, 29, 29);
+  height: 600px;
+  width: 38px;
+  top: 50%;
+  left: 50%;
+  position: fixed;
+  box-shadow: -40px 10px 40px rgb(95, 63, 63);
+  margin-left: -335px;
+  margin-top: -308px;
+  transform: skewY(-10deg);
+  z-index: -1;
+}
+
+#login_middle_spine {
+  background-color: rgb(110, 36, 36);
+  height: 600px;
+  width: 20px;
+  top: 50%;
+  left: 50%;
+  position: fixed;
+  box-shadow: -40px 10px 40px rgb(95, 63, 63);
+  margin-left: -340px;
+  margin-top: -300px;
+  border-radius: 10%;
+  transform: skewY(10deg);
+}
+
+#login_top_spine {
+  background-color: rgb(154, 53, 53);
+  height: 600px;
+  width: 20px;
+  top: 50%;
+  left: 50%;
+  position: fixed;
+  box-shadow: -40px 10px 40px rgb(95, 63, 63);
+  margin-left: -320px;
+  margin-top: -300px;
+}
+
+#login_page1 {
+  background-color: white;
+  box-shadow: 0 2px 3px 0 rgba(0, 0, 0);
+  height: 600px;
+  width: 420px;
+  top: 50%;
+  left: 50%;
+  border-radius: 2px 5px 5px 2px;
+  position: fixed;
+  margin-left: -300px;
+  margin-top: -320px;
+  transform: skewY(-4deg);
+  z-index: -1;
+}
+
+#login_page2 {
+  background-color: white;
+  box-shadow: 0 4px 30px 0 rgba(0, 0, 0);
+  height: 600px;
+  width: 450px;
+  top: 50%;
+  left: 50%;
+  border-radius: 2px 5px 5px 2px;
+  position: fixed;
+  margin-left: -320px;
+  margin-top: -315px;
+  transform: skewY(-3deg);
+  z-index: -1;
+}
+
+#login_page3 {
+  background-color: white;
+  box-shadow: 0 4px 20px 0 rgba(0, 0, 0);
+  height: 600px;
+  width: 465px;
+  top: 50%;
+  left: 50%;
+  border-radius: 2px 5px 5px 2px;
+  position: fixed;
+  margin-left: -320px;
+  margin-top: -310px;
+  transform: skewY(-2deg);
+  z-index: -1;
+}
+
+#login_page4 {
+  background-color: white;
+  box-shadow: 0 4px 10px 0 rgba(0, 0, 0);
+  height: 600px;
+  width: 480px;
+  top: 50%;
+  left: 50%;
+  border-radius: 2px 5px 5px 2px;
+  position: fixed;
+  margin-left: -320px;
+  margin-top: -305px;
+  transform: skewY(-1deg);
+  z-index: -1;
+}
+
+#login_page5 {
+  background-color: rgb(182, 16, 16);
+  box-shadow: 0 4px 5px 0 rgba(0, 0, 0);
+  height: 600px;
+  width: 500px;
+  top: 50%;
+  left: 50%;
+  border-radius: 2px 5px 5px 2px;
+  position: fixed;
+  margin-left: -320px;
+  margin-top: -303px;
+  transform: skewY(0deg);
+  z-index: -1;
+} 
