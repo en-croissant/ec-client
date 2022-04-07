@@ -4,6 +4,7 @@ import { Chessboard } from "react-chessboard";
 import { MatchResult } from "../"
 
 import "./style.css"
+import { is } from "@react-spring/shared";
 
 function Gameboard({ socket }) {
   useEffect(() => {
@@ -34,24 +35,31 @@ function Gameboard({ socket }) {
 
   function onDrop(sourceSquare, targetSquare) {
     const gameCopy = { ...game };
-    const move = gameCopy.move({
+    try {
+      const move = gameCopy.move({
       from: sourceSquare,
       to: targetSquare,
-      promotion: "q", // always promote to a queen for example simplicity
-    });
-    socket.emit("move piece", { move: move });
-    safeGameMutate((game) => {
-      game.move(move)
-      if(game.game_over()){
-        if(game.in_checkmate()){
-          const loser = game.fen().split(" ")[1]
-          const winner = loser == "b" ? "1" : "2"
-          setOutcome(`Player ${winner} has won the match`)
-          }else{
-          setOutcome("Match is a tie")
-      }}
-    });
-    return move;
+      promotion: "q",
+      });
+      socket.emit("move piece", { move: move });
+      setGame(gameCopy);
+      safeGameMutate((game) => {
+        if(game.game_over()){
+          if(game.in_checkmate()){
+            const loser = game.fen().split(" ")[1]
+            const winner = loser == "b" ? "1" : "2"
+            setOutcome(`Player ${winner} has won the match`)
+            }else{
+            setOutcome("Match is a tie")
+        }} 
+      });
+      return move; 
+    } catch (err) {
+      console.log("bad move")
+    }
+    
+    
+
   }
 
   return (
