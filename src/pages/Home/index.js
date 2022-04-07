@@ -50,10 +50,12 @@ function Home() {
           <div id="r_back_leg_a"></div>
           <div id="r_back_leg_b"></div>
         </div>
-        <div id="home_clip_board">
-          {/* <FlyingPaper /> */}
-          <div id="home-clip"></div>
-        </div>
+         <a href="/auth">
+           <div id="home_clip_board">
+            {/* <FlyingPaper /> */}
+            <div id="home-clip"></div>
+          </div>
+          </a>
         <TextScroller/>
         {/* <Header/> */}
       </div>
