@@ -10,3 +10,4 @@ export { default as TextScroller } from "./TextScroller";
 export { default as MatchResult } from "./MatchResult"
 export { default as PlayerTurn } from "./PlayerTurn"
 export { default as Logout } from './Logout'
+export { default as PlayerName } from './PlayerName'

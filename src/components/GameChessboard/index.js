@@ -1,7 +1,7 @@
 import { useRef, useState, useEffect } from "react";
 import Chess from "chess.js";
 import { Chessboard } from "react-chessboard";
-import { MatchResult, PlayerTurn } from "../"
+import { MatchResult, PlayerTurn, PlayerName } from "../"
 
 import "./style.css"
 
@@ -76,7 +76,9 @@ function Gameboard({ socket }) {
       ) : (
         <></>
       )}
-      <PlayerTurn turn={turn} />
+      <PlayerTurn turn={turn} /> 
+      <PlayerName playerName="Player 1" isActive={turn==1} isPlayer1="1"/>
+      <PlayerName playerName="Player 2" isActive={turn==2} isPlayer1=""/>
     </div>
   );
 }
