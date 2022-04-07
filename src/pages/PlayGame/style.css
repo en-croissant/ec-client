@@ -1,8 +1,7 @@
 #chessboard_border {
   height: 500px;
   width: 500px;
-  background: rgb(233, 223, 196);
-  background-repeat: repeat;
+  background-color: rgba(130, 76, 32);
   display: flex;
   justify-content: center;
   margin: auto;

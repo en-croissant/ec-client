@@ -9,7 +9,7 @@ function Book(props) {
     <>
       <div>
         <div>
-          <h1>Hello</h1>
+          <h1></h1>
         </div>
       </div>
       <HTMLFlipBook className="HTMLFlipBook" width={255} height={425}>
@@ -31,7 +31,8 @@ function Book(props) {
           {/* </div> */}
         </div>
         <div className="leftpage">
-          <br></br>1
+          <br></br>1<h1>How To Play Chess</h1>
+          <br></br><h2>By En Croissant</h2>
         </div>
         <div className="rightpage">
           <br></br>2
@@ -45,7 +46,9 @@ function Book(props) {
         <div className="leftpage">
           <br></br>5
         </div>
-        <div className="rightpage"><br></br>6</div>
+        <div className="rightpage">
+          <br></br>6
+        </div>
       </HTMLFlipBook>
       ;
       <a className="goBack" href="/">
