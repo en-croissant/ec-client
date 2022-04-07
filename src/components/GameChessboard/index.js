@@ -7,7 +7,8 @@ import { Chessboard } from "react-chessboard";
 function Gameboard({ socket }) {
 
   useEffect(() => {
-    socket.emit('join', {lobby_id:'play'})
+    const lobby_id = window.location.pathname.split("/")[2];
+    socket.emit('join', {lobby_id:lobby_id})
     socket.on('initial board', ({board}) => {
       console.log(game.fen())
       setGame(new Chess(board))
@@ -45,7 +46,6 @@ function Gameboard({ socket }) {
     });
     socket.emit("move piece", {"move":move});
     setGame(gameCopy);
-    console.log(game.fen())
     return move;
   }
 
