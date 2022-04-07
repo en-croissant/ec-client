@@ -1,10 +1,9 @@
 import { useRef, useState, useEffect } from "react";
 import Chess from "chess.js";
 import { Chessboard } from "react-chessboard";
-import { MatchResult } from "../"
+import { MatchResult, PlayerTurn } from "../"
 
 import "./style.css"
-import { is } from "@react-spring/shared";
 
 function Gameboard({ socket }) {
   useEffect(() => {
@@ -24,6 +23,7 @@ function Gameboard({ socket }) {
   const chessboardRef = useRef();
   const [game, setGame] = useState(new Chess());
   const [outcome, setOutcome] = useState("");
+  const [turn, setTurn] = useState("1");
 
   function safeGameMutate(modify) {
     setGame((g) => {
@@ -35,31 +35,25 @@ function Gameboard({ socket }) {
 
   function onDrop(sourceSquare, targetSquare) {
     const gameCopy = { ...game };
-    try {
-      const move = gameCopy.move({
-      from: sourceSquare,
-      to: targetSquare,
-      promotion: "q",
-      });
-      socket.emit("move piece", { move: move });
-      setGame(gameCopy);
-      safeGameMutate((game) => {
-        if(game.game_over()){
-          if(game.in_checkmate()){
-            const loser = game.fen().split(" ")[1]
-            const winner = loser == "b" ? "1" : "2"
-            setOutcome(`Player ${winner} has won the match`)
-            }else{
-            setOutcome("Match is a tie")
-        }} 
-      });
-      return move; 
-    } catch (err) {
-      console.log("bad move")
-    }
-    
-    
-
+    const move = gameCopy.move({
+    from: sourceSquare,
+    to: targetSquare,
+    promotion: "q",
+    });
+    socket.emit("move piece", { move: move });
+    setGame(gameCopy);
+    safeGameMutate((game) => {
+      const currentTurn = game.fen().split(" ")[1]
+      setTurn(currentTurn == "b" ? "2" : "1")
+      if(game.game_over()){
+        if(game.in_checkmate()){
+          const winner = turn == "2" ? "1" : "2"
+          setOutcome(`Player ${winner} has won the match`)
+          }else{
+          setOutcome("Match is a tie")
+      }} 
+    });
+    return move;
   }
 
   return (
@@ -82,28 +76,7 @@ function Gameboard({ socket }) {
       ) : (
         <></>
       )}
-      {/* <button
-        className="rc-button"
-        onClick={() => {
-          safeGameMutate((game) => {
-            game.reset();
-          });
-          chessboardRef.current.clearPremoves();
-        }}
-      >
-        reset
-      </button>
-      <button
-        className="rc-button"
-        onClick={() => {
-          safeGameMutate((game) => {
-            game.undo();
-          });
-          chessboardRef.current.clearPremoves();
-        }}
-      >
-        undo
-      </button> */}
+      <PlayerTurn turn={turn} />
     </div>
   );
 }

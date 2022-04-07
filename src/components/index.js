@@ -7,5 +7,6 @@ export { default as TableObjects } from "./TableObjects";
 export { default as LightSwitch } from "./LightSwitch";
 export { default as FlyingPaper } from "./FlyingPaper";
 export { default as TextScroller } from "./TextScroller";
-export { default as MatchResult} from "./MatchResult"
+export { default as MatchResult } from "./MatchResult"
+export { default as PlayerTurn } from "./PlayerTurn"
 export { default as Logout } from './Logout'
