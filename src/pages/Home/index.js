@@ -8,7 +8,7 @@ import { useAuthContext } from "../../contexts/auth";
 // import { useNavigate } from "react-router-dom";
 const styles = {
   fadeIn: {
-    animation: "x 2s",
+    animation: "x 5s",
     animationName: Radium.keyframes(fadeIn, "fadeIn"),
   },
 };
