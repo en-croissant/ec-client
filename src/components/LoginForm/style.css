@@ -37,15 +37,17 @@
   transform: rotate(2.1deg);
 }
 
-label {
+#labels {
   font-family: "Just Another Hand", cursive;
-  font-size: 34px;
+  font-size: 32px;
   background: linear-gradient(0deg, rgb(227, 239, 93), rgb(227, 239, 93))
     no-repeat right bottom / 0 var(--bg-h);
   transition: background-size 350ms;
   --bg-h: 100%;
+  margin-left: -15px;
+  margin-right: -10px;
 }
-label:where(:hover, :focus-visible) {
+#labels:where(:hover, :focus-visible) {
   background-size: 100% var(--bg-h);
   background-position-x: left;
 }
@@ -55,22 +57,21 @@ label:where(:hover, :focus-visible) {
   background-color: transparent;
   outline: none;
   margin-top: 10px;
-  margin-left: 15px;
+  margin-left: 10px;
   font-family: "Grape Nuts", cursive;
-  font-size: 20px;
+  font-size: 18px;
 }
 #password {
   border: none;
   background-color: transparent;
   outline: none;
-
-  margin-left: 15px;
+  margin-left: 10px;
   font-family: "Grape Nuts", cursive;
-  font-size: 20px;
+  font-size: 18px;
 }
 
-h1 {
-  font-size: 20px;
+#Login_Sheet {
+  font-size: 36px;
   font-family: "Inknut Antiqua", serif;
 }
 #submit_btn {

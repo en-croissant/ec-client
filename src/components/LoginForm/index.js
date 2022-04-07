@@ -49,9 +49,11 @@ function LoginForm() {
         <form aria-label="login-form" id="login_form" onSubmit={handleSubmit}>
           <div id="back_paper"></div>
           <div>
-            <h1> Login Sheet</h1>
+            <h1 id="Login_Sheet"> Login Sheet</h1>
             <div id="user_icon"></div>
-            <label htmlFor="username">Username:</label>
+            <label id="labels" htmlFor="username">
+              Username:
+            </label>
             <input
               id="username"
               className="password-field"
@@ -65,7 +67,9 @@ function LoginForm() {
             />
           </div>
           <div>
-            <label htmlFor="password">Password:</label>
+            <label id="labels" htmlFor="password">
+              Password:
+            </label>
             <input
               id="password"
               aria-label="password-field"
