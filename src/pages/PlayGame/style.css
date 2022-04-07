@@ -1,7 +1,8 @@
 #chessboard_border {
   height: 500px;
   width: 500px;
-  background-color: rgba(130, 76, 32);
+  background-color: rgb(124, 67, 33);
+  background-image: url("https://www.transparenttextures.com/patterns/wood-pattern.png");
   display: flex;
   justify-content: center;
   margin: auto;
