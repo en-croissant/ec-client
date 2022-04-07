@@ -49,7 +49,7 @@ function LoginForm() {
         <form aria-label="login-form" id="login_form" onSubmit={handleSubmit}>
           <div id="back_paper"></div>
           <div>
-            <h1> Login to compete again</h1>
+            <h1> Login Sheet</h1>
             <div id="user_icon"></div>
             <label htmlFor="username">Username:</label>
             <input
@@ -60,7 +60,7 @@ function LoginForm() {
               name="username"
               value={formData.username}
               onChange={handleInput}
-              placeholder="Enter username"
+              placeholder="username"
               required
             />
           </div>
@@ -73,7 +73,7 @@ function LoginForm() {
               name="password"
               value={formData.password}
               onChange={handleInput}
-              placeholder="Password"
+              placeholder="password"
               required
             />
           </div>

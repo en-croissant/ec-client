@@ -20,11 +20,19 @@ function Auth() {
 
   return (
     <>
-      <span data-testid="form-button" className="authbutton" onClick={onClick}>
-        hehehe
-      </span>
-      {showLogin ? <LoginForm /> : <RegForm />}
-
+      <div className="wrapper">
+        <span
+          data-testid="form-button"
+          className="authbutton"
+          onClick={onClick}
+        >
+          {showLogin ? "Sign Up" : "Login"}
+        </span>
+        {showLogin ? <LoginForm /> : <RegForm />}
+      </div>
+      <a className="goBack" href="/">
+        <span>Go back</span>
+      </a>
     </>
   );
 };
