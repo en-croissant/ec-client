@@ -31,7 +31,8 @@ const CreateGameForm = () => {
         setPlayer2Name(e.target.value)
     }
 
-    const handleSubmit = async () => {
+    const handleSubmit = async (e) => {
+        e.preventDefault()
         const lobbyData = {
             player_1_username: user,
             player_2_username: player2Name,
@@ -40,8 +41,11 @@ const CreateGameForm = () => {
         const headers = {
             "Content-Type": "application/json"
         }
-        const { lobby_id } = await axios.post('https://en-croissant.herokuapp.com/lobby', lobbyData, headers)
-        navigate(`/lobby/${lobby_id}`)
+        const {data} = await axios.post('https://en-croissant.herokuapp.com/lobby', lobbyData, headers)
+        // console.log(lobbyData)
+        // const { lobby_id } = await axios.post('localhost:5000/lobby', lobbyData, headers)
+        
+        navigate(`/lobby/${data}`)
     }
     
     // socket.on("new game", ({chessboard}) => { console.log(chessboard)})
@@ -49,7 +53,7 @@ const CreateGameForm = () => {
     return (
       <>
         <h2>Create Lobby</h2>
-        <form aria-label="create-game-form">
+        <form aria-label="create-game-form" onSubmit={handleSubmit}>
             <label htmlFor="user2-name" >Opponent name: </label>
             <input 
             aria-label="opponent-name"
@@ -111,14 +115,14 @@ const CreateGameForm = () => {
                 <option value="yes">Yes</option>
                 <option value="no">No</option>
             </select> */}
-        </form>
-
         <button
         aria-label="create-button"
-        onClick={handleSubmit}
+        type="submit"
         >
         Create Game
         </button>
+        </form>
+
 
       </>
     );

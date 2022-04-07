@@ -17,8 +17,6 @@ function App() {
         {!user ? (
           <>
             <Route path={"/auth"} element={<Pages.Auth />} />
-            <Route path={"/login"} element={<Pages.Auth />} />
-            <Route path={"/register"} element={<Pages.Auth />} />
           </>
         ) : (
           <>
