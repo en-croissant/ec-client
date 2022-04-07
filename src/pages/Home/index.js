@@ -21,22 +21,28 @@ function Home() {
     const [showLogin, setShowLogin] = useState(false);
 
     const onClick = () => {
-      if (showLogin == true || showReg == true) {
-        setShowLogin(false);
-        setShowReg(false)
-      } else {
-        setShowLogin(true)
+       if (!user) {
+         if (showLogin == true || showReg == true) {
+           setShowLogin(false);
+           setShowReg(false);
+         } else {
+           setShowLogin(true);
+         }
+       } else {
+         window.location.href = "/main";
+       }
       }
-    }
 
     const onClickbutton = () => {
-      if (showLogin ==true) {
-        setShowReg(true)
-        setShowLogin(false)
-      } else {
-        setShowReg(false)
-        setShowLogin(true)
-      }
+     
+         if (showLogin == true) {
+           setShowReg(true);
+           setShowLogin(false);
+         } else {
+           setShowReg(false);
+           setShowLogin(true);
+         }
+      
     }
 
 
@@ -69,7 +75,7 @@ function Home() {
         {/* <a data-testid="login-link" href={!user ? "/auth" : "/main"}> */}
         <div onClick={onClick} id="home_clip_board">
           <div id="home_clip_board_paper">
-            <h6>Sign in</h6>
+            <h6>{!user ? "Sign in" : "Join Game" }</h6>
           </div>
           {/* <FlyingPaper /> */}
           <div id="home-clip"></div>
