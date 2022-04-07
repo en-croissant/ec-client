@@ -5,7 +5,7 @@ import { fadeIn } from "react-animations";
 import Radium, { StyleRoot } from "radium";
 // import {Header} from "../../layout"
 import { useAuthContext } from "../../contexts/auth";
-import { LoginForm, RegForm } from "../../components";
+import { LoginForm, RegForm, Logout } from "../../components";
 
 const styles = {
   fadeIn: {
@@ -97,6 +97,7 @@ function Home() {
           {showLogin ? <LoginForm /> : showReg ? <RegForm /> : null}
         </div>
         <TextScroller />
+        { !!user ? <Logout/> : <></>}
         {/* <Header/> */}
       </div>
     </>
