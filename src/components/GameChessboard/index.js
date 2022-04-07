@@ -9,7 +9,6 @@ function Gameboard({ socket }) {
   useEffect(() => {
     socket.emit('join', {lobby_id:'play'})
     socket.on('initial board', ({board}) => {
-      console.log(board)
       console.log(game.fen())
       setGame(new Chess(board))
     socket.on('opponent move', ({chessMove}) => {
