@@ -23,8 +23,6 @@
   height: 320px;
 }
 
-
-
 /* .reg-username {
   margin-bottom: -10px;
 }
@@ -51,6 +49,25 @@
   border: none;
   background: none;
   outline: none;
+}
+
+#email {
+  border: none;
+  background-color: transparent;
+  outline: none;
+  margin-top: 10px;
+  margin-left: 15px;
+  font-family: "Grape Nuts", cursive;
+  font-size: 20px;
+}
+#passwordConfirmation {
+  border: none;
+  background-color: transparent;
+  outline: none;
+  margin-top: 10px;
+  margin-left: 15px;
+  font-family: "Grape Nuts", cursive;
+  font-size: 20px;
 }
 
 #reg_btn_doodle svg {
