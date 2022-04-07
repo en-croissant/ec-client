@@ -6,9 +6,6 @@ function Book(props) {
   return (
     <>
       <div className="bookbackground">
-        <div>
-          <h1></h1>
-        </div>
         <HTMLFlipBook className="HTMLFlipBook" width={255} height={425}>
           <div className="nopage"></div>
           <div className="extrafrontbook">
