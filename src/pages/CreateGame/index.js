@@ -7,9 +7,6 @@ function CreateGame() {
     <>
       <Header />
       <CreateGameForm />
-      <a className="goBack" href="/main">
-        <span>Go back</span>
-      </a>
     </>
   );
 }
