@@ -7,11 +7,27 @@ import { Chessboard } from "react-chessboard";
 function Gameboard({ socket }) {
 
   useEffect(() => {
-    socket.emit('join', {lobby_id:'play'})
-  }, [])
+    const lobby_id = window.location.pathname.split("/")[2];
+    socket.emit('join', {lobby_id:lobby_id})
+    socket.on('initial board', ({board}) => {
+      console.log(game.fen())
+      setGame(new Chess(board))
+    socket.on('opponent move', ({chessMove}) => {
+      setLastMove(chessMove)
+      safeGameMutate((game) => {
+        game.move(chessMove)
+      })
+    })
+    })
+  }, [socket])
+
+
 
   const chessboardRef = useRef();
   const [game, setGame] = useState(new Chess());
+  const [lastMove, setLastMove] = useState("");
+  
+
 
   function safeGameMutate(modify) {
     setGame((g) => {
@@ -28,22 +44,15 @@ function Gameboard({ socket }) {
       to: targetSquare,
       promotion: "q", // always promote to a queen for example simplicity
     });
-    socket.emit("move piece", {"move":move.san});
+    socket.emit("move piece", {"move":move});
     setGame(gameCopy);
     return move;
   }
 
-  socket.on('opponent move', ({chessMove}) => {
-    console.log(chessMove)
-    safeGameMutate((game) => {
-      console.log(chessMove)
-      game.move(chessMove)
-    })
-  })
-
   return (
     <div>
       <Chessboard
+        aria-label="chessboard"
         id="PlayVsPlay"
         animationDuration={200}
         boardWidth={400}
@@ -55,7 +64,7 @@ function Gameboard({ socket }) {
         }}
         ref={chessboardRef}
       />
-      <button
+      {/* <button
         className="rc-button"
         onClick={() => {
           safeGameMutate((game) => {
@@ -76,7 +85,7 @@ function Gameboard({ socket }) {
         }}
       >
         undo
-      </button>
+      </button> */}
     </div>
   );
 }

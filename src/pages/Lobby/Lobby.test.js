@@ -5,15 +5,14 @@ import { default as Lobby } from '.'
 describe("Lobby page", () => {
   test("it renders the JoinGame component", () => {
     renderWithProviders(<Lobby/>)
-    const lobbyTitle = screen.getByRole('heading', {level: 2})
+    const lobbyTitle = screen.getByRole('heading', {level: 1})
     expect(lobbyTitle).toBeInTheDocument()
-    expect(lobbyTitle.textContent).toMatch(/game settings/i)
+    expect(lobbyTitle.textContent).toMatch(/join now/i)
   })
 
-  test("it renders the PlayGameButton component", () => {
+  test("it renders a button to return to home", () => {
     renderWithProviders(<Lobby/>)
-    const button = screen.getByRole('button')
-    expect(button).toBeInTheDocument()
-    expect(button.textContent).toMatch(/play game/i)
+    const goBack = screen.getByRole('link')
+    expect(goBack).toHaveAttribute('href', '/main')
   })
 })

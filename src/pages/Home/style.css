@@ -7,6 +7,16 @@
   z-index: -10;
 }
 
+.HomeTitle {
+  color: whitesmoke;
+  z-index: 10;
+  position: fixed;
+  top: 70px;
+  left: 40px;
+  font-size: 80px;
+  font-family: sans-serif;
+}
+
 #homeDiv {
   height: 100vh;
   width: 100vw;
@@ -278,6 +288,25 @@
   border-left: solid 5px;
   border-left-color: rgb(103, 56, 29);
   transform: skewY(-6deg);
+}
+#home_clip_board_paper {
+  background-color: whitesmoke;
+  /* background-image: url("https://www.transparenttextures.com/patterns/wood-pattern.png"); */
+  width: 55px;
+  border-radius: 5px;
+  position: fixed;
+  box-shadow: -5px -5px 10px rgba(0, 0, 0, 0.3);
+  margin: 26px auto 0;
+  height: 78px;
+  bottom: 7px;
+  left: 4px;
+  color: black;
+  
+  z-index: 10;
+}
+
+#home_clip_board:hover {
+  opacity: 50%;
 }
 
 #home-clip {

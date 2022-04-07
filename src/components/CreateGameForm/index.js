@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 // import { io } from "socket.io-client"
 import { useAuthContext } from '../../contexts/auth'
-import { useNavigate } from 'react-router-dom'
+import { Navigate, useNavigate } from 'react-router-dom'
 import axios from 'axios'
 
 const CreateGameForm = () => {
@@ -27,7 +27,12 @@ const CreateGameForm = () => {
     //     socket.emit("create board", { settings })
     // }
 
-    const handleSubmit = async () => {
+    const handleChange = (e) => {
+        setPlayer2Name(e.target.value)
+    }
+
+    const handleSubmit = async (e) => {
+        e.preventDefault()
         const lobbyData = {
             player_1_username: user,
             player_2_username: player2Name,
@@ -36,8 +41,11 @@ const CreateGameForm = () => {
         const headers = {
             "Content-Type": "application/json"
         }
-        const { lobby_id } = await axios.post('https://en-croissant.herokuapp.com/lobby', lobbyData, headers)
-        navigate(`/lobby/${lobby_id}`)
+        const {data} = await axios.post('https://en-croissant.herokuapp.com/lobby', lobbyData, headers)
+        // console.log(lobbyData)
+        // const { lobby_id } = await axios.post('localhost:5000/lobby', lobbyData, headers)
+        
+        navigate(`/lobby/${data}`)
     }
     
     // socket.on("new game", ({chessboard}) => { console.log(chessboard)})
@@ -45,16 +53,17 @@ const CreateGameForm = () => {
     return (
       <>
         <h2>Create Lobby</h2>
-        <form>
-            <label for="user2-name" >Room name: </label>
+        <form aria-label="create-game-form" onSubmit={handleSubmit}>
+            <label htmlFor="user2-name" >Opponent name: </label>
             <input 
+            aria-label="opponent-name"
             type="text"
             name="user2-name"
             id="user2-name"
             placeholder="Opponents username"
-            onChange={(e) => setPlayer2Name(e.target.value)}
+            onChange={handleChange}
             value={player2Name}
-            isRequired />
+            required />
 
 
             {/* <label for="AI-difficulty" >AI Difficulty: </label>
@@ -106,13 +115,14 @@ const CreateGameForm = () => {
                 <option value="yes">Yes</option>
                 <option value="no">No</option>
             </select> */}
-        </form>
-
         <button
-        onClick={handleSubmit}
+        aria-label="create-button"
+        type="submit"
         >
         Create Game
         </button>
+        </form>
+
 
       </>
     );

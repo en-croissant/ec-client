@@ -46,9 +46,9 @@ function RegForm() {
       const regResult = await register(formData);
       if (regResult === "Registration successful") {
         await login(formData);
-        navigate("/");
+        navigate("/main");
       } else {
-        throw new Error("");
+        throw new Error("Unsuccessful registration");
       }
     } catch (err) {
       setLoading(false);
@@ -63,7 +63,7 @@ function RegForm() {
         <form aria-label="reg-form" id="reg_form" onSubmit={handleSubmit}>
           <div id="back_paper"></div>
           <div>
-            <h1> Sign up here!</h1>
+            <h1> Sign up Sheet</h1>
             <div id="user_icon" className="reg-username">
               <label htmlFor="username">Username:</label>
               <input

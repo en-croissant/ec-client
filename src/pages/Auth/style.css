@@ -1,6 +1,5 @@
 .authbutton {
-    background-color: red;
-    border: none;
+    border: solid black 1px;
     padding: 15px 20px;
     text-align: center;
     display: inline;
@@ -10,6 +9,18 @@
     cursor: pointer;
     margin: auto;
     margin-bottom: 10px;
-    color: whitesmoke;
+    color: black;
     margin-left: 10px;
+}
+
+
+.goBack {
+    text-align: center;
+    display: inline;
+    border-radius: 16px;
+    font-size: 20px;
+    font-weight: 600;
+    cursor: pointer;
+    color: black; 
+    bottom: 0px;
 }
