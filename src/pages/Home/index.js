@@ -5,8 +5,7 @@ import { fadeIn } from "react-animations";
 import Radium, { StyleRoot } from "radium";
 // import {Header} from "../../layout"
 
-import { useAuthContext } from "../../contexts/auth";
-// import { useNavigate } from "react-router-dom";
+
 const styles = {
   fadeIn: {
     animation: "x 5s",
@@ -14,21 +13,10 @@ const styles = {
   },
 };
 function Home() {
-  const { user, logout } = useAuthContext();
-  // const navigate = useNavigate()
-
-  const handleLogout = async () => {
-    await logout();
-    // navigate('/')
-    window.location.reload(false);
-  };
 
   return (
     <>
       <div className="wrapper">
-        {!!user && (
-          <input type="submit" onClick={handleLogout} value="Logout" />
-        )}
         <div id="homeDiv"></div>
         <StyleRoot>
           <div className="HomeTitle" style={styles.fadeIn}>
