@@ -27,15 +27,18 @@ const JoinGame = () => {
     const lobby_id = window.location.pathname.split("/")[2];
     let hostName;
     const fetchLobbyData = async () => {
-      const { data } = await axios.get(
-        `https://en-croissant.herokuapp.com/lobby/${lobby_id}`
+      const url = "https://en-croissant.herokuapp.com"
+      const { data } = await  axios.get(
+        `${url}/lobby/${lobby_id}`
       );
-      setUsername1(data.player_1_username);
-      setUsername2(data.player_2_username);
-      setRoomName(data.lobby_id);
-      hostName = data.player_1_username;
+      const user1 = await axios.get(`${url}/users/${data[0].player_1_key}`);
+      setUsername1(user1.data[0].username);
+      const user2 = await axios.get(`${url}/users/${data[0].player_2_key}`)
+      setUsername2(user2.data[0].username);
+      setRoomName(data[0].lobby_id);
+      hostName = user1.data[0].username;
     };
-    await fetchLobbyData();
+    fetchLobbyData();
     if (user === hostName) {
       setIsHost(true);
     }
@@ -43,7 +46,7 @@ const JoinGame = () => {
 
   const onClickEvent = (e) => {
     e.preventDefault();
-    navigate("/play");
+    navigate(`/play/${roomName}`);
   };
 
   return (
@@ -58,13 +61,13 @@ const JoinGame = () => {
             <li>Time limit: {timeLimit}</li> */}
       </div>
 
-      {isHost ? (
+      {/* {isHost ? ( */}
         <button aria-label="play-button" onClick={onClickEvent}>
           Start Game
         </button>
-      ) : (
+      {/* ) : (
         <></>
-      )}
+      )} */}
     </>
   );
 };
