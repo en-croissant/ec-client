@@ -49,27 +49,25 @@ function LoginForm() {
         <form aria-label="login-form" id="login_form" onSubmit={handleSubmit}>
           <div id="back_paper"></div>
           <div>
-            <h1 id="Login_Sheet"> Login Sheet</h1>
+            <h1 id="login-title"> Login Sheet</h1>
             <div id="user_icon"></div>
-            <label id="labels" htmlFor="username">
-              Username:
-            </label>
-            <input
-              id="username"
-              className="password-field"
-              aria-label="username-field"
-              type="text"
-              name="username"
-              value={formData.username}
-              onChange={handleInput}
-              placeholder="username"
-              required
-            />
+            <div className="field-div">
+              <label htmlFor="username">Username:</label>
+              <input
+                id="username"
+                className="password-field"
+                aria-label="username-field"
+                type="text"
+                name="username"
+                value={formData.username}
+                onChange={handleInput}
+                placeholder="username"
+                required
+              />
+            </div>
           </div>
-          <div>
-            <label id="labels" htmlFor="password">
-              Password:
-            </label>
+          <div className="field-div">
+            <label htmlFor="password">Password:</label>
             <input
               id="password"
               aria-label="password-field"
