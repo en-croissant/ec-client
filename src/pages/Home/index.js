@@ -13,28 +13,31 @@ const styles = {
     animationName: Radium.keyframes(fadeIn, "fadeIn"),
   },
 };
-function Home() {
-     const [showReg, setShowReg] = useState(false);
-     const [showLogin, setShowLogin] = useState(false);
 
-     const onClick = () => {
-       if (showLogin == true || showReg == true) {
-         setShowLogin(false);
-         setShowReg(false)
-     } else {
-       setShowLogin(true)
-     }
+function Home() {
+
+    const { user } = useAuthContext();
+    const [showReg, setShowReg] = useState(false);
+    const [showLogin, setShowLogin] = useState(false);
+
+    const onClick = () => {
+      if (showLogin == true || showReg == true) {
+        setShowLogin(false);
+        setShowReg(false)
+      } else {
+        setShowLogin(true)
+      }
     }
 
-     const onClickbutton = () => {
-       if (showLogin ==true) {
-         setShowReg(true)
-         setShowLogin(false)
-       } else {
-         setShowReg(false)
-         setShowLogin(true)
-       }
-     }
+    const onClickbutton = () => {
+      if (showLogin ==true) {
+        setShowReg(true)
+        setShowLogin(false)
+      } else {
+        setShowReg(false)
+        setShowLogin(true)
+      }
+    }
 
 
    
@@ -79,7 +82,7 @@ function Home() {
               className="authbutton"
               onClick={onClickbutton}
             >
-              Sign up
+              Don't have an account? Click here to sign up!
             </span>
           ) : showReg ? (
             <span
@@ -87,7 +90,7 @@ function Home() {
               className="authbutton"
               onClick={onClickbutton}
             >
-              Login
+              Already have an account? Click here to sign in!
             </span>
           ) : null}
 
