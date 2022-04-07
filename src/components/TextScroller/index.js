@@ -8,7 +8,7 @@ function TextScroller() {
     <>
       <div className="marquee">
         <div>
-          <span>LIVE MATCHES: RICHARD VS NOAH, JUMAANAH VS SUKHRAJ, MONIA VS ROMEO, BOB VS GOB, JIM VS TIM, DAVE VS DUVE, CROISSANT VS BREAD </span>
+          <span>LIVE MATCHES: RICHARD VS NOAH, JUMAANAH VS SUKHRAJ, SAMINA VS AI, MONIA VS ROMEO, BOB VS GOB, CROISSANT VS BREAD </span>
         </div>
       </div>
     </>

@@ -3,6 +3,7 @@ import "./style.css";
 import { TableObjects, TextScroller } from "../../components";
 import { fadeIn } from "react-animations";
 import Radium, { StyleRoot } from "radium";
+// import {Header} from "../../layout"
 
 import { useAuthContext } from "../../contexts/auth";
 // import { useNavigate } from "react-router-dom";
@@ -54,6 +55,7 @@ function Home() {
           <div id="home-clip"></div>
         </div>
         <TextScroller/>
+        {/* <Header/> */}
       </div>
     </>
   );
