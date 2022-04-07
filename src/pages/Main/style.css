@@ -1,5 +1,5 @@
 #createGame {
-   width: 250px;
+  width: 250px;
   height: 200px;
   text-align: justify;
   position: relative;
@@ -8,15 +8,87 @@
   font-size: 20px;
 }
 
-
 #joinGame {
   width: 250px;
   height: 200px;
   text-align: justify;
-  position: relative;
   display: inline-block;
   margin-top: 20px;
   font-size: 20px;
+}
 
+#create_doodle {
+  margin-top: 80px;
+  position: relative;
+  cursor: pointer;
+  height: 50px;
+}
 
+#create_doodle button {
+  padding: 8px 16px;
+  border: none;
+  background: none;
+  outline: none;
+}
+
+#create_doodle svg {
+  position: absolute;
+  top: 15px;
+  left: 40px;
+  width: 155px;
+  height: 50px;
+  pointer-events: none;
+}
+
+#create_doodle path {
+  stroke: #db3157;
+  stroke-width: 8px;
+  stroke-dasharray: 0 1500;
+}
+
+#create_doodle:hover path {
+  animation: draw 1s forwards;
+}
+
+#join_doodle {
+  margin-top: 80px;
+  position: relative;
+  cursor: pointer;
+  height: 50px;
+}
+
+#join_doodle button {
+  padding: 8px 16px;
+  border: none;
+  background: none;
+  outline: none;
+}
+
+#join_doodle svg {
+  position: absolute;
+  top: 15px;
+  left: 40px;
+  width: 155px;
+  height: 50px;
+  pointer-events: none;
+}
+
+#join_doodle path {
+  stroke: #db3157;
+  stroke-width: 8px;
+  stroke-dasharray: 0 1500;
+}
+
+#join_doodle:hover path {
+  animation: draw 1s forwards;
+}
+
+@keyframes draw {
+  from {
+    stroke-dasharray: 0 1500;
+  }
+
+  to {
+    stroke-dasharray: 1500 1500;
+  }
 }

@@ -5,7 +5,9 @@ const TableObjects = () => {
   return (
     <>
       <a data-testid="tableobj-component" href="/Book">
-        <div id="top_book"></div>
+        <div id="top_book">
+          <h7>How to play</h7>
+        </div>
         <div id="top_page"></div>
         <div id="side_book"></div>
         <div id="pages"></div>
