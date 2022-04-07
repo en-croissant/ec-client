@@ -40,7 +40,7 @@ function Book(props) {
             <h5> The Queen</h5>
             <h5> The King</h5>
             <h5> The Bishop</h5>
-            <h5> The King</h5>
+            <h5> The Knight</h5>
             <h5> The Rook </h5>
             <h5> The Pawn </h5>
           </div>
@@ -70,28 +70,51 @@ function Book(props) {
             </h3>
           </div>
           <div className="leftpage">
-            <br></br>5
+            <br></br>5<h1> The Queen </h1>
+            <h2> etc etc ect </h2>
+            <h3>etc etc etc</h3>
+            <h3>movements</h3>
           </div>
           <div className="rightpage">
-            <br></br>6
+            <br></br>6<h1> The King </h1>
+            <h2> etc etc ect </h2>
+            <h3>etc etc etc</h3>
+            <h3>movements</h3>
           </div>
           <div className="leftpage">
-            <br></br>7
+            <br></br>7<h1> The Bishop </h1>
+            <h2> etc etc ect </h2>
+            <h3>etc etc etc</h3>
+            <h3>movements</h3>
           </div>
           <div className="rightpage">
-            <br></br>8
+            <br></br>8<h1> The Knight </h1>
+            <h2> etc etc ect </h2>
+            <h3>etc etc etc</h3>
+            <h3>movements</h3>
           </div>
           <div className="leftpage">
-            <br></br>9
+            <br></br>9<h1> The Rook </h1>
+            <h2> etc etc ect </h2>
+            <h3>etc etc etc</h3>
+            <h3>movements</h3>
           </div>
           <div className="rightpage">
-            <br></br>10
+            <br></br>10<h1> The Pawn </h1>
+            <h2> etc etc ect </h2>
+            <h3>etc etc etc</h3>
+            <h3>movements</h3>
           </div>
           <div className="leftpage">
-            <br></br>11
+            <br></br>11<h1> The chessboard </h1>
+            <h2> etc etc ect </h2>
+            <h3>etc etc etc</h3>
+            <h3>movements</h3>
           </div>
           <div className="rightpage">
-            <br></br>12
+            <br></br>12<h1> Incoming more chess info. </h1>
+            <h2> etc etc ect </h2>
+            <h3>etc etc etc</h3>
           </div>
         </HTMLFlipBook>
         ;

@@ -12,8 +12,10 @@ function PlayGame() {
 
   return (
     <>
-      <div id="chessboard_border">
-        <GameChessboard socket={socket} />
+      <div className="bookbackground">
+        <div id="chessboard_border">
+          <GameChessboard socket={socket} />
+        </div>
       </div>
     </>
   );
