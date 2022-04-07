@@ -22,6 +22,7 @@ function Book(props) {
             <div id="login_page3"></div>
             <div id="login_page4"></div>
             <div id="login_page5">
+              <h2 className="bookfonttext">How To Play</h2>
               {/* <div className="bookfronttext">NOTEBOOK</div> */}
             </div>
             {/* </div> */}
@@ -156,7 +157,6 @@ function Book(props) {
             <h3>En Passant and Castling</h3>
           </div>
         </HTMLFlipBook>
-        <Header />
       </div>
     </>
   );

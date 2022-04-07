@@ -5,6 +5,11 @@
   background: linear-gradient(315deg, #8e4f18 0%, #a55c1b 50%, #7a4618 74%);
 }
 
+.bookfonttext {
+  font-size: 60px;
+  padding-top: 50px;
+}
+
 h3 {
   font-size: 15px;
 }

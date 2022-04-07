@@ -5,7 +5,7 @@ import { fadeIn } from "react-animations";
 import Radium, { StyleRoot } from "radium";
 // import {Header} from "../../layout"
 import { useAuthContext } from "../../contexts/auth";
-import { LoginForm, RegForm, FlyingPaper } from "../../components";
+import { LoginForm, RegForm, Logout } from "../../components";
 
 const styles = {
   fadeIn: {
@@ -20,11 +20,15 @@ function Home() {
   const [showLogin, setShowLogin] = useState(false);
 
   const onClick = () => {
-    if (showLogin == true || showReg == true) {
-      setShowLogin(false);
-      setShowReg(false);
+    if (!user) {
+      if (showLogin == true || showReg == true) {
+        setShowLogin(false);
+        setShowReg(false);
+      } else {
+        setShowLogin(true);
+      }
     } else {
-      setShowLogin(true);
+      window.location.href = "/main";
     }
   };
 
@@ -65,7 +69,7 @@ function Home() {
         {/* <a data-testid="login-link" href={!user ? "/auth" : "/main"}> */}
         <div onClick={onClick} id="home_clip_board">
           <div id="home_clip_board_paper">
-            <h6>Sign in</h6>
+            <h6>{!user ? "Sign in" : "Join Game"}</h6>
           </div>
           {/* <FlyingPaper /> */}
           <div id="home-clip"></div>
@@ -93,6 +97,7 @@ function Home() {
           {showLogin ? <LoginForm /> : showReg ? <RegForm /> : null}
         </div>
         <TextScroller />
+        {!!user ? <Logout /> : <></>}
         {/* <Header/> */}
       </div>
     </>
