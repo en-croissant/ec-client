@@ -5,3 +5,4 @@ export { default as CreateGame } from "./CreateGame";
 export { default as Auth } from "./Auth"
 export { default as PlayGame } from "./PlayGame"
 export { default as Main } from "./Main";
+export { default as NotFound } from "./NotFound"

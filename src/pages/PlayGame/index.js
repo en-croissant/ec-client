@@ -13,7 +13,9 @@ function PlayGame() {
   return (
     <>
       <div id="chessboard_border">
-        <GameChessboard socket={socket} />
+        <div id="chessboard_bottm">
+          <GameChessboard socket={socket} />
+        </div>
       </div>
     </>
   );
