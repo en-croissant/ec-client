@@ -28,5 +28,6 @@
 }
 
 .HTMLFlipBook {
-  margin-left: 200px;
+  margin-left: 420px;
+  position: fixed;
 }
