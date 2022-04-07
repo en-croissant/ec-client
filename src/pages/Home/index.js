@@ -78,6 +78,7 @@ function Home() {
         <div className="homesignup">
           {showLogin ? (
             <span
+              id="login_authbtn"
               data-testid="form-button"
               className="authbutton"
               onClick={onClickbutton}
@@ -87,10 +88,11 @@ function Home() {
           ) : showReg ? (
             <span
               data-testid="form-button"
+              id="reg_authbtn"
               className="authbutton"
               onClick={onClickbutton}
             >
-              Already have an account? Click here to sign in!
+              Already have an account? Click here to login in!
             </span>
           ) : null}
 

@@ -12,7 +12,26 @@
   width: 310px;
 }
 
+#reg_authbtn {
+  padding: 15px 20px;
+  display: inline;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-bottom: 0px;
+  margin-top: 330px;
+  color: black;
+  margin-left: 39px;
+  z-index: 10;
+  width: 310px;
+}
+
 .authbutton:hover {
+  color: rgb(230, 3, 3);
+  opacity: 50%;
+}
+
+#reg_authbtn:hover {
   color: rgb(230, 3, 3);
   opacity: 50%;
 }
