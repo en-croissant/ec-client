@@ -50,6 +50,16 @@ label:where(:hover, :focus-visible) {
   background-position-x: left;
 }
 
+input {
+  border: none;
+  background-color: transparent;
+  outline: none;
+  margin-top: 15px;
+  margin-left: 20px;
+  font-family: "Grape Nuts", cursive;
+  font-size: 15px;
+}
+
 #username {
   border: none;
   background-color: transparent;
