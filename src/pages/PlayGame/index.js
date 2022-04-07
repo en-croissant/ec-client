@@ -13,7 +13,7 @@ function PlayGame() {
   return (
     <>
       <div id="chessboard_border">
-        <div id="chessboard_bottm">
+        <div id="chessboard_inner_border">
           <GameChessboard socket={socket} />
         </div>
       </div>

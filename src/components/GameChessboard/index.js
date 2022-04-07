@@ -5,24 +5,6 @@ import { Chessboard } from "react-chessboard";
 function Gameboard({ socket }) {
   useEffect(() => {
     const lobby_id = window.location.pathname.split("/")[2];
-<<<<<<< HEAD
-    socket.emit("join", { lobby_id: lobby_id });
-    socket.on("initial board", ({ board }) => {
-      console.log(game.fen());
-      setGame(new Chess(board));
-      socket.on("opponent move", ({ chessMove }) => {
-        setLastMove(chessMove);
-        safeGameMutate((game) => {
-          game.move(chessMove);
-        });
-      });
-    });
-  }, [socket]);
-
-  const chessboardRef = useRef();
-  const [game, setGame] = useState(new Chess());
-  const [lastMove, setLastMove] = useState("");
-=======
     socket.emit('join', {lobby_id:lobby_id})
     socket.on('initial board', ({board}) => {
       console.log(game.fen())
@@ -37,7 +19,6 @@ function Gameboard({ socket }) {
 
   const chessboardRef = useRef();
   const [game, setGame] = useState(new Chess());
->>>>>>> 67503f8004fe6eeaecf8af931ad3e09d8e4a1c0a
 
   function safeGameMutate(modify) {
     setGame((g) => {
