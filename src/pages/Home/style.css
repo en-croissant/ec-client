@@ -17,7 +17,7 @@
   position: fixed;
   transform: scale(0.75);
   top: 60px;
-  left: 1100px;
+  left: 1050px;
 }
 
 .HomeTitle {
@@ -293,7 +293,7 @@
   width: 65px;
   border-radius: 5px;
   position: fixed;
-  left: 1000px;
+  left: 900px;
   box-shadow: -5px -5px 10px rgba(0, 0, 0, 0.3);
   margin: 26px auto 0;
   top: 25%;
