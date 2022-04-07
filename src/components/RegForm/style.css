@@ -69,6 +69,13 @@
   font-family: "Grape Nuts", cursive;
   font-size: 20px;
 }
+#submit_btn_reg {
+  border: none;
+  background-color: transparent;
+  outline: none;
+  font-family: "Grape Nuts", cursive;
+  font-size: 24px;
+}
 
 #reg_btn_doodle svg {
   position: absolute;
