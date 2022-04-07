@@ -46,7 +46,7 @@ function RegForm() {
       const regResult = await register(formData);
       if (regResult === "Registration successful") {
         await login(formData);
-        navigate("/");
+        navigate("/main");
       } else {
         throw new Error("Unsuccessful registration");
       }

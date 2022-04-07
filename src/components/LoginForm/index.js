@@ -32,7 +32,7 @@ function LoginForm() {
       setLoading(true);
       const loginResult = await login(formData);
       if (loginResult === "Login successful") {
-        navigate("/");
+        navigate("/main");
       } else {
         throw new Error(loginResult);
       }
