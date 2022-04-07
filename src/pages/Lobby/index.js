@@ -5,8 +5,11 @@ import "./style.css";
 function Lobby() {
   return (
     <>
-    <Header />
-    <div id="cork_board"></div>
+      <Header />
+      <a className="goBack" href="/main">
+        <span>Go back</span>
+      </a>
+      <div id="cork_board"></div>
       <div id="poster">
         <div id="poster_border">
           <div id="inner_border">
@@ -15,9 +18,6 @@ function Lobby() {
           </div>
         </div>
       </div>
-      <a className="goBack" href="/main">
-        <span>Go back</span>
-      </a>
     </>
   );
 }
