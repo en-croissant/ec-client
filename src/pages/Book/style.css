@@ -21,6 +21,11 @@ h5 {
   border-radius: 10px;
   border-left: 6px solid grey;
 }
+.plain_page {
+  background-color: whitesmoke;
+  border-radius: 10px;
+  border-left: 6px solid grey;
+}
 
 .rightpage {
   background-color: whitesmoke;
