@@ -65,7 +65,7 @@ input {
   background-color: transparent;
   outline: none;
   margin-top: 10px;
-  margin-left: 15px;
+  margin-left: 10px;
   font-family: "Grape Nuts", cursive;
   font-size: 20px;
 }
@@ -73,10 +73,13 @@ input {
   border: none;
   background-color: transparent;
   outline: none;
-
-  margin-left: 15px;
+  margin-left: 10px;
   font-family: "Grape Nuts", cursive;
   font-size: 20px;
+}
+
+.field-div {
+  display: flex;
 }
 
 h1 {

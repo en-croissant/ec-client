@@ -64,7 +64,7 @@ function RegForm() {
           <div id="back_paper"></div>
           <div>
             <h1> Sign up Sheet</h1>
-            <div id="user_icon" className="reg-username">
+            <div id="user_icon" className="reg-username field-div">
               <label htmlFor="username">Username:</label>
               <input
                 aria-label="username-field"
@@ -79,7 +79,7 @@ function RegForm() {
               />
             </div>
           </div>
-          <div className="reg-email">
+          <div className="reg-email field-div">
             <label htmlFor="email">Email:</label>
             <input
               aria-label="email-field"
@@ -93,7 +93,7 @@ function RegForm() {
               // pattern={"([0-9]|[A-Z]|[a-z]){1,30}@([0-9]|[A-Z]|[a-z]){1,10}.([0-9]|[A-Z]|[a-z]){1,10}(.([0-9]|[A-Z]|[a-z]){1,10})?"}
             />
           </div>
-          <div className="reg-password">
+          <div className="reg-password field-div">
             <label htmlFor="password">Password:</label>
             <input
               aria-label="password-field"
@@ -107,7 +107,7 @@ function RegForm() {
               required
             />
           </div>
-          <div>
+          <div className="field-div">
             <label htmlFor="passwordConfirmation">Confirm:</label>
             <input
               aria-label="passwordConfirmation-field"
