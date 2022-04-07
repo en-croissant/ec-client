@@ -30,7 +30,8 @@ function Book(props) {
             <br></br>
           </div>
           <div className="rightpage">
-            <br></br>1<h1>How To Play Chess</h1>
+            <br></br>
+            <h1>How To Play Chess</h1>
             <br></br>
             <h2>By En Croissant</h2>
           </div>

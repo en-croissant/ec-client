@@ -5,7 +5,7 @@ import React from "react";
 function FlyingPaper() {
   return (
     <>
-      <div id="app">
+      <div id="app_paper">
         <div className="papers">
           <div className="paper -rogue">
             <div className="segment">

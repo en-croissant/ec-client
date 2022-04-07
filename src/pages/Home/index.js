@@ -1,11 +1,11 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import "./style.css";
 import { TableObjects, TextScroller } from "../../components";
 import { fadeIn } from "react-animations";
 import Radium, { StyleRoot } from "radium";
 // import {Header} from "../../layout"
 import { useAuthContext } from "../../contexts/auth";
-import { LoginForm, RegForm } from "../../components";
+import { LoginForm, RegForm, FlyingPaper } from "../../components";
 
 const styles = {
   fadeIn: {
@@ -15,32 +15,28 @@ const styles = {
 };
 
 function Home() {
+  const { user } = useAuthContext();
+  const [showReg, setShowReg] = useState(false);
+  const [showLogin, setShowLogin] = useState(false);
 
-    const { user } = useAuthContext();
-    const [showReg, setShowReg] = useState(false);
-    const [showLogin, setShowLogin] = useState(false);
-
-    const onClick = () => {
-      if (showLogin == true || showReg == true) {
-        setShowLogin(false);
-        setShowReg(false)
-      } else {
-        setShowLogin(true)
-      }
+  const onClick = () => {
+    if (showLogin == true || showReg == true) {
+      setShowLogin(false);
+      setShowReg(false);
+    } else {
+      setShowLogin(true);
     }
+  };
 
-    const onClickbutton = () => {
-      if (showLogin ==true) {
-        setShowReg(true)
-        setShowLogin(false)
-      } else {
-        setShowReg(false)
-        setShowLogin(true)
-      }
+  const onClickbutton = () => {
+    if (showLogin == true) {
+      setShowReg(true);
+      setShowLogin(false);
+    } else {
+      setShowReg(false);
+      setShowLogin(true);
     }
-
-
-   
+  };
 
   return (
     <>
@@ -101,7 +97,7 @@ function Home() {
       </div>
     </>
   );
-  };
+}
 
 export default Home;
 
@@ -116,4 +112,3 @@ export default Home;
             <div id="whiteR_dgnl"></div>
           </div> */
 }
-
