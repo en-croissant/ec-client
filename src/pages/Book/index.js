@@ -22,6 +22,7 @@ function Book(props) {
             <div id="login_page3"></div>
             <div id="login_page4"></div>
             <div id="login_page5">
+              <h2 className="bookfonttext">How To Play</h2>
               {/* <div className="bookfronttext">NOTEBOOK</div> */}
             </div>
             {/* </div> */}

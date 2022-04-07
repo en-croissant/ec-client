@@ -40,7 +40,7 @@
 
 label {
   font-family: "Just Another Hand", cursive;
-  font-size: 30px;
+  font-size: 20px;
   background: linear-gradient(0deg, rgb(227, 239, 93), rgb(227, 239, 93))
     no-repeat right bottom / 0 var(--bg-h);
   transition: background-size 350ms;
@@ -58,7 +58,7 @@ input {
   margin-top: 15px;
   margin-left: 20px;
   font-family: "Grape Nuts", cursive;
-  font-size: 22px;
+  font-size: 15px;
 }
 
 h1 {
