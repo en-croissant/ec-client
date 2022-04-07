@@ -132,7 +132,6 @@ function Book(props) {
             <h3>En Passant and Castling</h3>
           </div>
         </HTMLFlipBook>
-        <Header />
       </div>
     </>
   );
