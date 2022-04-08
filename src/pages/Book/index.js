@@ -56,17 +56,17 @@ function Book(props) {
               king in what is called a checkmate.
             </h3>
             <h3>
-              The next few chapters will englighten on how they cooperate with
+              The next few chapters will enlighten on how they cooperate with
               one another, and the affairs they face in order to come to a
-              succesion.
+              succession.
             </h3>
           </div>
           <div className="leftpage">
             <br></br>4<h1> Chapter 2: </h1>
             <h2> The Chess pieces </h2>
             <h3>
-              Chess is about winning. It's a game to win and succed through life
-              through captalism
+              Chess is about winning. It's a game to win and succeed through life
+              via captalism
             </h3>
             <h3>
               What is life if you aren't winning? Can't catch some W's? Take an
@@ -77,7 +77,7 @@ function Book(props) {
             <br></br>5<h1> The Pawn </h1>
             <h2>The humble sacrifice</h2>
             <h3>
-              The pawn only moves one square forwards, except for in two cases:
+              The pawn only moves one square forward, except for in two cases:
               the inital move can be two squares forward. When taking a piece it
               must be on a forwards diagonal
             </h3>
@@ -124,7 +124,7 @@ function Book(props) {
               lose this piece without a good reason
             </h3>
             <h3>
-              The Queen has the ability to travel in straight and diagnoal lines
+              The Queen has the ability to travel in straight and diagonal lines
               like both the Bishop and Rook
             </h3>
           </div>
