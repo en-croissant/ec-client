@@ -21,7 +21,6 @@ export const AuthProvider = ({ children }) => {
   }
 
   const login = async (userData) => {
-    // return new Promise(async (res, rej) => {
       try {
         const options = {
           headers: {
@@ -35,8 +34,6 @@ export const AuthProvider = ({ children }) => {
           options
         );
 
-        // console.log(data)
-
         if (data.success) {
           console.log("Success!");
         } else {
@@ -44,13 +41,10 @@ export const AuthProvider = ({ children }) => {
         }
 
         loginUser(data.token);
-        // res("Login successful");
         return "Login successful"
       } catch (err) {
-        // rej(`Login error: ${err}`);
         return err
       }
-    // });
   };
 
   const register = async (userData) => {

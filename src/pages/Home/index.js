@@ -3,7 +3,6 @@ import "./style.css";
 import { TableObjects, TextScroller } from "../../components";
 import { fadeIn } from "react-animations";
 import Radium, { StyleRoot } from "radium";
-// import {Header} from "../../layout"
 import { useAuthContext } from "../../contexts/auth";
 import { LoginForm, RegForm, Logout } from "../../components";
 import { Navigate, useNavigate } from "react-router-dom";
@@ -53,7 +52,6 @@ function Home() {
             En Croissant
           </div>
         </StyleRoot>
-        {/* <LightSwitch /> */}
         <div id="table">
           <TableObjects />
           <div id="table_top"></div>
@@ -73,10 +71,8 @@ function Home() {
           <div id="home_clip_board_paper">
             <h6>{!user ? "Sign in" : "Join Game"}</h6>
           </div>
-          {/* <FlyingPaper /> */}
           <div id="home-clip"></div>
         </div>
-        {/* </a> */}
         <div className="homesignup">
           {showLogin ? (
             <span
@@ -102,22 +98,9 @@ function Home() {
         </div>
         <TextScroller />
         {!!user ? <Logout /> : <></>}
-        {/* <Header/> */}
       </div>
     </>
   );
 }
 
 export default Home;
-
-{
-  /* <div id="black_l">
-            <div id="black_dgnl"></div>
-          </div>
-          <div id="white_l">
-            <div id="white_dgnl"></div>
-          </div>
-          <div id="white_r">
-            <div id="whiteR_dgnl"></div>
-          </div> */
-}

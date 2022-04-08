@@ -1,4 +1,3 @@
-// import logo from "./logo.svg";
 import { Routes, Route } from "react-router-dom";
 import * as Pages from "./pages";
 import { useAuthContext } from "./contexts/auth";
@@ -20,7 +19,6 @@ function App() {
           </>
         ) : (
           <>
-            {/* <Route path={"/profile"} element={Pages.Profile} /> */}
             <Route path={"/main"} element={<Pages.Main />} />
             <Route path={"/create"} element={<Pages.CreateGame />} />
             <Route path={"/play/*"} element={<Pages.PlayGame />} />
