@@ -314,8 +314,17 @@
   bottom: 7px;
   left: 4px;
   color: black;
-  
+  box-shadow: 1px 2px 5px #444;
+  animation: anim 1s infinite ease-in-out alternate;
+
   z-index: 10;
+}
+
+@keyframes anim {
+  100% {
+    transform: translateZ(0) translateY(3px) perspective(1290px);
+    box-shadow: 60px 60px 50px #999;
+  }
 }
 
 #home_clip_board:hover {
