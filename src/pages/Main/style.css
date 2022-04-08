@@ -1,6 +1,6 @@
 #main_text{
   margin-top:0;
-  font-size: 4rem;
+  font-size: 3.5rem;
   font-family: cursive;
 }
 
@@ -15,7 +15,7 @@
     cursor: pointer;
     margin: auto;
     margin-bottom: 0px;
-    margin-top: 50px;
+    margin-top: 20px;
     color: black;
     margin-left: 0px;
     z-index: 10;
@@ -38,7 +38,7 @@
     cursor: pointer;
     margin: auto;
     margin-bottom: 0px;
-    margin-top: 50px;
+    margin-top: 20px;
     color: black;
     margin-left: 0px;
     z-index: 10;
@@ -56,7 +56,7 @@ a {
 }
 
 #create_doodle {
-  margin-top: 80px;
+  margin-top: 0px;
   position: relative;
   cursor: pointer;
   height: 50px;
