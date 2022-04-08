@@ -6,11 +6,7 @@ import { useNavigate } from "react-router-dom";
 const TableObjects = () => {
   const navigate = useNavigate()
   const { user } = useAuthContext();
-  const boardOnClick = () => {
-    if (user) {
-
-    }
-  }
+  
   function goToBook() {
     navigate("/book")
   }
