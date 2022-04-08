@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 // import { io } from "socket.io-client"
 import { useAuthContext } from '../../contexts/auth'
-import { Navigate, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
+
+import "./style.css"
 
 const CreateGameForm = () => {
 
@@ -52,15 +54,15 @@ const CreateGameForm = () => {
   
     return (
       <>
-        <h2>Create Lobby</h2>
+        <h1 id="create_text">Create Lobby</h1>
         <form aria-label="create-game-form" onSubmit={handleSubmit}>
-            <label htmlFor="user2-name" >Opponent name: </label>
+            <label htmlFor="user2-name" >Opponent name:</label>
             <input 
             aria-label="opponent-name"
             type="text"
             name="user2-name"
             id="user2-name"
-            placeholder="Opponents username"
+            placeholder="Opponent's username"
             onChange={handleChange}
             value={player2Name}
             required />
@@ -116,6 +118,7 @@ const CreateGameForm = () => {
                 <option value="no">No</option>
             </select> */}
         <button
+        id="create_game"
         aria-label="create-button"
         type="submit"
         >
