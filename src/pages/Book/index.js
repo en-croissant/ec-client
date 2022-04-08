@@ -36,7 +36,7 @@ function Book(props) {
             <br></br>
             <h2>By En Croissant</h2>
           </div>
-          <div className="rightpage">
+          <div className="leftpage">
             <br></br>2<h3> Contents</h3>
             <h4> Chapter 1: What is Chess about?</h4>
             <h5> A brief summary about Chess</h5>
@@ -48,7 +48,7 @@ function Book(props) {
             <h5> The Rook </h5>
             <h5> The Pawn </h5>
           </div>
-          <div className="leftpage">
+          <div className="rightpage">
             <br></br>3<h1> Chapter 1: </h1>
             <h2> What is Chess about? </h2>
             <h3>
@@ -56,17 +56,17 @@ function Book(props) {
               king in what is called a checkmate.
             </h3>
             <h3>
-              The next few chapters will englighten on how they cooperate with
+              The next few chapters will enlighten on how they cooperate with
               one another, and the affairs they face in order to come to a
-              succesion.
+              succession.
             </h3>
           </div>
-          <div className="rightpage">
+          <div className="leftpage">
             <br></br>4<h1> Chapter 2: </h1>
             <h2> The Chess pieces </h2>
             <h3>
-              Chess is about winning. It's a game to win and succed through life
-              through captalism
+              Chess is about winning. It's a game to win and succeed through life
+              via captalism
             </h3>
             <h3>
               What is life if you aren't winning? Can't catch some W's? Take an
@@ -77,7 +77,7 @@ function Book(props) {
             <br></br>5<h1> The Pawn </h1>
             <h2>The humble sacrifice</h2>
             <h3>
-              The pawn only moves one square forwards, except for in two cases:
+              The pawn only moves one square forward, except for in two cases:
               the inital move can be two squares forward. When taking a piece it
               must be on a forwards diagonal
             </h3>
@@ -86,7 +86,7 @@ function Book(props) {
               any piece (except the king)
             </h3>
           </div>
-          <div className="rightpage">
+          <div className="leftpage">
             <br></br>6<h1> The Knight </h1>
             <h2>Hippity hoppity</h2>
             <h3>
@@ -97,7 +97,7 @@ function Book(props) {
               then one square at a right angle to the first direction
             </h3>
           </div>
-          <div className="leftpage">
+          <div className="rightpage">
             <br></br>7<h1> The Rook </h1>
             <h2>Howl's moving castle</h2>
             <h3>One of the most powerful pieces</h3>
@@ -116,7 +116,7 @@ function Book(props) {
               direction as they like
             </h3>
           </div>
-          <div className="leftpage">
+          <div className="rightpage">
             <br></br>9<h1> The Queen </h1>
             <h2>Oh No, My Queen!</h2>
             <h3>
@@ -124,11 +124,11 @@ function Book(props) {
               lose this piece without a good reason
             </h3>
             <h3>
-              The Queen has the ability to travel in straight and diagnoal lines
+              The Queen has the ability to travel in straight and diagonal lines
               like both the Bishop and Rook
             </h3>
           </div>
-          <div className="rightpage">
+          <div className="leftpage">
             <br></br>10<h1> The King </h1>
             <h2>Long live the king</h2>
             <h3>
@@ -140,7 +140,7 @@ function Book(props) {
               king can only move one square at a time
             </h3>
           </div>
-          <div className="leftpage">
+          <div className="rightpage">
             <br></br>11<h1> The chessboard </h1>
             <h2>Everything thing you need to know from A to H</h2>
             <h3>
@@ -151,10 +151,13 @@ function Book(props) {
               row 8
             </h3>
           </div>
-          <div className="rightpage">
-            <br></br>12<h1> Incoming more chess info. </h1>
+          <div className="leftpage">
+            <h1> Incoming more chess info. </h1>
             <h2>Advanced rules such as:</h2>
             <h3>En Passant and Castling</h3>
+          </div>
+          <div className="rightpage">
+            <br></br>
           </div>
         </HTMLFlipBook>
         <a href="/">

@@ -153,6 +153,8 @@ function Gameboard({ socket }) {
           borderRadius: "4px",
           // boxShadow: "0 5px 15px rgba(0, 0, 0, 0.5)",
         }}
+        customDarkSquareStyle={{ backgroundColor: '#719972' }}
+        customLightSquareStyle={{ backgroundColor: '#f7e7e0' }}
         customSquareStyles={{
           ...moveSquares,
           ...optionSquares,

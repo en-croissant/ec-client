@@ -27,23 +27,31 @@
   display: block;
   width: 200%;
   height: 30px;
-  opacity: 50%;
   position: absolute;
   overflow: hidden;
 
-  animation: marquee 15s linear infinite;
+  animation: marquee 10s linear infinite;
 }
 
 .marquee span {
-  float: left;
+  float:right;
   width: 100%;
+  color: rgb(228, 9, 9);
 }
+
+
 
 @keyframes marquee {
   0% {
-    left: 0;
+    left: -25%;
   }
   100% {
-    left: -100%;
+    left: -140%;
   }
+}
+
+
+.Live {
+  color: red;
+  display: inline;
 }

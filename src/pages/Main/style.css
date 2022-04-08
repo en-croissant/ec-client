@@ -1,15 +1,21 @@
+#main_text{
+  margin-top:0;
+  font-size: 3.5rem;
+  font-family: cursive;
+}
+
 #createGame {
    border: solid black 1px;
     padding: 15px 20px;
     text-align: center;
     display: inline;
     border-radius: 16px;
-    font-size: 20px;
+    font-size: 2.5rem;
     font-weight: 600;
     cursor: pointer;
     margin: auto;
     margin-bottom: 0px;
-    margin-top: 50px;
+    margin-top: 20px;
     color: black;
     margin-left: 0px;
     z-index: 10;
@@ -27,12 +33,12 @@
     text-align: center;
     display: inline;
     border-radius: 16px;
-    font-size: 20px;
+    font-size: 2rem;
     font-weight: 600;
     cursor: pointer;
     margin: auto;
     margin-bottom: 0px;
-    margin-top: 50px;
+    margin-top: 20px;
     color: black;
     margin-left: 0px;
     z-index: 10;
@@ -50,7 +56,7 @@ a {
 }
 
 #create_doodle {
-  margin-top: 80px;
+  margin-top: 0px;
   position: relative;
   cursor: pointer;
   height: 50px;
