@@ -12,23 +12,23 @@ describe("Home page", () => {
     expect(component).toBeInTheDocument()
   })
 
-  test("if no user is logged in the link redirects to /auth", () => {
-    renderWithProviders(<Home/>)
-    const link = screen.getByTestId('login-link')
-    expect(link).toBeInTheDocument()
-    expect(link).toHaveAttribute('href', '/auth')
-  })
+  // test("if no user is logged in the link redirects to /auth", () => {
+  //   renderWithProviders(<Home/>)
+  //   const link = screen.getByTestId('login-link')
+  //   expect(link).toBeInTheDocument()
+  //   expect(link).toHaveAttribute('href', '/auth')
+  // })
 
-  test("if user is logged in the link redirects to /main", () => {
-    const mockLogout = jest.fn()
-    const mockValues = {
-      user: "tester",
-      logout: mockLogout
-    }
-    jest.spyOn(AuthContext, 'useAuthContext').mockImplementation(() => mockValues)
-    renderWithProviders(<Home/>)
-    const link = screen.getByTestId('login-link')
-    expect(link).toBeInTheDocument()
-    expect(link).toHaveAttribute('href', '/main')
-  })
+  // test("if user is logged in the link redirects to /main", () => {
+  //   const mockLogout = jest.fn()
+  //   const mockValues = {
+  //     user: "tester",
+  //     logout: mockLogout
+  //   }
+  //   jest.spyOn(AuthContext, 'useAuthContext').mockImplementation(() => mockValues)
+  //   renderWithProviders(<Home/>)
+  //   const link = screen.getByTestId('login-link')
+  //   expect(link).toBeInTheDocument()
+  //   expect(link).toHaveAttribute('href', '/main')
+  // })
 })
