@@ -38,8 +38,9 @@ h5 {
 
 .leftpage {
   background-color: whitesmoke;
-  border-radius: 10px;
-  border-left: 6px solid grey;
+  border-radius: 10px 0px 0px 10px;
+  border-left: 6px soli
+d grey;
 }
 .plain_page {
   background-color: whitesmoke;
