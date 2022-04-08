@@ -1,17 +1,22 @@
 import React from "react";
 import "./style.css";
 import { useAuthContext } from "../../contexts/auth";
+import { useNavigate } from "react-router-dom";
 
 const TableObjects = () => {
+  const navigate = useNavigate()
   const { user } = useAuthContext();
   const boardOnClick = () => {
     if (user) {
 
     }
   }
+  function goToBook() {
+    navigate("/book")
+  }
   return (
     <>
-      <a data-testid="tableobj-component" href="/Book">
+      <a data-testid="tableobj-component" onClick={goToBook}>
         <div id="top_book">
           <h7>How to play</h7>
         </div>
