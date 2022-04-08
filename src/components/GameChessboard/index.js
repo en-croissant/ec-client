@@ -8,15 +8,14 @@ import "./style.css"
 function Gameboard({ socket }) {
   useEffect(() => {
     const lobby_id = window.location.pathname.split("/")[2];
-    socket.emit('join', {lobby_id:lobby_id})
+    socket.emit('join', { lobby_id: lobby_id })
     socket.on('initial board', ({board}) => {
-      console.log(game.fen())
       setGame(new Chess(board))
-    socket.on('opponent move', ({chessMove}) => {
-      safeGameMutate((game) => {
-        game.move(chessMove)
+      socket.on('opponent move', ({chessMove}) => {
+        safeGameMutate((game) => {
+          game.move(chessMove)
+        })
       })
-    })
     })
   }, [socket])
 
@@ -54,9 +53,10 @@ function Gameboard({ socket }) {
         if(game.in_checkmate()){
           const winner = turn === "2" ? "1" : "2"
           setOutcome(`Player ${winner} has won the match`)
-          }else{
+        } else {
           setOutcome("Match is a tie")
-      }} 
+        }
+      } 
     });
     setMoveFrom('');
     setOptionSquares({});
