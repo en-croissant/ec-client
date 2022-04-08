@@ -6,6 +6,7 @@ import Radium, { StyleRoot } from "radium";
 // import {Header} from "../../layout"
 import { useAuthContext } from "../../contexts/auth";
 import { LoginForm, RegForm, Logout } from "../../components";
+import { Navigate, useNavigate } from "react-router-dom";
 
 const styles = {
   fadeIn: {
@@ -16,6 +17,7 @@ const styles = {
 
 function Home() {
   const { user } = useAuthContext();
+  const navigate = useNavigate()
   const [showReg, setShowReg] = useState(false);
   const [showLogin, setShowLogin] = useState(false);
 
@@ -28,7 +30,7 @@ function Home() {
         setShowLogin(true);
       }
     } else {
-      window.location.href = "/main";
+      navigate('/main');
     }
   };
 
@@ -67,7 +69,7 @@ function Home() {
           <div id="r_back_leg_b"></div>
         </div>
         {/* <a data-testid="login-link" href={!user ? "/auth" : "/main"}> */}
-        <div onClick={onClick} id="home_clip_board">
+        <div data-testid="clipboard" onClick={onClick} id="home_clip_board">
           <div id="home_clip_board_paper">
             <h6>{!user ? "Sign in" : "Join Game"}</h6>
           </div>
@@ -79,7 +81,7 @@ function Home() {
           {showLogin ? (
             <span
               id="login_authbtn"
-              data-testid="form-button"
+              data-testid="loginform-button"
               className="authbutton"
               onClick={onClickbutton}
             >
@@ -87,7 +89,7 @@ function Home() {
             </span>
           ) : showReg ? (
             <span
-              data-testid="form-button"
+              data-testid="regform-button"
               id="reg_authbtn"
               className="authbutton"
               onClick={onClickbutton}
