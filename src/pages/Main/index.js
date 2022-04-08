@@ -24,7 +24,7 @@ function Main() {
             <h1 id="main_text"> Where the game begins...</h1>
 
             <div id="create_doodle">
-              <div onClick={createGame} id="createGame">Create Game</div>
+              <div role="button" onClick={createGame} id="createGame">Create Game</div>
               {/* <svg viewBox="0 0 500 150" preserveAspectRatio="none">
                 <path
                   fill="none"
@@ -34,7 +34,7 @@ function Main() {
             </div>
             <div id="join_doodle">
             
-              <div id="joinGame"
+              <div role="button" id="joinGame"
               onClick={joinGame}>Join Game</div>
               {/* <svg viewBox="0 0 500 150" preserveAspectRatio="none">
                 <path
