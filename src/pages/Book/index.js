@@ -9,7 +9,7 @@ function Book(props) {
       <div className="bookbackground">
         <HTMLFlipBook className="HTMLFlipBook" width={255} height={425}>
           <div className="nopage"></div>
-          <div className="extrafrontbook">
+          <div data-testid="flipbook" className="extrafrontbook">
             {/* <div className="bookfront"> */}
             {/* <div id="login_front_cover"></div> */}
             <div id="login_back_cover"></div>

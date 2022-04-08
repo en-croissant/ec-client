@@ -8,7 +8,6 @@ describe("Home page", () => {
   test("it renders the TableObjects component", () => {
     renderWithProviders(<Home/>)
     const component = screen.getByTestId('tableobj-component')
-    expect(component).toHaveAttribute('href', '/Book')
     expect(component).toBeInTheDocument()
   })
 
