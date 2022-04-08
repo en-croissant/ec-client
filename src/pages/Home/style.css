@@ -332,8 +332,7 @@
 
 @keyframes anim {
   100% {
-    transform: translateZ(0) translateY(3px) perspective(1290px);
-    box-shadow: 60px 60px 50px #999;
+    transform: translateZ(0) translateY(3px);
   }
 }
 
