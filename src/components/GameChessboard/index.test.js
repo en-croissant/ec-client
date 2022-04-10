@@ -1,6 +1,7 @@
 import { screen } from "@testing-library/react";
 import MockedSocket from "socket.io-mock";
 
+import * as React from 'react'
 import { default as GameChessboard } from ".";
 
 describe("GameChessboard", () => {
@@ -14,15 +15,16 @@ describe("GameChessboard", () => {
   })
 
   it("successfully renders the chessboard", () => {
-    // const mockSetState = jest.fn()
-    // const mockUseState = jest.fn(() => ["tester", mockSetState])
-    // const mockValues = {
-    //   setState: mockUseState
-    // }
-    // jest.spyOn(Stuff, 'useState').mockImplementation(() => mockValues)
     renderWithProviders(<GameChessboard socket={socket}/>)
     const chessboard = screen.getByLabelText('chessboard')
     expect(chessboard).toBeInTheDocument()
+  })
+
+  xtest("if there is an outcome the MatchResults component renders", () => {
+    jest.spyOn(React, 'useState').mockImplementation(() => [{}, jest.fn()])
+    jest.spyOn(React, 'useState').mockImplementation(() => ["Player 1 has won the match", jest.fn()])
+    renderWithProviders(<GameChessboard socket={socket}/>)
+    const result = screen.getByText(/player 1 has won the match/)
   })
 
   // it("successfully makes socket connections", () => {
