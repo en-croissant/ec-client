@@ -1,8 +1,7 @@
-import { default as GameChessboard } from ".";
 import { screen } from "@testing-library/react";
 import MockedSocket from "socket.io-mock";
 
-import * as Stuff from 'react'
+import { default as GameChessboard } from ".";
 
 describe("GameChessboard", () => {
 

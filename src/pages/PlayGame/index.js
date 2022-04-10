@@ -6,9 +6,9 @@ import "./style.css";
 const socket = io("wss://en-croissant.herokuapp.com");
 
 function PlayGame() {
-  useEffect(() => {
-    socket.on("hello world", ({ data }) => console.log(data));
-  }, []);
+  // useEffect(() => {
+  //   socket.on("hello world", ({ data }) => console.log(data));
+  // }, []);
 
   return (
     <>
