@@ -5,6 +5,8 @@ import { useNavigate } from "react-router-dom";
 
 import "./style.css";
 
+const array = [1,2,3,4]
+
 function LoginForm() {
   const { login } = useAuthContext();
   const navigate = useNavigate();

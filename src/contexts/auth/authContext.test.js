@@ -25,7 +25,7 @@ describe("useAuthContext", () => {
   });
 
   describe("register", () => {
-    test("if no error recieved from axios then login is called", async () => {
+    xtest("if no error recieved from axios then login is called", async () => {
       const testUser = {
         username: "tester",
         password: "testword"
@@ -42,7 +42,7 @@ describe("useAuthContext", () => {
       expect(result.current.login).toHaveBeenCalled();
     });
 
-    test("it should catch an error thrown by axios", async () => {
+    xtest("it should catch an error thrown by axios", async () => {
       let authContext;
       const testUser = {
         username: "tester",
@@ -60,9 +60,9 @@ describe("useAuthContext", () => {
   });
 
   describe("login", () => {
-    test("if login successful it should set localStorage and setCurrentUser", async () => {});
+    xtest("if login successful it should set localStorage and setCurrentUser", async () => {});
 
-    test("it should catch an error if token generation is unsuccessful", async () => {
+    xtest("it should catch an error if token generation is unsuccessful", async () => {
       const testUser = {
         username: "tester",
         password: "testword"
