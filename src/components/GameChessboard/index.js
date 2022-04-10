@@ -1,5 +1,9 @@
 import { useRef, useState, useEffect } from "react";
-import Chess from "chess.js";
+// ================================================
+//  POSSIBLE FIX
+import * as ChessJS from "chess.js";
+const Chess = typeof ChessJS === 'function' ? ChessJS : ChessJS.Chess
+// ================================================
 import { Chessboard } from "react-chessboard";
 import { MatchResult, PlayerTurn, PlayerName } from "../"
 
@@ -138,9 +142,8 @@ function Gameboard({ socket }) {
   }
 
   return (
-    <div id="chessboard">
+    <div id="chessboard" aria-label="chessboard">
       <Chessboard
-        aria-label="chessboard"
         id="PlayVsPlay"
         animationDuration={200}
         boardWidth={400}
