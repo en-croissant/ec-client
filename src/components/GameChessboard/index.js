@@ -1,13 +1,12 @@
 import { useRef, useState, useEffect } from "react";
+import { Chessboard } from "react-chessboard";
+import { MatchResult, PlayerTurn, PlayerName } from "../"
+import "./style.css"
 // ================================================
 //  POSSIBLE FIX
 import * as ChessJS from "chess.js";
 const Chess = typeof ChessJS === 'function' ? ChessJS : ChessJS.Chess
 // ================================================
-import { Chessboard } from "react-chessboard";
-import { MatchResult, PlayerTurn, PlayerName } from "../"
-
-import "./style.css"
 
 function Gameboard({ socket }) {
   useEffect(() => {

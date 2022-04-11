@@ -5,7 +5,7 @@ import { fadeIn } from "react-animations";
 import Radium, { StyleRoot } from "radium";
 import { useAuthContext } from "../../contexts/auth";
 import { LoginForm, RegForm, Logout } from "../../components";
-import { Navigate, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const styles = {
   fadeIn: {
@@ -22,7 +22,7 @@ function Home() {
 
   const onClick = () => {
     if (!user) {
-      if (showLogin == true || showReg == true) {
+      if (showLogin || showReg) {
         setShowLogin(false);
         setShowReg(false);
       } else {
@@ -34,7 +34,7 @@ function Home() {
   };
 
   const onClickbutton = () => {
-    if (showLogin == true) {
+    if (showLogin) {
       setShowReg(true);
       setShowLogin(false);
     } else {
