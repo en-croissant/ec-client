@@ -34,8 +34,6 @@ export const AuthProvider = ({ children }) => {
           options
         );
 
-        console.log(data)
-
         if (data.success) {
           console.log("Success!");
         } else {
@@ -66,7 +64,7 @@ export const AuthProvider = ({ children }) => {
       await login(userData);
       return "Registration successful";
     } catch (err) {
-      return err;
+      return err.message;
     }
   };
 
@@ -75,8 +73,6 @@ export const AuthProvider = ({ children }) => {
     const user = jwt_decode(token);
     setUser(user.sub);
   };
-
-  
 
   const logout = () => {
     localStorage.clear();

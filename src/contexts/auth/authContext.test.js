@@ -2,7 +2,10 @@ import { renderHook, act } from "@testing-library/react-hooks";
 import "jest-localstorage-mock";
 
 import axios from 'axios'
-jest.mock('axios')
+// jest.mock('axios')
+
+import 'jwt-decode'
+jest.mock('jwt-decode', () => ({ jwt_decode: () => ({ sub: "tester" }) }))
 
 import { AuthProvider, useAuthContext } from ".";
 
@@ -29,77 +32,92 @@ describe("useAuthContext", () => {
   });
 
   describe("register", () => {
-    xtest("if no error recieved from axios then login is called", async () => {
-      const testUser = {
-        username: "tester",
-        password: "testword"
-      };
-      const { result } = renderHook(() => useAuthContext(), {
-        wrapper
-      });
-      jest.spyOn(axios, "post").mockResolvedValue({ data: {} });
-      jest.spyOn(result.current, "login");
-      act(async () => {
-        await axios.post.mockImplementationOnce(() => Promise.resolve({data: {}}))
-        await result.current.register(testUser)
-      });
-      expect(result.current.login).toHaveBeenCalled();
-    });
+    test("if no error recieved from axios then login is called", async () => {
+      let AuthContext;
+      const { result } = renderHook(() => (AuthContext = useAuthContext()), { wrapper });
+      jest.spyOn(axios, "post").mockImplementationOnce(() => Promise.resolve({
+        data: {
+          err: false
+        }
+      }));
+      jest.spyOn(AuthContext, "login").mockImplementationOnce(() => {})
+      let response;
+      await act(async () => {
+        response = await result.current.register({username: "tester", password: "testword"})
+      })
+      expect(response).toBe("Registration successful")
+    }, 7000);
 
-    xtest("it should catch an error thrown by axios", async () => {
-      let authContext;
-      const testUser = {
-        username: "tester",
-        password: "testword"
-      };
-      const { result } = renderHook(() => (authContext = useAuthContext()), {
-        wrapper
-      });
-      jest.spyOn(axios, "post").mockImplementation(() => {
-        throw new Error("test error");
-      });
-      await act(async () => await result.current.register(testUser));
-      expect(authContext.register).toThrow("test error");
+    test("it catches error sent from unsuccessful registration", async () => {
+      const { result } = renderHook(() => useAuthContext(), { wrapper });
+      jest.spyOn(axios, "post").mockImplementationOnce(() => Promise.resolve({
+        data: {
+          err: "Unsuccessful registration"
+        }
+      }));
+      let response;
+      await act(async () => {
+        response = await result.current.register({username: "tester", password: "testword"})
+      })
+      expect(response).toBe("Unsuccessful registration")
+    })
+
+    test("it should catch an error thrown by axios", async () => {
+      const { result } = renderHook(() => useAuthContext(), { wrapper });
+      jest.spyOn(axios, "post").mockImplementationOnce(() => Promise.reject(
+        new Error("Unsuccessful registration")
+      ));
+      let response;
+      await act(async () => {
+        response = await result.current.register({username: "tester", email: "test@email.com", password: "testword"})
+      })
+      expect(response).toBe("Unsuccessful registration")
     });
   });
 
   describe("login", () => {
     test("if login is successful loginUser is called", async () => {
       let AuthContext;
-      renderHook(() => (AuthContext = useAuthContext()), { wrapper });
+      const { result } = renderHook(() => (AuthContext = useAuthContext()), { wrapper });
+      jest.spyOn(axios, "post").mockImplementationOnce(() => Promise.resolve({
+        data: {
+          success: true,
+          token: "Bearer testtoken"
+        }
+      }));
+      let response;
       await act(async () => {
-        await axios.post.mockImplementationOnce(() => Promise.resolve({
-          data: {
-            success: true,
-            token: "Bearer testtoken"
-          }
-        }));
+        response = await result.current.login({username: "tester", password: "testword"})
       })
-      const response = await AuthContext.login({username: "tester", password: "testword"})
       expect(response).toBe("Login successful")
       expect(localStorage.setItem).toHaveBeenCalledWith("token", "Bearer testtoken")
     })
 
-    xtest("it should catch an error if token generation is unsuccessful", async () => {
-      let AuthContext;
-      renderHook(() => (AuthContext = useAuthContext()), { wrapper });
-      jest.spyOn(axios, "post").mockImplementation(() => Promise.resolve({
+    test("it should catch an error if token generation is unsuccessful", async () => {
+      const { result } = renderHook(() => useAuthContext(), { wrapper });
+      jest.spyOn(axios, "post").mockImplementationOnce(() => Promise.resolve({
         data: {
           success: false
         }
       }));
-      const response = await AuthContext.login({username: "tester", password: "testword"})
+      let response;
+      await act(async () => {
+        response = await result.current.login({username: "tester", password: "testword"})
+      })
       expect(response).toBe("Login not authorised")
     });
 
-    xtest("it should catch an error if token generation is unsuccessful", async () => {
-      let AuthContext;
-      renderHook(() => (AuthContext = useAuthContext()), { wrapper });
-      jest.spyOn(axios, "post").mockImplementation(() => Promise.reject(
-        new Error("Unauthorised")
+    test("it should catch an error thrown by axios", async () => {
+      const { result } = renderHook(() => useAuthContext(), { wrapper });
+      jest.spyOn(axios, "post").mockImplementationOnce(() => Promise.reject(
+        new Error("Login not authorised")
       ));
-      const response = await AuthContext.login({username: "tester", password: "testword"})
-      expect(response).toBe("Unauthorised")
+      let response;
+      await act(async () => {
+        response = await result.current.login({username: "tester", password: "testword"})
+      })
+      expect(response).toBe("Login not authorised")
     });
+
   });
 });
