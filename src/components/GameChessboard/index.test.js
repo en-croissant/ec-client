@@ -14,7 +14,7 @@ describe("GameChessboard", () => {
     })
   })
 
-  it("successfully renders the chessboard", () => {
+  test("it successfully renders the chessboard", () => {
     renderWithProviders(<GameChessboard socket={socket}/>)
     const chessboard = screen.getByLabelText('chessboard')
     expect(chessboard).toBeInTheDocument()
