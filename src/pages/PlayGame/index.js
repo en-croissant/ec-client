@@ -1,4 +1,5 @@
-import React, { useEffect } from "react";
+import React from 'react'
+// import { useEffect } from "react";
 import { GameChessboard } from "../../components";
 import { io } from "socket.io-client";
 import "./style.css";
@@ -17,7 +18,7 @@ function PlayGame() {
           <GameChessboard socket={socket} />
         </div>
         <a href="/">
-          <div class="backpieceplay">&#9820; Go Back</div>
+          <div className="backpieceplay">&#9820; Go Back</div>
         </a>
       </div>
     </>

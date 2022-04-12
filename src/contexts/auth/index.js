@@ -34,6 +34,8 @@ export const AuthProvider = ({ children }) => {
           options
         );
 
+        console.log(data)
+
         if (data.success) {
           console.log("Success!");
         } else {
@@ -43,7 +45,7 @@ export const AuthProvider = ({ children }) => {
         loginUser(data.token);
         return "Login successful"
       } catch (err) {
-        return err
+        return err.message
       }
   };
 

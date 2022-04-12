@@ -9,9 +9,13 @@ import { AuthProvider, useAuthContext } from ".";
 describe("useAuthContext", () => {
   let wrapper;
   beforeEach(() => {
-    jest.resetAllMocks();
+    jest.clearAllMocks();
     wrapper = ({ children }) => <AuthProvider>{children}</AuthProvider>;
   });
+
+  afterEach(() => {
+    jest.resetAllMocks()
+  })
 
   test("it retrieves the token from local storage", async () => {
     renderHook(() => useAuthContext(), { wrapper });
@@ -60,22 +64,42 @@ describe("useAuthContext", () => {
   });
 
   describe("login", () => {
-    xtest("if login successful it should set localStorage and setCurrentUser", async () => {});
+    test("if login is successful loginUser is called", async () => {
+      let AuthContext;
+      renderHook(() => (AuthContext = useAuthContext()), { wrapper });
+      await act(async () => {
+        await axios.post.mockImplementationOnce(() => Promise.resolve({
+          data: {
+            success: true,
+            token: "Bearer testtoken"
+          }
+        }));
+      })
+      const response = await AuthContext.login({username: "tester", password: "testword"})
+      expect(response).toBe("Login successful")
+      expect(localStorage.setItem).toHaveBeenCalledWith("token", "Bearer testtoken")
+    })
 
     xtest("it should catch an error if token generation is unsuccessful", async () => {
-      const testUser = {
-        username: "tester",
-        password: "testword"
-      };
-      const { result } = renderHook(() => useAuthContext(), {
-        wrapper
-      });
-      let res;
-      await act(async () => {
-        await axios.post.mockImplementationOnce(() => Promise.resolve({data: {err: "not authorized"}}))
-        res = result.current.login(testUser)
-      });
-      expect(res).toMatch(/not authorised/i);
+      let AuthContext;
+      renderHook(() => (AuthContext = useAuthContext()), { wrapper });
+      jest.spyOn(axios, "post").mockImplementation(() => Promise.resolve({
+        data: {
+          success: false
+        }
+      }));
+      const response = await AuthContext.login({username: "tester", password: "testword"})
+      expect(response).toBe("Login not authorised")
+    });
+
+    xtest("it should catch an error if token generation is unsuccessful", async () => {
+      let AuthContext;
+      renderHook(() => (AuthContext = useAuthContext()), { wrapper });
+      jest.spyOn(axios, "post").mockImplementation(() => Promise.reject(
+        new Error("Unauthorised")
+      ));
+      const response = await AuthContext.login({username: "tester", password: "testword"})
+      expect(response).toBe("Unauthorised")
     });
   });
 });

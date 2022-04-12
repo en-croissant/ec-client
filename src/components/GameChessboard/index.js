@@ -169,8 +169,8 @@ function Gameboard({ socket }) {
         <></>
       )}
       <PlayerTurn turn={turn} /> 
-      <PlayerName playerName="Player 1" isActive={turn==1} isPlayer1="1"/>
-      <PlayerName playerName="Player 2" isActive={turn==2} isPlayer1=""/>
+      <PlayerName playerName="Player 1" isActive={turn===1} isPlayer1="1"/>
+      <PlayerName playerName="Player 2" isActive={turn===2} isPlayer1=""/>
     </div>
   );
 }

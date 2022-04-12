@@ -5,16 +5,16 @@ import { LoginForm, RegForm } from "../../components";
 import "./style.css";
 
 function Auth() {
-  const [showReg, setShowReg] = useState(false);
+  // const [showReg, setShowReg] = useState(false);
   const [showLogin, setShowLogin] = useState(true);
 
   const onClick = () => {
-    if (showLogin == true) {
+    if (showLogin) {
       setShowLogin(false);
-      setShowReg(true);
+      // setShowReg(true);
     } else {
       setShowLogin(true);
-      setShowReg(false);
+      // setShowReg(false);
     }
   };
 

@@ -1,6 +1,5 @@
 import React from "react";
 import HTMLFlipBook from "react-pageflip";
-import { Header } from "../../layout";
 import "./style.css";
 
 function Book(props) {
@@ -157,7 +156,7 @@ function Book(props) {
           </div>
         </HTMLFlipBook>
         <a href="/">
-          <div class="backpiece">&#9820; Go Back</div>
+          <div className="backpiece">&#9820; Go Back</div>
         </a>
       </div>
     </>

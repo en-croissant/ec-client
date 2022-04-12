@@ -12,7 +12,7 @@ const TableObjects = () => {
   }
   return (
     <>
-      <a data-testid="tableobj-component" onClick={goToBook}>
+      <a data-testid="tableobj-component" onClick={goToBook} href="/book">
         <div id="top_book">
           <h7>How to play</h7>
         </div>
