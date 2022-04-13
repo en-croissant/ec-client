@@ -2,13 +2,6 @@ import { renderHook, act } from "@testing-library/react-hooks";
 import "jest-localstorage-mock";
 
 import axios from 'axios'
-// jest.mock('axios')
-
-// import jwt_decode from 'jwt-decode'
-// jest.mock('jwt-decode', () => ({
-//    ...jest.requireActual('jwt-decode'),
-//   default: () => "tester"
-// }));
 
 import { AuthProvider, useAuthContext } from ".";
 
@@ -80,8 +73,7 @@ describe("useAuthContext", () => {
 
   describe("login", () => {
     test("if login is successful loginUser is called", async () => {
-      let AuthContext;
-      const { result } = renderHook(() => (AuthContext = useAuthContext()), { wrapper });
+      const { result } = renderHook(() =>  useAuthContext(), { wrapper });
       jest.spyOn(axios, "post").mockImplementationOnce(() => Promise.resolve({
         data: {
           success: true,
@@ -123,4 +115,16 @@ describe("useAuthContext", () => {
     });
 
   });
+
+  describe("getCurrentUser", () => {
+    test("if there is a user logged in it returns the sub", async () => {
+      const { result } = renderHook(() => useAuthContext(), { wrapper });
+      jest.spyOn(localStorage, "getItem").mockReturnValueOnce("Bearer testtoken")
+      let response;
+      await act(async () => {
+        response = result.current.getCurrentUser()
+      })
+      expect(response).toBe("test")
+    })
+  })
 });
