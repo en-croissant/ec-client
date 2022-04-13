@@ -4,11 +4,11 @@ import "jest-localstorage-mock";
 import axios from 'axios'
 // jest.mock('axios')
 
-import 'jwt-decode'
-jest.mock('jwt-decode', () => ({
-   ...jest.requireActual('jwt-decode'),
-  default: () => jest.fn()
-}));
+// import jwt_decode from 'jwt-decode'
+// jest.mock('jwt-decode', () => ({
+//    ...jest.requireActual('jwt-decode'),
+//   default: () => "tester"
+// }));
 
 import { AuthProvider, useAuthContext } from ".";
 
@@ -79,7 +79,7 @@ describe("useAuthContext", () => {
   });
 
   describe("login", () => {
-    xtest("if login is successful loginUser is called", async () => {
+    test("if login is successful loginUser is called", async () => {
       let AuthContext;
       const { result } = renderHook(() => (AuthContext = useAuthContext()), { wrapper });
       jest.spyOn(axios, "post").mockImplementationOnce(() => Promise.resolve({

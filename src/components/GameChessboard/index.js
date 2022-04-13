@@ -10,6 +10,7 @@ const Chess = typeof ChessJS === 'function' ? ChessJS : ChessJS.Chess
 
 function Gameboard({ socket }) {
   useEffect(() => {
+    console.log(window.history)
     const lobby_id = window.location.pathname.split("/")[2];
     socket.emit('join', { lobby_id: lobby_id })
     socket.on('initial board', ({board}) => {
@@ -168,6 +169,7 @@ function Gameboard({ socket }) {
       ) : (
         <></>
       )}
+      {console.log(outcome)}
       <PlayerTurn turn={turn} /> 
       <PlayerName playerName="Player 1" isActive={turn===1} isPlayer1="1"/>
       <PlayerName playerName="Player 2" isActive={turn===2} isPlayer1=""/>
